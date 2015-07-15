@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="pwd-48-qvZ">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <scenes>
+        <!--Playlist-->
+        <scene sceneID="ll7-4w-cv8">
+            <objects>
+                <tableViewController id="tXg-JQ-3Ih" customClass="PodcastPlaylistViewController" customModule="RapidCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="522-v6-C0E">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="aOT-s3-sJF">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aOT-s3-sJF" id="OTw-6x-qvy">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="tXg-JQ-3Ih" id="WWg-Tf-7VQ"/>
+                            <outlet property="delegate" destination="tXg-JQ-3Ih" id="WGe-EZ-Rod"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Playlist" id="kpq-qL-Msy"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Pgz-IJ-4fE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1761" y="-334"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mzc-wK-7c8">
+            <objects>
+                <navigationController id="pwd-48-qvZ" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cdZ-5N-0Ja">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="tXg-JQ-3Ih" kind="relationship" relationship="rootViewController" id="aTZ-lE-QYY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qLH-3m-HGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2665" y="-334"/>
+        </scene>
+        <!--Podcast Player View Controller-->
+        <scene sceneID="hle-lS-yRJ">
+            <objects>
+                <viewController id="zd0-nn-XDP" customClass="PodcastPlayerViewController" customModule="RapidCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="INF-Kb-9lG"/>
+                        <viewControllerLayoutGuide type="bottom" id="hBF-gA-T0W"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Wa-Wq-3eb">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVF-6H-jtL" userLabel="Pause/Play">
+                                <rect key="frame" x="277" y="504" width="46" height="50"/>
+                                <state key="normal" image="Play">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedPlayPause:" destination="zd0-nn-XDP" eventType="touchUpInside" id="Ldd-oc-RaG"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="podcast icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="pbP-nS-3Jb" userLabel="Placeholder Image">
+                                <rect key="frame" x="125" y="90" width="350" height="325"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="sAU-2A-Pm7"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLD-ot-xXV" userLabel="Fast Forward">
+                                <rect key="frame" x="342" y="504" width="50" height="50"/>
+                                <state key="normal" image="Fast Forward">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedFastForward:" destination="zd0-nn-XDP" eventType="touchUpInside" id="qWd-ju-aed"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbn-HM-S0V" userLabel="Rewind">
+                                <rect key="frame" x="198" y="504" width="50" height="50"/>
+                                <state key="normal" image="Rewind">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="pressedRewind:" destination="zd0-nn-XDP" eventType="touchUpInside" id="2lw-di-L1V"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2Mf-QE-gf0">
+                                <rect key="frame" x="123" y="466" width="354" height="31"/>
+                                <connections>
+                                    <action selector="sliderMoved:" destination="zd0-nn-XDP" eventType="valueChanged" id="NE4-Kr-Pon"/>
+                                </connections>
+                            </slider>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giL-PY-SPc" userLabel="Volume">
+                                <rect key="frame" x="440" y="511" width="35" height="35"/>
+                                <state key="normal" image="Volume">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OUe-Gg-XDr">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="Podcast Title" id="18K-FR-p24"/>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="centerY" secondItem="2Mf-QE-gf0" secondAttribute="centerY" constant="-181" id="3mF-qu-Jlu"/>
+                            <constraint firstItem="2Mf-QE-gf0" firstAttribute="leading" secondItem="pbP-nS-3Jb" secondAttribute="leading" id="7hq-V3-Pio"/>
+                            <constraint firstItem="fVF-6H-jtL" firstAttribute="top" secondItem="pbP-nS-3Jb" secondAttribute="bottom" constant="89" id="Mda-Ch-b9u"/>
+                            <constraint firstAttribute="centerX" secondItem="pbP-nS-3Jb" secondAttribute="centerX" constant="-0.5" id="TUD-3i-uzY"/>
+                            <constraint firstAttribute="centerY" secondItem="fVF-6H-jtL" secondAttribute="centerY" constant="-229" id="UdU-fm-ace"/>
+                            <constraint firstAttribute="centerY" secondItem="zLD-ot-xXV" secondAttribute="centerY" constant="-229" id="W2m-YJ-45T"/>
+                            <constraint firstItem="zLD-ot-xXV" firstAttribute="leading" secondItem="fVF-6H-jtL" secondAttribute="trailing" constant="19" id="WJk-ao-az9"/>
+                            <constraint firstAttribute="centerX" secondItem="zLD-ot-xXV" secondAttribute="centerX" constant="-67" id="YRV-TQ-XaO"/>
+                            <constraint firstItem="fVF-6H-jtL" firstAttribute="top" secondItem="2Mf-QE-gf0" secondAttribute="bottom" constant="8" symbolic="YES" id="dGA-ah-GyS"/>
+                            <constraint firstAttribute="centerX" secondItem="2Mf-QE-gf0" secondAttribute="centerX" id="iHP-7g-1ey"/>
+                            <constraint firstAttribute="centerY" secondItem="pbP-nS-3Jb" secondAttribute="centerY" constant="47.5" id="lA2-8n-pY9"/>
+                            <constraint firstAttribute="centerX" secondItem="fVF-6H-jtL" secondAttribute="centerX" id="n76-Bb-qMo"/>
+                            <constraint firstAttribute="centerX" secondItem="Kbn-HM-S0V" secondAttribute="centerX" constant="77" id="s94-Wy-w13"/>
+                            <constraint firstItem="fVF-6H-jtL" firstAttribute="leading" secondItem="Kbn-HM-S0V" secondAttribute="trailing" constant="29" id="vCJ-vL-l6R"/>
+                            <constraint firstAttribute="centerY" secondItem="Kbn-HM-S0V" secondAttribute="centerY" constant="-229" id="zO9-Mn-5YM"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pausePlay" destination="fVF-6H-jtL" id="hNJ-ne-Mu8"/>
+                        <outlet property="podcastImage" destination="pbP-nS-3Jb" id="VR1-WV-LYV"/>
+                        <outlet property="podcastSlider" destination="2Mf-QE-gf0" id="jEX-Ht-5Ub"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cIe-iw-j3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-864" y="-334"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Fast Forward" width="50" height="50"/>
+        <image name="Play" width="50" height="50"/>
+        <image name="Rewind" width="50" height="50"/>
+        <image name="Volume" width="50" height="50"/>
+        <image name="podcast icon.jpeg" width="225" height="225"/>
+    </resources>
+</document>
