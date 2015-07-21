@@ -10,6 +10,8 @@ import UIKit
 
 class PodcastPlaylistViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
 
+    var podcasts : [Podcast]?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
@@ -35,36 +37,36 @@ class PodcastPlaylistViewController: UITableViewController, UITableViewDelegate,
 }
 
 
-/*
+
 extension PodcastPlaylistViewController: UITableViewDelegate {
     
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
     
     // 3
-    func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
 }
 
 extension PodcastPlaylistViewController: UITableViewDataSource {
-    
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("PodcastCell", forIndexPath: indexPath) as! PodcastTableViewCell //1
         
         let row = indexPath.row
-        let note = notes[row] as Podcast
-        cell.note = note
+        let note = podcasts![row] as Podcast
+        cell.podcast = note
         
         return cell
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Int(notes?.count ?? 0)
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Int(podcasts?.count ?? 0)
     }
     
-}*/
+}
 
 
 

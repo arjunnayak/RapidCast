@@ -10,20 +10,44 @@ import Foundation
 
 class iTunesHelper {
     
-    static func searchItunesFor(searchTerm: String) {
+    static var genres = [   "Arts" : "1301",
+                    "Comedy" : "1303",
+                    "Education" : "1304"
+                    //"" : "",
+                    //"" : "",
+                    //"" : "",
+    ]
+    
+    static func getiTunesLinksFromRSS(categories: [String]) -> [String] {
+        var genreIDs = [String]()
+        for category in categories {
+            genreIDs.append(iTunesHelper.genres[category]!)
+        }
         
-        // The iTunes API wants multiple terms separated by + symbols, so replace spaces with + signs
-        var itunesSearchTerm = searchTerm.stringByReplacingOccurrencesOfString(" ", withString: "+", options: NSStringCompareOptions.CaseInsensitiveSearch, range: nil)
+        var iTunesLinks = [String]()
+        for (var i = 0; i < genreIDs.count; i++) {
+            //get ids from rss link
+            iTunesLinks.append("https://itunes.apple.com/us/rss/toppodcasts/limit=10/genre=\(genreIDs[i])/xml")
+        }
+        return iTunesLinks
+    }
+    
+    /*
+    * @parm in the lookup ID from rss link generator
+    */
+    static func lookupItunesFor(lookupID: String) {
         
-        // Now escape anything else that isn't URL-friendly
-        var escapedSearchTerm = itunesSearchTerm.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
-        var urlPath = "https://itunes.apple.com/search?term=\(escapedSearchTerm)&media=software"
+        var urlPath = "https://itunes.apple.com/lookup?id=\(lookupID)"
         var url: NSURL! = NSURL(string: urlPath)
         var request: NSURLRequest? = NSURLRequest(URL: url!)
         var connection: NSURLConnection? = NSURLConnection(request: request!, delegate: self, startImmediately: false)
-        
-        println("Search iTunes API at URL \(url)")
+        ///what do you do with this connection?????????
+        println("Lookup iTunes API at URL \(url)")
         
         connection!.start()
+    }
+    
+    static func getGenres() -> Dictionary<String, String> {
+        return genres
     }
 }

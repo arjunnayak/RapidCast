@@ -28,6 +28,7 @@ class PodcastPlayerViewController: UIViewController {
         //set up track and audioplayer
         track = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("jazzy.mp3", ofType: "mp3")!)
         audioPlayer = AVAudioPlayer(contentsOfURL: track, error: nil)
+
         
         //slider functionality
         podcastSlider.maximumValue = Float(audioPlayer!.duration)

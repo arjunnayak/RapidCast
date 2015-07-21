@@ -14,8 +14,9 @@
 		4768FF4D1B5038620012C80F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4768FF4C1B5038620012C80F /* AppDelegate.swift */; };
 		4768FF521B5038620012C80F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4768FF501B5038620012C80F /* Main.storyboard */; };
 		4768FF541B5038620012C80F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4768FF531B5038620012C80F /* Images.xcassets */; };
-		4768FF571B5038620012C80F /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4768FF551B5038620012C80F /* LaunchScreen.xib */; };
 		4768FF631B5038620012C80F /* RapidCastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4768FF621B5038620012C80F /* RapidCastTests.swift */; };
+		47D3FC821B5DC59D00EAE1EF /* RapidCastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3FC811B5DC59D00EAE1EF /* RapidCastViewController.swift */; };
+		47D3FC841B5ECA8700EAE1EF /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3FC831B5ECA8700EAE1EF /* XMLParser.swift */; };
 		47FEB0CB1B5814150091725D /* podcast icon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 47FEB0CA1B5814150091725D /* podcast icon.jpeg */; };
 		47FEB0CF1B5815F20091725D /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FEB0CE1B5815F20091725D /* PodcastTableViewCell.swift */; };
 		47FEB0D21B58200B0091725D /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FEB0D11B58200B0091725D /* Podcast.swift */; };
@@ -41,10 +42,11 @@
 		4768FF4C1B5038620012C80F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4768FF511B5038620012C80F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4768FF531B5038620012C80F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		4768FF561B5038620012C80F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		4768FF5C1B5038620012C80F /* RapidCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RapidCastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4768FF611B5038620012C80F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4768FF621B5038620012C80F /* RapidCastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidCastTests.swift; sourceTree = "<group>"; };
+		47D3FC811B5DC59D00EAE1EF /* RapidCastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidCastViewController.swift; sourceTree = "<group>"; };
+		47D3FC831B5ECA8700EAE1EF /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		47FEB0CA1B5814150091725D /* podcast icon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "podcast icon.jpeg"; path = "../../../Desktop/podcast icon.jpeg"; sourceTree = "<group>"; };
 		47FEB0CE1B5815F20091725D /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
 		47FEB0D11B58200B0091725D /* Podcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
@@ -73,6 +75,7 @@
 			children = (
 				47018D7C1B54693D009A7870 /* PodcastPlayerViewController.swift */,
 				4730DF8F1B56CF0E0040B15B /* PodcastPlaylistViewController.swift */,
+				47D3FC811B5DC59D00EAE1EF /* RapidCastViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -81,6 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				4730DF8D1B56C6E10040B15B /* iTunesHelper.swift */,
+				47D3FC831B5ECA8700EAE1EF /* XMLParser.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -113,7 +117,6 @@
 				4768FF4C1B5038620012C80F /* AppDelegate.swift */,
 				4768FF501B5038620012C80F /* Main.storyboard */,
 				4768FF531B5038620012C80F /* Images.xcassets */,
-				4768FF551B5038620012C80F /* LaunchScreen.xib */,
 				4768FF4A1B5038620012C80F /* Supporting Files */,
 			);
 			path = RapidCast;
@@ -245,7 +248,6 @@
 				47FEB0CB1B5814150091725D /* podcast icon.jpeg in Resources */,
 				4768FF521B5038620012C80F /* Main.storyboard in Resources */,
 				4730DF8B1B558C730040B15B /* jazzy.mp3.mp3 in Resources */,
-				4768FF571B5038620012C80F /* LaunchScreen.xib in Resources */,
 				4768FF541B5038620012C80F /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,11 +266,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				47D3FC841B5ECA8700EAE1EF /* XMLParser.swift in Sources */,
 				47018D7D1B54693D009A7870 /* PodcastPlayerViewController.swift in Sources */,
 				4730DF901B56CF0E0040B15B /* PodcastPlaylistViewController.swift in Sources */,
 				47FEB0D21B58200B0091725D /* Podcast.swift in Sources */,
 				4768FF4D1B5038620012C80F /* AppDelegate.swift in Sources */,
 				47FEB0CF1B5815F20091725D /* PodcastTableViewCell.swift in Sources */,
+				47D3FC821B5DC59D00EAE1EF /* RapidCastViewController.swift in Sources */,
 				4730DF8E1B56C6E10040B15B /* iTunesHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,14 +302,6 @@
 				4768FF511B5038620012C80F /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		4768FF551B5038620012C80F /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				4768FF561B5038620012C80F /* Base */,
-			);
-			name = LaunchScreen.xib;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
