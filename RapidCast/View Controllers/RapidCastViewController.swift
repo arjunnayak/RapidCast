@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RapidCastViewController: UIViewController {
+class RapidCastViewController: UIViewController, NSXMLParserDelegate {
     
     @IBOutlet weak var rapidCastButton: UIButton!
     var categories: [String]?
@@ -35,15 +35,18 @@ class RapidCastViewController: UIViewController {
         if(segue.identifier == "RapidCast") {
             let podcastPlayer = segue.destinationViewController as! PodcastPlayerViewController
             if let categories = self.categories {
-                var iTunesLinks : [String] = iTunesHelper.getiTunesLinksFromRSS(categories)
+                var iTunesLinks : [NSURL] = iTunesHelper.getiTunesLinksFromRSS(categories)
                 
+                //NSXMLParse setup
+                for link in iTunesLinks {
+                 
+                    
+                    
+                }
             }
             else {
                 println("Error")
             }
         }
-        
     }
-    
-    
 }

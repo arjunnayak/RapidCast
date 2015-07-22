@@ -11,23 +11,23 @@ import Foundation
 class iTunesHelper {
     
     static var genres = [   "Arts" : "1301",
-                    "Comedy" : "1303",
-                    "Education" : "1304"
-                    //"" : "",
-                    //"" : "",
-                    //"" : "",
+        "Comedy" : "1303",
+        "Education" : "1304"
+        //"" : "",
+        //"" : "",
+        //"" : "",
     ]
     
-    static func getiTunesLinksFromRSS(categories: [String]) -> [String] {
+    static func getiTunesLinksFromRSS(categories: [String]) -> [NSURL] {
         var genreIDs = [String]()
         for category in categories {
             genreIDs.append(iTunesHelper.genres[category]!)
         }
         
-        var iTunesLinks = [String]()
+        var iTunesLinks = [NSURL]()
         for (var i = 0; i < genreIDs.count; i++) {
             //get ids from rss link
-            iTunesLinks.append("https://itunes.apple.com/us/rss/toppodcasts/limit=10/genre=\(genreIDs[i])/xml")
+            iTunesLinks.append(NSURL(string: "https://itunes.apple.com/us/rss/toppodcasts/limit=10/genre=\(genreIDs[i])/json")!)
         }
         return iTunesLinks
     }
