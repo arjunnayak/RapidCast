@@ -1,0 +1,6 @@
+framework module Pods_RapidCast {
+  umbrella header "Pods-RapidCast-umbrella.h"
+
+  export *
+  module * { export * }
+}

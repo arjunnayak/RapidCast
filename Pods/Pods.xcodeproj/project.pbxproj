@@ -1,0 +1,503 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1E15B15ED2D7BCCE030CFA9F /* Pods-RapidCast-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 9E4E6091EE2A4F7006732C89 /* Pods-RapidCast-dummy.m */; };
+		1F3DD04FA9FCBB189D67A798 /* Pods-RapidCast-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = EC381BC0D2BB91953807F46D /* Pods-RapidCast-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		45627AD2350A171ADE971CED /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37754840C9B248FE4D95D19F /* Foundation.framework */; };
+		65994AAD6142CF850FDDCE10 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 37754840C9B248FE4D95D19F /* Foundation.framework */; };
+		753B547F3CF7394A10F19167 /* Pods-RapidCast-SwiftyJSON-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 301B66774B9B1905FAD75A41 /* Pods-RapidCast-SwiftyJSON-dummy.m */; };
+		C46A64CC1D0DE39ECD5F75A8 /* Pods-RapidCast-SwiftyJSON-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 32821BDCCEB77DF0D88272C5 /* Pods-RapidCast-SwiftyJSON-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E72DE764C9E87A60547F831B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCB50C87280E8DA4B42451BC /* SwiftyJSON.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1AC385520437B9BC0B6D54EA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 46EF5EBC7E6F8CBCFB7DF9E4 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 7CCC37C3FE23FF015B9E8E82;
+			remoteInfo = "Pods-RapidCast-SwiftyJSON";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1343A84D207675EC15B1E9FE /* Pods-RapidCast-SwiftyJSON.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RapidCast-SwiftyJSON.xcconfig"; sourceTree = "<group>"; };
+		19B40CC889DA457452F0C450 /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		1BC6580C8969E428374348E0 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		301B66774B9B1905FAD75A41 /* Pods-RapidCast-SwiftyJSON-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RapidCast-SwiftyJSON-dummy.m"; sourceTree = "<group>"; };
+		32821BDCCEB77DF0D88272C5 /* Pods-RapidCast-SwiftyJSON-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RapidCast-SwiftyJSON-umbrella.h"; sourceTree = "<group>"; };
+		37754840C9B248FE4D95D19F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS8.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		63981C04DA937EACAE5DEBA9 /* Pods-RapidCast-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-RapidCast-acknowledgements.markdown"; sourceTree = "<group>"; };
+		65B4935C85FF980B68302919 /* Pods-RapidCast-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-RapidCast-acknowledgements.plist"; sourceTree = "<group>"; };
+		6E0C249FD732040AC9C7EE2D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7C228138B9BD03D8C644F137 /* Pods-RapidCast.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-RapidCast.modulemap"; sourceTree = "<group>"; };
+		7F05983009498C9BBA9BE98A /* Pods_RapidCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RapidCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9384CAE00FA7A8D6077AA88C /* SwiftyJSON.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftyJSON.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9E4E6091EE2A4F7006732C89 /* Pods-RapidCast-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-RapidCast-dummy.m"; sourceTree = "<group>"; };
+		A148FC6CB52B3C8E5E602E9A /* Pods-RapidCast-SwiftyJSON-Private.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RapidCast-SwiftyJSON-Private.xcconfig"; sourceTree = "<group>"; };
+		B27869BB379F3703DAAA4C47 /* Pods-RapidCast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RapidCast.debug.xcconfig"; sourceTree = "<group>"; };
+		BB8606E6D74DD4C473E88407 /* Pods-RapidCast-SwiftyJSON.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-RapidCast-SwiftyJSON.modulemap"; sourceTree = "<group>"; };
+		BCB50C87280E8DA4B42451BC /* SwiftyJSON.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Source/SwiftyJSON.swift; sourceTree = "<group>"; };
+		BD8EB202C72A38E1495A50AC /* Pods-RapidCast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-RapidCast.release.xcconfig"; sourceTree = "<group>"; };
+		CE002FC35DD4E1D9EB57B1BC /* Pods-RapidCast-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RapidCast-frameworks.sh"; sourceTree = "<group>"; };
+		E8CA6360C6F7FAF1E510279E /* Pods-RapidCast-SwiftyJSON-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RapidCast-SwiftyJSON-prefix.pch"; sourceTree = "<group>"; };
+		EC381BC0D2BB91953807F46D /* Pods-RapidCast-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RapidCast-umbrella.h"; sourceTree = "<group>"; };
+		F209B10FF1ABE7AAEC1B9CCE /* Pods-RapidCast-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-RapidCast-resources.sh"; sourceTree = "<group>"; };
+		F2D34B78E7E640BEA5AB41F4 /* Pods-RapidCast-environment.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-RapidCast-environment.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		191E9483FB393F6A601E1199 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				45627AD2350A171ADE971CED /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3189D685AB7772C1C6E93042 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65994AAD6142CF850FDDCE10 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6703472D934B642AF61A24E0 /* SwiftyJSON */ = {
+			isa = PBXGroup;
+			children = (
+				BCB50C87280E8DA4B42451BC /* SwiftyJSON.swift */,
+				CA6684E3464B41BB51D2B483 /* Support Files */,
+			);
+			path = SwiftyJSON;
+			sourceTree = "<group>";
+		};
+		6B12DCE1E80B38F0097FB98A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				7F05983009498C9BBA9BE98A /* Pods_RapidCast.framework */,
+				9384CAE00FA7A8D6077AA88C /* SwiftyJSON.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		75D3EC9D0C196B313BB6CD6A /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				37754840C9B248FE4D95D19F /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		AAB0993B2D3D8F4C0C83DCF6 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				AEFB7F35108434D1160BD8DD /* Pods-RapidCast */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		AEFB7F35108434D1160BD8DD /* Pods-RapidCast */ = {
+			isa = PBXGroup;
+			children = (
+				1BC6580C8969E428374348E0 /* Info.plist */,
+				7C228138B9BD03D8C644F137 /* Pods-RapidCast.modulemap */,
+				63981C04DA937EACAE5DEBA9 /* Pods-RapidCast-acknowledgements.markdown */,
+				65B4935C85FF980B68302919 /* Pods-RapidCast-acknowledgements.plist */,
+				9E4E6091EE2A4F7006732C89 /* Pods-RapidCast-dummy.m */,
+				F2D34B78E7E640BEA5AB41F4 /* Pods-RapidCast-environment.h */,
+				CE002FC35DD4E1D9EB57B1BC /* Pods-RapidCast-frameworks.sh */,
+				F209B10FF1ABE7AAEC1B9CCE /* Pods-RapidCast-resources.sh */,
+				EC381BC0D2BB91953807F46D /* Pods-RapidCast-umbrella.h */,
+				B27869BB379F3703DAAA4C47 /* Pods-RapidCast.debug.xcconfig */,
+				BD8EB202C72A38E1495A50AC /* Pods-RapidCast.release.xcconfig */,
+			);
+			name = "Pods-RapidCast";
+			path = "Target Support Files/Pods-RapidCast";
+			sourceTree = "<group>";
+		};
+		B0E66E97C736FD95DFDF94BB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				75D3EC9D0C196B313BB6CD6A /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B4059747CE79324F03BAC036 = {
+			isa = PBXGroup;
+			children = (
+				19B40CC889DA457452F0C450 /* Podfile */,
+				B0E66E97C736FD95DFDF94BB /* Frameworks */,
+				D29D4FD04F99657E8E489977 /* Pods */,
+				6B12DCE1E80B38F0097FB98A /* Products */,
+				AAB0993B2D3D8F4C0C83DCF6 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		CA6684E3464B41BB51D2B483 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				6E0C249FD732040AC9C7EE2D /* Info.plist */,
+				BB8606E6D74DD4C473E88407 /* Pods-RapidCast-SwiftyJSON.modulemap */,
+				1343A84D207675EC15B1E9FE /* Pods-RapidCast-SwiftyJSON.xcconfig */,
+				A148FC6CB52B3C8E5E602E9A /* Pods-RapidCast-SwiftyJSON-Private.xcconfig */,
+				301B66774B9B1905FAD75A41 /* Pods-RapidCast-SwiftyJSON-dummy.m */,
+				E8CA6360C6F7FAF1E510279E /* Pods-RapidCast-SwiftyJSON-prefix.pch */,
+				32821BDCCEB77DF0D88272C5 /* Pods-RapidCast-SwiftyJSON-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/Pods-RapidCast-SwiftyJSON";
+			sourceTree = "<group>";
+		};
+		D29D4FD04F99657E8E489977 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6703472D934B642AF61A24E0 /* SwiftyJSON */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		C080742AE74AE8211A31759D /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C46A64CC1D0DE39ECD5F75A8 /* Pods-RapidCast-SwiftyJSON-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C6A39ACE152D248259DB524E /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1F3DD04FA9FCBB189D67A798 /* Pods-RapidCast-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5EFA47A950AA12F4BC8722F9 /* Pods-RapidCast */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B20A624D34AD77321FE3304B /* Build configuration list for PBXNativeTarget "Pods-RapidCast" */;
+			buildPhases = (
+				F3DB5EB2D70AE14AEE57F9E1 /* Sources */,
+				3189D685AB7772C1C6E93042 /* Frameworks */,
+				C6A39ACE152D248259DB524E /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4D3CE4D1B0A49589EE0CF7F8 /* PBXTargetDependency */,
+			);
+			name = "Pods-RapidCast";
+			productName = "Pods-RapidCast";
+			productReference = 7F05983009498C9BBA9BE98A /* Pods_RapidCast.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		7CCC37C3FE23FF015B9E8E82 /* Pods-RapidCast-SwiftyJSON */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 5EF88306F98960FF54C2C2E8 /* Build configuration list for PBXNativeTarget "Pods-RapidCast-SwiftyJSON" */;
+			buildPhases = (
+				4DE86A1F77E46AB8CCC762E0 /* Sources */,
+				191E9483FB393F6A601E1199 /* Frameworks */,
+				C080742AE74AE8211A31759D /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-RapidCast-SwiftyJSON";
+			productName = "Pods-RapidCast-SwiftyJSON";
+			productReference = 9384CAE00FA7A8D6077AA88C /* SwiftyJSON.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		46EF5EBC7E6F8CBCFB7DF9E4 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0640;
+			};
+			buildConfigurationList = DF6E594490FBC21536C175E6 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B4059747CE79324F03BAC036;
+			productRefGroup = 6B12DCE1E80B38F0097FB98A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				5EFA47A950AA12F4BC8722F9 /* Pods-RapidCast */,
+				7CCC37C3FE23FF015B9E8E82 /* Pods-RapidCast-SwiftyJSON */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4DE86A1F77E46AB8CCC762E0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				753B547F3CF7394A10F19167 /* Pods-RapidCast-SwiftyJSON-dummy.m in Sources */,
+				E72DE764C9E87A60547F831B /* SwiftyJSON.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F3DB5EB2D70AE14AEE57F9E1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1E15B15ED2D7BCCE030CFA9F /* Pods-RapidCast-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4D3CE4D1B0A49589EE0CF7F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-RapidCast-SwiftyJSON";
+			target = 7CCC37C3FE23FF015B9E8E82 /* Pods-RapidCast-SwiftyJSON */;
+			targetProxy = 1AC385520437B9BC0B6D54EA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		121D942D34B3EE49D45D6061 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A148FC6CB52B3C8E5E602E9A /* Pods-RapidCast-SwiftyJSON-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-RapidCast-SwiftyJSON/Pods-RapidCast-SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-RapidCast-SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-RapidCast-SwiftyJSON/Pods-RapidCast-SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		45FBC452462F311D01A6B1F4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				ONLY_ACTIVE_ARCH = YES;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		4AF9CE3F1350D7F522BDAC86 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BD8EB202C72A38E1495A50AC /* Pods-RapidCast.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-RapidCast/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-RapidCast/Pods-RapidCast.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_RapidCast;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		6C597D0293C5DCCFE81A4AFA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B27869BB379F3703DAAA4C47 /* Pods-RapidCast.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-RapidCast/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-RapidCast/Pods-RapidCast.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_NAME = Pods_RapidCast;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		7E589085B1024D3D9E4DBCC9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A148FC6CB52B3C8E5E602E9A /* Pods-RapidCast-SwiftyJSON-Private.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/Pods-RapidCast-SwiftyJSON/Pods-RapidCast-SwiftyJSON-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/Pods-RapidCast-SwiftyJSON/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/Pods-RapidCast-SwiftyJSON/Pods-RapidCast-SwiftyJSON.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = SwiftyJSON;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		DC193F765F82E230DDB2251E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = "RELEASE=1";
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		5EF88306F98960FF54C2C2E8 /* Build configuration list for PBXNativeTarget "Pods-RapidCast-SwiftyJSON" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7E589085B1024D3D9E4DBCC9 /* Debug */,
+				121D942D34B3EE49D45D6061 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B20A624D34AD77321FE3304B /* Build configuration list for PBXNativeTarget "Pods-RapidCast" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6C597D0293C5DCCFE81A4AFA /* Debug */,
+				4AF9CE3F1350D7F522BDAC86 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DF6E594490FBC21536C175E6 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				45FBC452462F311D01A6B1F4 /* Debug */,
+				DC193F765F82E230DDB2251E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 46EF5EBC7E6F8CBCFB7DF9E4 /* Project object */;
+}

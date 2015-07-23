@@ -16,9 +16,12 @@
 		4768FF631B5038620012C80F /* RapidCastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4768FF621B5038620012C80F /* RapidCastTests.swift */; };
 		47D3FC821B5DC59D00EAE1EF /* RapidCastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3FC811B5DC59D00EAE1EF /* RapidCastViewController.swift */; };
 		47D3FC891B60181000EAE1EF /* iTunesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3FC881B60181000EAE1EF /* iTunesHelper.swift */; };
+		47D3FC8B1B6018CA00EAE1EF /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3FC8A1B6018CA00EAE1EF /* JSONParser.swift */; };
+		47D3FC8D1B60545000EAE1EF /* RequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3FC8C1B60545000EAE1EF /* RequestHelper.swift */; };
 		47FEB0CB1B5814150091725D /* podcast icon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 47FEB0CA1B5814150091725D /* podcast icon.jpeg */; };
 		47FEB0CF1B5815F20091725D /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FEB0CE1B5815F20091725D /* PodcastTableViewCell.swift */; };
 		47FEB0D21B58200B0091725D /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FEB0D11B58200B0091725D /* Podcast.swift */; };
+		6450CCEB4F7C00789A41752B /* Pods_RapidCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229AD353732B1E4D7C11F174 /* Pods_RapidCast.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		229AD353732B1E4D7C11F174 /* Pods_RapidCast.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RapidCast.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		47018D7C1B54693D009A7870 /* PodcastPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PodcastPlayerViewController.swift; path = ../PodcastPlayerViewController.swift; sourceTree = "<group>"; };
 		4730DF8A1B558C730040B15B /* jazzy.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = jazzy.mp3.mp3; path = ../../../Downloads/jazzy.mp3.mp3; sourceTree = "<group>"; };
 		4730DF8F1B56CF0E0040B15B /* PodcastPlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastPlaylistViewController.swift; sourceTree = "<group>"; };
@@ -45,9 +49,13 @@
 		4768FF621B5038620012C80F /* RapidCastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidCastTests.swift; sourceTree = "<group>"; };
 		47D3FC811B5DC59D00EAE1EF /* RapidCastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidCastViewController.swift; sourceTree = "<group>"; };
 		47D3FC881B60181000EAE1EF /* iTunesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesHelper.swift; sourceTree = "<group>"; };
+		47D3FC8A1B6018CA00EAE1EF /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
+		47D3FC8C1B60545000EAE1EF /* RequestHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestHelper.swift; sourceTree = "<group>"; };
 		47FEB0CA1B5814150091725D /* podcast icon.jpeg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = "podcast icon.jpeg"; path = "../../../Desktop/podcast icon.jpeg"; sourceTree = "<group>"; };
 		47FEB0CE1B5815F20091725D /* PodcastTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastTableViewCell.swift; sourceTree = "<group>"; };
 		47FEB0D11B58200B0091725D /* Podcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Podcast.swift; sourceTree = "<group>"; };
+		4F3EB6FECAC228F32843553E /* Pods-RapidCast.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RapidCast.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RapidCast/Pods-RapidCast.debug.xcconfig"; sourceTree = "<group>"; };
+		C7E4D31A1E31B3496C24A166 /* Pods-RapidCast.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RapidCast.release.xcconfig"; path = "Pods/Target Support Files/Pods-RapidCast/Pods-RapidCast.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6450CCEB4F7C00789A41752B /* Pods_RapidCast.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -91,6 +100,8 @@
 				4768FF491B5038620012C80F /* RapidCast */,
 				4768FF5F1B5038620012C80F /* RapidCastTests */,
 				4768FF481B5038620012C80F /* Products */,
+				A38A53847B4381A5E39A16C1 /* Pods */,
+				60B2470B50A3671EF6599348 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -150,6 +161,8 @@
 			isa = PBXGroup;
 			children = (
 				47D3FC881B60181000EAE1EF /* iTunesHelper.swift */,
+				47D3FC8A1B6018CA00EAE1EF /* JSONParser.swift */,
+				47D3FC8C1B60545000EAE1EF /* RequestHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -170,6 +183,23 @@
 			path = Entities;
 			sourceTree = "<group>";
 		};
+		60B2470B50A3671EF6599348 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				229AD353732B1E4D7C11F174 /* Pods_RapidCast.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A38A53847B4381A5E39A16C1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F3EB6FECAC228F32843553E /* Pods-RapidCast.debug.xcconfig */,
+				C7E4D31A1E31B3496C24A166 /* Pods-RapidCast.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -177,9 +207,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4768FF661B5038620012C80F /* Build configuration list for PBXNativeTarget "RapidCast" */;
 			buildPhases = (
+				BA0417BD7DE42615E5469B94 /* Check Pods Manifest.lock */,
 				4768FF431B5038620012C80F /* Sources */,
 				4768FF441B5038620012C80F /* Frameworks */,
 				4768FF451B5038620012C80F /* Resources */,
+				8CC99985989603207489F04F /* Embed Pods Frameworks */,
+				E3ECB941081284C5AA0876B7 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -266,6 +299,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		8CC99985989603207489F04F /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RapidCast/Pods-RapidCast-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA0417BD7DE42615E5469B94 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E3ECB941081284C5AA0876B7 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RapidCast/Pods-RapidCast-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		4768FF431B5038620012C80F /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -273,6 +354,8 @@
 			files = (
 				47018D7D1B54693D009A7870 /* PodcastPlayerViewController.swift in Sources */,
 				4730DF901B56CF0E0040B15B /* PodcastPlaylistViewController.swift in Sources */,
+				47D3FC8B1B6018CA00EAE1EF /* JSONParser.swift in Sources */,
+				47D3FC8D1B60545000EAE1EF /* RequestHelper.swift in Sources */,
 				47FEB0D21B58200B0091725D /* Podcast.swift in Sources */,
 				4768FF4D1B5038620012C80F /* AppDelegate.swift in Sources */,
 				47D3FC891B60181000EAE1EF /* iTunesHelper.swift in Sources */,
@@ -394,6 +477,7 @@
 		};
 		4768FF671B5038620012C80F /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F3EB6FECAC228F32843553E /* Pods-RapidCast.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RapidCast/Info.plist;
@@ -404,6 +488,7 @@
 		};
 		4768FF681B5038620012C80F /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C7E4D31A1E31B3496C24A166 /* Pods-RapidCast.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = RapidCast/Info.plist;

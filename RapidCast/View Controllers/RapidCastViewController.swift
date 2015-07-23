@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class RapidCastViewController: UIViewController, NSXMLParserDelegate {
     
     @IBOutlet weak var rapidCastButton: UIButton!
@@ -37,10 +38,10 @@ class RapidCastViewController: UIViewController, NSXMLParserDelegate {
             if let categories = self.categories {
                 var iTunesLinks : [NSURL] = iTunesHelper.getiTunesLinksFromRSS(categories)
                 
-                //NSXMLParse setup
+                
                 for link in iTunesLinks {
-                 
-                    
+                    //1. Make HTTP Request
+                    RequestHelper.makeRequest(link)
                     
                 }
             }

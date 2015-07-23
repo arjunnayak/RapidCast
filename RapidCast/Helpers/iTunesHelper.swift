@@ -27,10 +27,11 @@ class iTunesHelper {
         var iTunesLinks = [NSURL]()
         for (var i = 0; i < genreIDs.count; i++) {
             //get ids from rss link
-            iTunesLinks.append(NSURL(string: "https://itunes.apple.com/us/rss/toppodcasts/limit=10/genre=\(genreIDs[i])/json")!)
+            iTunesLinks.append(NSURL(string: "https://itunes.apple.com/us/rss/toppodcasts/limit=1/genre=\(genreIDs[i])/json")!)
         }
         return iTunesLinks
     }
+    
     
     /*
     * @parm in the lookup ID from rss link generator
@@ -41,7 +42,8 @@ class iTunesHelper {
         var url: NSURL! = NSURL(string: urlPath)
         var request: NSURLRequest? = NSURLRequest(URL: url!)
         var connection: NSURLConnection? = NSURLConnection(request: request!, delegate: self, startImmediately: false)
-        ///what do you do with this connection?????????
+        
+        ///what do you do with this connection??
         println("Lookup iTunes API at URL \(url)")
         
         connection!.start()
