@@ -24,6 +24,9 @@ class XMLParser : NSObject, NSXMLParserDelegate {
         parser = NSXMLParser(contentsOfURL: self.feedURL)
         parser?.delegate = self
         parser?.parse()
+        for podcast in podcastArray {
+            println(podcast.mp3)
+        }
         return podcastArray
     }
     
@@ -35,6 +38,7 @@ class XMLParser : NSObject, NSXMLParserDelegate {
             if(elementName == "enclosure") {
                 podcastArray.append(Podcast(mp3: attributes["url"] as! NSString))
                 podcastCount++
+                //println(podcastArray[podcastArray.count-1].mp3)
             }
         }
     }

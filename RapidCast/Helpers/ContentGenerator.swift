@@ -10,7 +10,7 @@ import Foundation
 
 class ContentGenerator {
     
-    static func generate(categories: [String]) -> [Podcast] {
+    static func generate(categories: [String], completionBlock: [Podcast] -> Void) {
         
         var lookupIDs = [String]()
         var iTunesLinks : [NSURL] = iTunesHelper.getiTunesLinksFromRSS(categories)
@@ -25,10 +25,11 @@ class ContentGenerator {
                 RequestHelper.makeRequestForFeedURL(lookupURL) { feedURL in //got feedURL
                     var xmlParser = XMLParser(feedURL: feedURL)
                     podcastPlaylist = xmlParser.beginParse()
+                    completionBlock(podcastPlaylist)
                 }
             }
         }
-        
-        return podcastPlaylist
+        //completionBlock(podcastPlaylist)
     }
+
 }

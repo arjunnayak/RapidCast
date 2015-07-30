@@ -31,9 +31,13 @@ class RapidCastViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         
         if(segue.identifier == "RapidCast") {
-            
+            var dict : [String : [Podcast]]
+            var podcastPlaylistToReturn : [Podcast]?
             if let categories = self.categories {
-                ContentGenerator.generate(categories)
+                ContentGenerator.generate(categories) { podcastPlaylist in
+                    podcastPlaylistToReturn = podcastPlaylist
+                    println("final podcast playlist: \(podcastPlaylistToReturn!)")
+                }
             }
             let podcastPlayer = segue.destinationViewController as! PodcastPlayerViewController
             //needs to send playlist of podcasts to podcast player AND playlist

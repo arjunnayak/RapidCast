@@ -91,13 +91,6 @@
 			path = "View Controllers";
 			sourceTree = "<group>";
 		};
-		4730DF8C1B56C6C70040B15B /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Helpers;
-			sourceTree = "<group>";
-		};
 		4768FF3E1B5038620012C80F = {
 			isa = PBXGroup;
 			children = (
@@ -124,7 +117,6 @@
 				47D3FC871B60176000EAE1EF /* Helpers */,
 				47FEB0D01B581FF20091725D /* Entities */,
 				47FEB0CD1B5815D00091725D /* Views */,
-				4730DF8C1B56C6C70040B15B /* Helpers */,
 				4730DF891B558BD80040B15B /* View Controllers */,
 				4768FF4C1B5038620012C80F /* AppDelegate.swift */,
 				4768FF501B5038620012C80F /* Main.storyboard */,
@@ -491,7 +483,7 @@
 				INFOPLIST_FILE = RapidCast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "RapidCast/RapidCast-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Debug;
 		};
@@ -503,7 +495,7 @@
 				INFOPLIST_FILE = RapidCast/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "RapidCast/RapidCast-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
