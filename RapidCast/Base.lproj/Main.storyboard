@@ -2,9 +2,10 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="a1i-Ac-Ky3">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Playlist-->
+        <!--Title-->
         <scene sceneID="ll7-4w-cv8">
             <objects>
                 <tableViewController id="tXg-JQ-3Ih" customClass="PodcastPlaylistViewController" customModule="RapidCast" customModuleProvider="target" sceneMemberID="viewController">
@@ -55,12 +56,19 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Playlist" id="kpq-qL-Msy"/>
+                    <navigationItem key="navigationItem" title="Title" id="mep-R6-Imy">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="uQF-tY-Oey">
+                            <connections>
+                                <segue destination="WnT-sc-3Qk" kind="unwind" unwindAction="prepareForUnwind:" id="SUm-Ay-Mbf"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pgz-IJ-4fE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="WnT-sc-3Qk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1879" y="-334"/>
+            <point key="canvasLocation" x="-1107" y="422"/>
         </scene>
         <!--Rapid Cast View Controller-->
         <scene sceneID="i5q-pp-gz9">
@@ -97,17 +105,41 @@
                                             <userDefinedRuntimeAttribute type="color" keyPath="layer.borderUIColor">
                                                 <color key="value" red="0.0" green="0.0" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
                                             <segue destination="zd0-nn-XDP" kind="show" identifier="RapidCast" id="0r0-h4-zlP"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6P-xG-NJj">
+                                        <rect key="frame" x="542" y="521" width="50" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="apl-vd-2dm"/>
+                                        </constraints>
+                                        <state key="normal" image="Forward">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Fgp-d3-3Xc">
+                                        <rect key="frame" x="499" y="521" width="53" height="49"/>
+                                        <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
+                                        <state key="normal" title="Current Playlist ">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="pwd-48-qvZ" kind="show" id="82T-uw-vIT"/>
+                                        </connections>
+                                    </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.2952371486" blue="0.22480045730000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Fgp-d3-3Xc" secondAttribute="trailing" constant="48" id="8Qp-Lu-6cv"/>
+                                    <constraint firstItem="Z6P-xG-NJj" firstAttribute="top" secondItem="Fgp-d3-3Xc" secondAttribute="top" id="EYp-Ig-fpv"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z6P-xG-NJj" secondAttribute="bottom" constant="29" id="H7c-Pi-5ii"/>
+                                    <constraint firstAttribute="bottom" secondItem="Fgp-d3-3Xc" secondAttribute="bottom" constant="30" id="PSF-fv-kdT"/>
                                     <constraint firstItem="LgK-U4-E2h" firstAttribute="centerY" secondItem="Xu2-Cr-waC" secondAttribute="centerY" id="SPK-Ka-c4l"/>
                                     <constraint firstItem="LgK-U4-E2h" firstAttribute="centerX" secondItem="Xu2-Cr-waC" secondAttribute="centerX" id="tFc-xP-HEW"/>
+                                    <constraint firstItem="Z6P-xG-NJj" firstAttribute="trailing" secondItem="Xu2-Cr-waC" secondAttribute="trailingMargin" id="weo-po-KZC"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -125,7 +157,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOG-sR-j4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1868" y="427"/>
+            <point key="canvasLocation" x="-1962" y="-87"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mzc-wK-7c8">
@@ -141,7 +173,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLH-3m-HGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2665" y="-334"/>
+            <point key="canvasLocation" x="-1865" y="734"/>
         </scene>
         <!--Choose Topics -->
         <scene sceneID="IsD-c0-KIX">
@@ -175,7 +207,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6G-u8-IWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2660" y="427"/>
+            <point key="canvasLocation" x="-3103" y="193"/>
         </scene>
         <!--Podcast Player View Controller-->
         <scene sceneID="hle-lS-yRJ">
@@ -279,6 +311,7 @@
     </scenes>
     <resources>
         <image name="Fast Forward" width="50" height="50"/>
+        <image name="Forward" width="50" height="50"/>
         <image name="Play" width="50" height="50"/>
         <image name="Rewind" width="50" height="50"/>
         <image name="Volume" width="50" height="50"/>

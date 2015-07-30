@@ -10,13 +10,31 @@ import Foundation
 
 class RequestHelper {
     
-    static func makeRequest(url: NSURL) {
+    private static var currentID : String =  ""
+    private static var currentLink : NSURL? =  NSURL(string: "")
+    
+    static func makeRequestForLookupID(url: NSURL, completionBlock: String -> Void) {
         
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url) {(data, response, error) in
+        var returningID = ""
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
             var responseString = NSString(data: data, encoding: NSUTF8StringEncoding)!
-            JSONParser.parse(responseString)
+            returningID = JSONParser.parseForLookupID(responseString)
+            
+            completionBlock(returningID)
         }
-        
+        task.resume()
+    }
+
+
+    static func makeRequestForFeedURL(url: NSURL, completionBlock: NSURL -> Void) {
+            
+        var returningLink = NSURL(string: "")
+        let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
+            var responseString = NSString(data: data, encoding: NSUTF8StringEncoding)!
+            returningLink = NSURL(string: JSONParser.parseForFeedURL(responseString))!
+            completionBlock(returningLink!)
+        }
         task.resume()
     }
 }
+

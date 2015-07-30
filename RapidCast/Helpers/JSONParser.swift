@@ -11,18 +11,24 @@ import SwiftyJSON
 
 class JSONParser {
     
-    static func parse(dataFromRequest : NSString) {
+    static func parseForLookupID(dataFromRequest : NSString) -> String {
     
-        let json = JSON(dataFromRequest)
+        let dataFromString = dataFromRequest.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
+
+        let json = JSON(data: dataFromString!)
+        let feed = json["feed"]["entry"]["id"]
+        let id = feed["attributes"]["im:id"].string!
+        return id
+    }
+    
+    static func parseForFeedURL(dataFromRequest: NSString) -> String {
         
-        //example:
-        // let path = [1,"list",2,"name"]
-        // let name = json[path].string
-
+        let dataFromString = dataFromRequest.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
         
-        println(json)
-        //NOTE: CAN ACCESS JSON, JUST NOT ID YET, FIX THIS
-
-
+        let json = JSON(data: dataFromString!) //gets here successfully!
+        let results = json["results"]
+        let resultsAttributes = results[0]
+        let feedURL = resultsAttributes["feedUrl"].stringValue
+        return feedURL
     }
 }

@@ -6,6 +6,30 @@
 // project.
 
 
+// Realm
+#define COCOAPODS_POD_AVAILABLE_Realm
+#define COCOAPODS_VERSION_MAJOR_Realm 0
+#define COCOAPODS_VERSION_MINOR_Realm 93
+#define COCOAPODS_VERSION_PATCH_Realm 2
+
+// Realm/Headers
+#define COCOAPODS_POD_AVAILABLE_Realm_Headers
+#define COCOAPODS_VERSION_MAJOR_Realm_Headers 0
+#define COCOAPODS_VERSION_MINOR_Realm_Headers 93
+#define COCOAPODS_VERSION_PATCH_Realm_Headers 2
+
+// RealmSwift
+#define COCOAPODS_POD_AVAILABLE_RealmSwift
+#define COCOAPODS_VERSION_MAJOR_RealmSwift 0
+#define COCOAPODS_VERSION_MINOR_RealmSwift 93
+#define COCOAPODS_VERSION_PATCH_RealmSwift 2
+
+// StreamingKit
+#define COCOAPODS_POD_AVAILABLE_StreamingKit
+#define COCOAPODS_VERSION_MAJOR_StreamingKit 0
+#define COCOAPODS_VERSION_MINOR_StreamingKit 1
+#define COCOAPODS_VERSION_PATCH_StreamingKit 25
+
 // SwiftyJSON
 #define COCOAPODS_POD_AVAILABLE_SwiftyJSON
 #define COCOAPODS_VERSION_MAJOR_SwiftyJSON 2

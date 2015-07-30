@@ -24,7 +24,7 @@ class PodcastTableViewCell: UITableViewCell {
                 self.episodeTitle.text = podcast.episodeTitle
                 self.podcastChannel.text = podcast.podcastChannel
                 self.duration.text = podcast.duration
-                self.track = podcast.track
+                self.track = podcast.mp3
             }
         }
     }

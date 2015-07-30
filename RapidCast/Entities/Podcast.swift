@@ -15,6 +15,11 @@ class Podcast {
     let podcastChannel: String = ""  //authorTerm
     let coverArt : UIImage = UIImage()
     let duration: String = ""
-    let track:  NSObject = NSObject()
+    let mp3:  NSString
+    let genre: NSString = ""
+    
+    init(mp3 : NSString) {
+        self.mp3 = mp3
+    }
 }
 

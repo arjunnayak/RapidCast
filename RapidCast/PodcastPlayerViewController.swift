@@ -24,20 +24,9 @@ class PodcastPlayerViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        //set up track and audioplayer
-        track = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("jazzy.mp3", ofType: "mp3")!)
-        audioPlayer = AVAudioPlayer(contentsOfURL: track, error: nil)
-
-        
-        //slider functionality
-        podcastSlider.maximumValue = Float(audioPlayer!.duration)
-        var timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: Selector("updateSlider"), userInfo: nil, repeats: true)
-        
-        if(audioPlayer!.playing == false) {
-            pausePlay.setImage(playImg, forState: UIControlState.Normal)
-        }
+    
     }
+    
     
     @IBAction func pressedPlayPause(sender: AnyObject) {
         if(audioPlayer!.playing) { //track is playing

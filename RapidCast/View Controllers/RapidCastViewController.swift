@@ -8,10 +8,11 @@
 
 import UIKit
 
-
-class RapidCastViewController: UIViewController, NSXMLParserDelegate {
+class RapidCastViewController: UIViewController {
     
     @IBOutlet weak var rapidCastButton: UIButton!
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
+
     var categories: [String]?
 
     override func viewDidLoad() {
@@ -19,8 +20,7 @@ class RapidCastViewController: UIViewController, NSXMLParserDelegate {
         rapidCastButton.layer.borderColor = UIColor.whiteColor().CGColor
         
         //REALM STUFF TO GET CATEGORIES
-        //HARDCODED FOR NOW
-        categories = ["Comedy", "Education"]
+        categories = ["Comedy", "Education", "Technology", "Arts"]
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,26 +28,15 @@ class RapidCastViewController: UIViewController, NSXMLParserDelegate {
         // Dispose of any resources that can be recreated.
     }
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
         
         if(segue.identifier == "RapidCast") {
-            let podcastPlayer = segue.destinationViewController as! PodcastPlayerViewController
+            
             if let categories = self.categories {
-                var iTunesLinks : [NSURL] = iTunesHelper.getiTunesLinksFromRSS(categories)
-                
-                
-                for link in iTunesLinks {
-                    //1. Make HTTP Request
-                    RequestHelper.makeRequest(link)
-                    
-                }
+                ContentGenerator.generate(categories)
             }
-            else {
-                println("Error")
-            }
+            let podcastPlayer = segue.destinationViewController as! PodcastPlayerViewController
+            //needs to send playlist of podcasts to podcast player AND playlist
         }
     }
 }
