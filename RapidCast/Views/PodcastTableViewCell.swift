@@ -16,6 +16,10 @@ class PodcastTableViewCell: UITableViewCell {
     @IBOutlet weak var duration: UILabel!
     var track: NSObject? = NSObject()
 
+    //IMPORTANT: NEED TO HANDLE WHEN PODCAST ATTRIBUTES TURN UP NIL
+        //EXAMPLE: IF IMAGE(MEDIA:THUMBNAIL) == NIL, THEN GIVE IT SAMPLE IMAGE
+    
+    /*
     var podcast: Podcast? {
         didSet {
             if let podcast = podcast, coverArt = coverArt, episodeTitle = episodeTitle, podcastChannel = podcastChannel, duration = duration, track = track {
@@ -28,6 +32,7 @@ class PodcastTableViewCell: UITableViewCell {
             }
         }
     }
+    */
 
     override func awakeFromNib() {
         super.awakeFromNib()

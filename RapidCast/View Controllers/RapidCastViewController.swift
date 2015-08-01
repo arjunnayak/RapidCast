@@ -12,6 +12,8 @@ class RapidCastViewController: UIViewController {
     
     @IBOutlet weak var rapidCastButton: UIButton!
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
+    
+    var podcastPlaylist = [Podcast]()
 
     var categories: [String]?
 
@@ -28,15 +30,16 @@ class RapidCastViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
+    {
         if(segue.identifier == "RapidCast") {
-            var dict : [String : [Podcast]]
-            var podcastPlaylistToReturn : [Podcast]?
             if let categories = self.categories {
-                ContentGenerator.generate(categories) { podcastPlaylist in
-                    podcastPlaylistToReturn = podcastPlaylist
-                    println("final podcast playlist: \(podcastPlaylistToReturn!)")
+                
+                ContentGenerator.generate(categories) { podcasts in
+                    for podcast in podcasts {
+                        self.podcastPlaylist.append(podcast)
+                        println(self.podcastPlaylist)
+                    }
                 }
             }
             let podcastPlayer = segue.destinationViewController as! PodcastPlayerViewController

@@ -11,15 +11,18 @@ import UIKit
 
 class Podcast {
     
-    let episodeTitle : String = "" //titleTerm
-    let podcastChannel: String = ""  //authorTerm
-    let coverArt : UIImage = UIImage()
-    let duration: String = ""
-    let mp3:  NSString
-    let genre: NSString = ""
+    var title : String? //titleTerm
+    var author: String? //authorTerm
+    var url:  NSString?
+    var duration: String?
+    var image : UIImage?
     
-    init(mp3 : NSString) {
-        self.mp3 = mp3
+    init() {
+        
+    }
+    
+    func printPodcast() {
+        println("\(title) \(author) \(url) \(duration) \(image?.description)")
     }
 }
 

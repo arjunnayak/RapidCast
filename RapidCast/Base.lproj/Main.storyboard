@@ -59,7 +59,7 @@
                     <navigationItem key="navigationItem" title="Title" id="mep-R6-Imy">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="uQF-tY-Oey">
                             <connections>
-                                <segue destination="WnT-sc-3Qk" kind="unwind" unwindAction="prepareForUnwind:" id="SUm-Ay-Mbf"/>
+                                <segue destination="WnT-sc-3Qk" kind="unwind" unwindAction="prepareForUnwind:" id="sGD-iU-GtS"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -68,7 +68,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pgz-IJ-4fE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="WnT-sc-3Qk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1107" y="422"/>
+            <point key="canvasLocation" x="-1122" y="418"/>
         </scene>
         <!--Rapid Cast View Controller-->
         <scene sceneID="i5q-pp-gz9">
@@ -126,8 +126,14 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dz-rI-6ue" userLabel="Background Button">
+                                        <rect key="frame" x="499" y="521" width="81" height="49"/>
+                                        <state key="normal">
+                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
-                                            <segue destination="pwd-48-qvZ" kind="show" id="82T-uw-vIT"/>
+                                            <segue destination="pwd-48-qvZ" kind="show" id="QJ8-Fs-w5G"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -136,8 +142,12 @@
                                     <constraint firstAttribute="trailing" secondItem="Fgp-d3-3Xc" secondAttribute="trailing" constant="48" id="8Qp-Lu-6cv"/>
                                     <constraint firstItem="Z6P-xG-NJj" firstAttribute="top" secondItem="Fgp-d3-3Xc" secondAttribute="top" id="EYp-Ig-fpv"/>
                                     <constraint firstAttribute="bottom" secondItem="Z6P-xG-NJj" secondAttribute="bottom" constant="29" id="H7c-Pi-5ii"/>
+                                    <constraint firstItem="4Dz-rI-6ue" firstAttribute="bottom" secondItem="Fgp-d3-3Xc" secondAttribute="bottom" id="K0g-nB-p4g"/>
                                     <constraint firstAttribute="bottom" secondItem="Fgp-d3-3Xc" secondAttribute="bottom" constant="30" id="PSF-fv-kdT"/>
                                     <constraint firstItem="LgK-U4-E2h" firstAttribute="centerY" secondItem="Xu2-Cr-waC" secondAttribute="centerY" id="SPK-Ka-c4l"/>
+                                    <constraint firstItem="4Dz-rI-6ue" firstAttribute="leading" secondItem="Fgp-d3-3Xc" secondAttribute="leading" id="cZE-jr-z7g"/>
+                                    <constraint firstItem="4Dz-rI-6ue" firstAttribute="top" secondItem="Fgp-d3-3Xc" secondAttribute="top" id="eIR-ib-OBb"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Dz-rI-6ue" secondAttribute="trailing" constant="20" id="rAi-Qa-8Hs"/>
                                     <constraint firstItem="LgK-U4-E2h" firstAttribute="centerX" secondItem="Xu2-Cr-waC" secondAttribute="centerX" id="tFc-xP-HEW"/>
                                     <constraint firstItem="Z6P-xG-NJj" firstAttribute="trailing" secondItem="Xu2-Cr-waC" secondAttribute="trailingMargin" id="weo-po-KZC"/>
                                 </constraints>
@@ -157,7 +167,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOG-sR-j4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1962" y="-87"/>
+            <point key="canvasLocation" x="-2088" y="-33"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mzc-wK-7c8">
@@ -173,7 +183,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLH-3m-HGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1865" y="734"/>
+            <point key="canvasLocation" x="-1977" y="758"/>
         </scene>
         <!--Choose Topics -->
         <scene sceneID="IsD-c0-KIX">
@@ -208,6 +218,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6G-u8-IWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-3103" y="193"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="TNd-gW-AFL">
+            <objects>
+                <navigationController id="5H8-ry-Zsh" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AhO-J7-HDX">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="zd0-nn-XDP" kind="relationship" relationship="rootViewController" id="PNU-lz-RRS"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="U9a-VD-CJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2023" y="-800"/>
         </scene>
         <!--Podcast Player View Controller-->
         <scene sceneID="hle-lS-yRJ">
@@ -260,12 +286,6 @@
                                     <action selector="sliderMoved:" destination="zd0-nn-XDP" eventType="valueChanged" id="NE4-Kr-Pon"/>
                                 </connections>
                             </slider>
-                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OUe-Gg-XDr">
-                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
-                                <items>
-                                    <navigationItem title="Podcast Title" id="18K-FR-p24"/>
-                                </items>
-                            </navigationBar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giL-PY-SPc" userLabel="Volume">
                                 <rect key="frame" x="432" y="503.5" width="51" height="50"/>
                                 <state key="normal" image="Volume">
@@ -279,18 +299,15 @@
                             <constraint firstItem="2Mf-QE-gf0" firstAttribute="leading" secondItem="pbP-nS-3Jb" secondAttribute="leading" id="7hq-V3-Pio"/>
                             <constraint firstAttribute="centerX" secondItem="giL-PY-SPc" secondAttribute="centerX" constant="-157.5" id="EOF-gg-v9U"/>
                             <constraint firstItem="fVF-6H-jtL" firstAttribute="top" secondItem="pbP-nS-3Jb" secondAttribute="bottom" constant="89" id="Mda-Ch-b9u"/>
-                            <constraint firstItem="OUe-Gg-XDr" firstAttribute="centerX" secondItem="pbP-nS-3Jb" secondAttribute="centerX" id="QV4-71-6jU"/>
                             <constraint firstAttribute="centerX" secondItem="pbP-nS-3Jb" secondAttribute="centerX" constant="-0.5" id="TUD-3i-uzY"/>
                             <constraint firstAttribute="centerY" secondItem="fVF-6H-jtL" secondAttribute="centerY" constant="-229" id="UdU-fm-ace"/>
                             <constraint firstAttribute="centerY" secondItem="zLD-ot-xXV" secondAttribute="centerY" constant="-229" id="W2m-YJ-45T"/>
                             <constraint firstItem="zLD-ot-xXV" firstAttribute="leading" secondItem="fVF-6H-jtL" secondAttribute="trailing" constant="19" id="WJk-ao-az9"/>
                             <constraint firstAttribute="centerY" secondItem="giL-PY-SPc" secondAttribute="centerY" constant="-228.5" id="Wjc-XI-EmD"/>
                             <constraint firstAttribute="centerX" secondItem="zLD-ot-xXV" secondAttribute="centerX" constant="-67" id="YRV-TQ-XaO"/>
-                            <constraint firstItem="OUe-Gg-XDr" firstAttribute="top" secondItem="INF-Kb-9lG" secondAttribute="bottom" constant="8" id="Yby-nx-fXU"/>
                             <constraint firstItem="fVF-6H-jtL" firstAttribute="top" secondItem="2Mf-QE-gf0" secondAttribute="bottom" constant="8" symbolic="YES" id="dGA-ah-GyS"/>
                             <constraint firstAttribute="centerX" secondItem="2Mf-QE-gf0" secondAttribute="centerX" id="iHP-7g-1ey"/>
                             <constraint firstAttribute="centerY" secondItem="pbP-nS-3Jb" secondAttribute="centerY" constant="47.5" id="lA2-8n-pY9"/>
-                            <constraint firstItem="OUe-Gg-XDr" firstAttribute="leading" secondItem="3Wa-Wq-3eb" secondAttribute="leading" id="mbp-gg-pHh"/>
                             <constraint firstAttribute="centerX" secondItem="fVF-6H-jtL" secondAttribute="centerX" id="n76-Bb-qMo"/>
                             <constraint firstAttribute="centerX" secondItem="Kbn-HM-S0V" secondAttribute="centerX" constant="77" id="s94-Wy-w13"/>
                             <constraint firstItem="fVF-6H-jtL" firstAttribute="leading" secondItem="Kbn-HM-S0V" secondAttribute="trailing" constant="29" id="vCJ-vL-l6R"/>
@@ -298,6 +315,13 @@
                             <constraint firstAttribute="centerY" secondItem="Kbn-HM-S0V" secondAttribute="centerY" constant="-229" id="zO9-Mn-5YM"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="ANr-Io-kl0">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="8VJ-WY-Q3G">
+                            <connections>
+                                <segue destination="iEc-29-nrl" kind="unwind" unwindAction="prepareForUnwind:" id="xU5-vF-hrm"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="pausePlay" destination="fVF-6H-jtL" id="hNJ-ne-Mu8"/>
                         <outlet property="podcastImage" destination="pbP-nS-3Jb" id="VR1-WV-LYV"/>
@@ -305,6 +329,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIe-iw-j3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="iEc-29-nrl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1112" y="-334"/>
         </scene>
@@ -317,4 +342,7 @@
         <image name="Volume" width="50" height="50"/>
         <image name="podcast icon.jpeg" width="225" height="225"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="0r0-h4-zlP"/>
+    </inferredMetricsTieBreakers>
 </document>

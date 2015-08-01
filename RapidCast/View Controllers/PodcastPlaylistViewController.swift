@@ -57,7 +57,7 @@ extension PodcastPlaylistViewController: UITableViewDataSource {
         
         let row = indexPath.row
         let note = podcasts![row] as Podcast
-        cell.podcast = note
+        //cell.podcast = note
         
         return cell
     }

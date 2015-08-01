@@ -21,7 +21,7 @@ class ContentGenerator {
             RequestHelper.makeRequestForLookupID(link) { savedID in //lookupID
                 
                 var lookupURL  = iTunesHelper.getiTunesLookupURLs(savedID)
-                println(lookupURL)
+                //println(lookupURL)
                 RequestHelper.makeRequestForFeedURL(lookupURL) { feedURL in //got feedURL
                     var xmlParser = XMLParser(feedURL: feedURL)
                     podcastPlaylist = xmlParser.beginParse()
@@ -31,5 +31,4 @@ class ContentGenerator {
         }
         //completionBlock(podcastPlaylist)
     }
-
 }
