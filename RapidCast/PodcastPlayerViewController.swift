@@ -55,7 +55,7 @@ class PodcastPlayerViewController: UIViewController {
             self.player.play()
         }
         else {
-            println("shit is buffering")
+            println("podcast is buffering")
         }
     }
     
