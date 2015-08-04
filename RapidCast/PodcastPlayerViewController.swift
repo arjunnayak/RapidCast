@@ -32,15 +32,12 @@ class PodcastPlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for (category, podcasts) in podcastPlaylist {
+        for (category, podcasts) in podcastPlaylist { //creates podcast queue
             for podcast in podcasts {
                 let item = AVPlayerItem(URL: NSURL(string: podcast.url as! String))
                 allPodcasts.append(item)
             }
         }
-        
-//        var podcastArr = podcastPlaylist["Technology"]
-//        var podcast = podcastArr![0]
         self.player = AVPlayer(playerItem: allPodcasts[currentIndex])
         self.player.play()
         pausePlay.setImage(pauseImg, forState: UIControlState.Normal)
@@ -48,18 +45,18 @@ class PodcastPlayerViewController: UIViewController {
     }
     
     @IBAction func pressedPlayPause(sender: AnyObject) {
-//        switch player.state.value {
-//            case STKAudioPlayerStatePlaying.value: //playing
-//                pausePlay.setImage(playImg, forState: UIControlState.Normal)
-//                player.pause()
-//            case STKAudioPlayerStatePaused.value: //pause
-//                pausePlay.setImage(pauseImg, forState: UIControlState.Normal)
-//                player.resume()
-//            default: println("playpause button not working")
-//        }
         
-       //if(
-        
+        if (self.player.rate != 0 && self.player.error == nil) { //if player is playing
+            self.player.pause()
+            pausePlay.setImage(playImg, forState: UIControlState.Normal)
+        }
+        else if(self.player.rate == 0) { //if player is paused
+            pausePlay.setImage(pauseImg, forState: UIControlState.Normal)
+            self.player.play()
+        }
+        else {
+            println("shit is buffering")
+        }
     }
     
     @IBAction func pressedFastForward(sender: AnyObject) {
