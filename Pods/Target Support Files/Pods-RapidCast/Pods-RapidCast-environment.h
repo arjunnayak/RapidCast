@@ -24,12 +24,6 @@
 #define COCOAPODS_VERSION_MINOR_RealmSwift 93
 #define COCOAPODS_VERSION_PATCH_RealmSwift 2
 
-// StreamingKit
-#define COCOAPODS_POD_AVAILABLE_StreamingKit
-#define COCOAPODS_VERSION_MAJOR_StreamingKit 0
-#define COCOAPODS_VERSION_MINOR_StreamingKit 1
-#define COCOAPODS_VERSION_PATCH_StreamingKit 25
-
 // SwiftyJSON
 #define COCOAPODS_POD_AVAILABLE_SwiftyJSON
 #define COCOAPODS_VERSION_MAJOR_SwiftyJSON 2

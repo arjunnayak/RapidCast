@@ -13,9 +13,12 @@ class RapidCastViewController: UIViewController {
     @IBOutlet weak var rapidCastButton: UIButton!
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) {}
     
-    var podcastPlaylist = [Podcast]()
-
+    @IBAction func rapidCast(sender: AnyObject) {
+        segueToPlayer()
+    }
     var categories: [String]?
+    
+    var finalPlaylist : [String : [Podcast]] = [:]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,18 +35,24 @@ class RapidCastViewController: UIViewController {
 
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)
     {
+        
         if(segue.identifier == "RapidCast") {
-            if let categories = self.categories {
-                
-                ContentGenerator.generate(categories) { podcasts in
-                    for podcast in podcasts {
-                        self.podcastPlaylist.append(podcast)
-                        println(self.podcastPlaylist)
-                    }
-                }
-            }
-            let podcastPlayer = segue.destinationViewController as! PodcastPlayerViewController
+            
+            var navController: UINavigationController = segue.destinationViewController as! UINavigationController
+            var playerController: PodcastPlayerViewController = navController.viewControllers[0] as! PodcastPlayerViewController
+            //var player = segue.destinationViewController as! PodcastPlayerViewController
+            playerController.podcastPlaylist = finalPlaylist
+            
             //needs to send playlist of podcasts to podcast player AND playlist
+        }
+    }
+    
+    func segueToPlayer() {
+        if let categories = self.categories {
+            ContentGenerator.generate(categories) { finalPlaylist in //final playlist created
+                self.finalPlaylist = finalPlaylist
+                self.performSegueWithIdentifier("RapidCast", sender: self)
+            }
         }
     }
 }

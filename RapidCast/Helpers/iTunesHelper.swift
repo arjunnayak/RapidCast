@@ -10,24 +10,6 @@ import Foundation
 
 class iTunesHelper {
     
-    static var genres = [
-        "Arts" : "1301",
-        "Comedy" : "1303",
-        "Education" : "1304",
-        "Kids & Family" : "1305",
-        "Health" : "1307",
-        "TV & Film" : "1309",
-        "Music" : "1310",
-        "News & Politics" : "1311",
-        "Science & Medicine" : "1315",
-        "Sports & Recreation" : "1316",
-        "Technology" : "1318",
-        "Business" : "1321",
-        "Games & Hobbies" : "1323",
-        "Society & Culture" : "1324",
-        "Government & Organizations" : "1325"
-    ]
-    
     static func getiTunesLinksFromRSS(categories: [String]) -> [NSURL] {
         var genreIDs = [String]()
         for category in categories {
@@ -54,4 +36,23 @@ class iTunesHelper {
     static func getGenres() -> Dictionary<String, String> {
         return genres
     }
+    
+    static var genres = [
+        "Arts" : "1301",
+        "Comedy" : "1303",
+        "Education" : "1304",
+        "Kids & Family" : "1305",
+        "Health" : "1307",
+        "TV & Film" : "1309",
+        "Music" : "1310",
+        "News & Politics" : "1311",
+        "Science & Medicine" : "1315",
+        "Sports & Recreation" : "1316",
+        "Technology" : "1318",
+        "Business" : "1321",
+        "Games & Hobbies" : "1323",
+        "Society & Culture" : "1324",
+        "Government & Organizations" : "1325"
+    ]
+    
 }

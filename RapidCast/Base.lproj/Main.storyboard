@@ -5,10 +5,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Title-->
+        <!--Podcast Playlist-->
         <scene sceneID="ll7-4w-cv8">
             <objects>
-                <tableViewController id="tXg-JQ-3Ih" customClass="PodcastPlaylistViewController" customModule="RapidCast" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="tXg-JQ-3Ih" userLabel="Podcast Playlist" customClass="PodcastPlaylistViewController" customModule="RapidCast" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="522-v6-C0E">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -31,22 +31,22 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zt7-wQ-1X2">
-                                            <rect key="frame" x="8" y="15" width="50" height="50"/>
-                                        </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="69E-i4-sSu">
                                             <rect key="frame" x="554" y="29" width="38" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zt7-wQ-1X2">
+                                            <rect key="frame" x="8" y="15" width="50" height="50"/>
+                                        </imageView>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="coverArt" destination="zt7-wQ-1X2" id="lqJ-f8-BtC"/>
-                                    <outlet property="duration" destination="69E-i4-sSu" id="aWS-8Q-xFs"/>
-                                    <outlet property="episodeTitle" destination="Szh-Bz-sIe" id="MC6-4a-hLh"/>
-                                    <outlet property="podcastChannel" destination="69E-i4-sSu" id="GXz-hE-kuA"/>
+                                    <outlet property="author" destination="DdZ-QX-YhL" id="guW-Jb-CAW"/>
+                                    <outlet property="duration" destination="69E-i4-sSu" id="emX-3s-pFg"/>
+                                    <outlet property="podcastImage" destination="zt7-wQ-1X2" id="GkJ-J1-cc3"/>
+                                    <outlet property="title" destination="Szh-Bz-sIe" id="bKS-jG-vlu"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -68,7 +68,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pgz-IJ-4fE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="WnT-sc-3Qk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1122" y="418"/>
+            <point key="canvasLocation" x="-1112" y="420"/>
         </scene>
         <!--Rapid Cast View Controller-->
         <scene sceneID="i5q-pp-gz9">
@@ -107,10 +107,10 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="zd0-nn-XDP" kind="show" identifier="RapidCast" id="0r0-h4-zlP"/>
+                                            <action selector="rapidCast:" destination="a1i-Ac-Ky3" eventType="touchUpInside" id="yxd-0M-Kgv"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6P-xG-NJj">
+                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6P-xG-NJj">
                                         <rect key="frame" x="542" y="521" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="apl-vd-2dm"/>
@@ -163,11 +163,12 @@
                     </view>
                     <connections>
                         <outlet property="rapidCastButton" destination="LgK-U4-E2h" id="4mm-o3-mgq"/>
+                        <segue destination="5H8-ry-Zsh" kind="show" identifier="RapidCast" id="KKc-W6-Qth"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOG-sR-j4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2088" y="-33"/>
+            <point key="canvasLocation" x="-2023" y="-63"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mzc-wK-7c8">
@@ -183,7 +184,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLH-3m-HGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1977" y="758"/>
+            <point key="canvasLocation" x="-2023" y="734"/>
         </scene>
         <!--Choose Topics -->
         <scene sceneID="IsD-c0-KIX">
@@ -217,7 +218,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6G-u8-IWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3103" y="193"/>
+            <point key="canvasLocation" x="-2935" y="-63"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TNd-gW-AFL">
@@ -256,12 +257,6 @@
                                     <action selector="pressedPlayPause:" destination="zd0-nn-XDP" eventType="touchUpInside" id="Ldd-oc-RaG"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="podcast icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="pbP-nS-3Jb" userLabel="Placeholder Image">
-                                <rect key="frame" x="125" y="90" width="350" height="325"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="350" id="sAU-2A-Pm7"/>
-                                </constraints>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLD-ot-xXV" userLabel="Fast Forward">
                                 <rect key="frame" x="342" y="504" width="50" height="50"/>
                                 <state key="normal" image="Fast Forward">
@@ -292,6 +287,12 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="podcast icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="pbP-nS-3Jb" userLabel="Placeholder Image">
+                                <rect key="frame" x="125" y="90" width="350" height="325"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="350" id="sAU-2A-Pm7"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -316,9 +317,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ANr-Io-kl0">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="8VJ-WY-Q3G">
+                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="8VJ-WY-Q3G">
                             <connections>
-                                <segue destination="iEc-29-nrl" kind="unwind" unwindAction="prepareForUnwind:" id="xU5-vF-hrm"/>
+                                <segue destination="iEc-29-nrl" kind="unwind" unwindAction="prepareForUnwind:" id="tjf-CE-oys"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Playlist &gt;" id="37v-RU-3FG">
+                            <connections>
+                                <segue destination="tXg-JQ-3Ih" kind="show" id="tVJ-ev-jGV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -343,6 +349,6 @@
         <image name="podcast icon.jpeg" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0r0-h4-zlP"/>
+        <segue reference="tVJ-ev-jGV"/>
     </inferredMetricsTieBreakers>
 </document>

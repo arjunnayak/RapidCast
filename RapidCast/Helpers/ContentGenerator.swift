@@ -10,25 +10,38 @@ import Foundation
 
 class ContentGenerator {
     
-    static func generate(categories: [String], completionBlock: [Podcast] -> Void) {
-        
+    static func generate(categories: [String], completionBlock: [String : [Podcast]] -> Void) {
+        var counter = 0
         var lookupIDs = [String]()
         var iTunesLinks : [NSURL] = iTunesHelper.getiTunesLinksFromRSS(categories)
+        //println(iTunesLinks.count)
         
-        var podcastPlaylist = [Podcast]()
+        var podcastPlaylist: [Podcast] = []
+        
+        var finalPlaylist : [String : [Podcast]] = [:]
+        
         
         for link in iTunesLinks {
+            
             RequestHelper.makeRequestForLookupID(link) { savedID in //lookupID
                 
                 var lookupURL  = iTunesHelper.getiTunesLookupURLs(savedID)
-                //println(lookupURL)
+                
                 RequestHelper.makeRequestForFeedURL(lookupURL) { feedURL in //got feedURL
+                    counter++
                     var xmlParser = XMLParser(feedURL: feedURL)
                     podcastPlaylist = xmlParser.beginParse()
-                    completionBlock(podcastPlaylist)
+                    println(counter)
+                    
+                    if counter ==  iTunesLinks.count {
+                        finalPlaylist[categories[counter - 1]] = podcastPlaylist
+                        completionBlock(finalPlaylist)
+                    }
+                    else {
+                        finalPlaylist[categories[counter - 1]] = podcastPlaylist
+                    }
                 }
             }
         }
-        //completionBlock(podcastPlaylist)
     }
 }

@@ -14,11 +14,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Pods-RapidCast-StreamingKit.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-RapidCast-SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,27 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>067C753358A17A23628458DD</key>
+		<key>0EAD0545B5923DDCCA652622</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>22B8530927F30C95DF1E243A</key>
+		<key>236B39B8EC9B427FD5A73B35</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>6704EC8DA132860075D3E54A</key>
+		<key>3AD8D6743AB6C3DDA72D8988</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>7084580CBF9A12D2AF78EED0</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>F3C00351FA8223B6A52A2A61</key>
+		<key>76E3A29E4797B71B273E99E0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

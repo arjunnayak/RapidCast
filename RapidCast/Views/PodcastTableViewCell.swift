@@ -10,29 +10,35 @@ import UIKit
 
 class PodcastTableViewCell: UITableViewCell {
 
-    @IBOutlet weak var coverArt: UIImageView!
-    @IBOutlet weak var episodeTitle: UILabel!
-    @IBOutlet weak var podcastChannel: UILabel!
+//    var title : String? //titleTerm
+//    var author: String? //authorTerm
+//    var url:  NSString?
+//    var duration: String?
+//    var image : UIImage?
+    
+    
+    @IBOutlet weak var title: UILabel!
+    @IBOutlet weak var author: UILabel!
+    @IBOutlet weak var podcastImage: UIImageView!
     @IBOutlet weak var duration: UILabel!
-    var track: NSObject? = NSObject()
 
     //IMPORTANT: NEED TO HANDLE WHEN PODCAST ATTRIBUTES TURN UP NIL
         //EXAMPLE: IF IMAGE(MEDIA:THUMBNAIL) == NIL, THEN GIVE IT SAMPLE IMAGE
     
-    /*
+    
     var podcast: Podcast? {
         didSet {
-            if let podcast = podcast, coverArt = coverArt, episodeTitle = episodeTitle, podcastChannel = podcastChannel, duration = duration, track = track {
+            if let podcast = podcast {
                 
-                self.coverArt.image = podcast.coverArt
-                self.episodeTitle.text = podcast.episodeTitle
-                self.podcastChannel.text = podcast.podcastChannel
+                self.title.text = podcast.title
+                self.author.text = podcast.author
+                self.podcastImage.image = podcast.image
                 self.duration.text = podcast.duration
-                self.track = podcast.mp3
+                let track = podcast.url
             }
         }
     }
-    */
+    
 
     override func awakeFromNib() {
         super.awakeFromNib()

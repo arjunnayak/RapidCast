@@ -50,12 +50,10 @@ code_sign() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework 'Realm.framework'
   install_framework 'RealmSwift.framework'
-  install_framework 'StreamingKit.framework'
   install_framework 'SwiftyJSON.framework'
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework 'Realm.framework'
   install_framework 'RealmSwift.framework'
-  install_framework 'StreamingKit.framework'
   install_framework 'SwiftyJSON.framework'
 fi

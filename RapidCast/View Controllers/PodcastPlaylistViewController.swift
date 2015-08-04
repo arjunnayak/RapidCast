@@ -10,7 +10,7 @@ import UIKit
 
 class PodcastPlaylistViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var podcasts : [Podcast]?
+    var podcasts : [String : [Podcast]]?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -56,7 +56,7 @@ extension PodcastPlaylistViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCellWithIdentifier("PodcastCell", forIndexPath: indexPath) as! PodcastTableViewCell //1
         
         let row = indexPath.row
-        let note = podcasts![row] as Podcast
+        //let note = podcasts![row] as Podcast
         //cell.podcast = note
         
         return cell
