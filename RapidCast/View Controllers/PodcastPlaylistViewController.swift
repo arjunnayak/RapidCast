@@ -8,16 +8,38 @@
 
 import UIKit
 
-class PodcastPlaylistViewController: UITableViewController, UITableViewDelegate, UITableViewDataSource {
+class PodcastPlaylistViewController: UITableViewController {
 
-    var podcasts : [String : [Podcast]]?
+    var podcastPlaylist : [String : [Podcast]] = [:]
+    
+    var allPodcasts : [Podcast] = []
+    
+    var categories : [Category] = []
+    
+    struct Category {
+        var name : String
+        var podcasts : [Podcast]
+    }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
         tableView.delegate = self
-
+        
+        for (category, podcasts) in podcastPlaylist { //creates podcast queue of podcasts
+            
+            categories.append(Category(name: category, podcasts: podcasts))
+            
+            for podcast in podcasts {
+                allPodcasts.append(podcast)
+            }
+        }
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,48 +47,64 @@ class PodcastPlaylistViewController: UITableViewController, UITableViewDelegate,
         // Dispose of any resources that can be recreated.
     }
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let identifier = segue.identifier {
+            if(identifier == "PlayPodcast") {
+                let playerViewController = segue.destinationViewController as! PodcastPlayerViewController
+                playerViewController.playPodcast()
+                //STOP HERE
+            }
+        }
     }
-    */
-}
 
 
+    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+        return categories.count
+    }
 
-extension PodcastPlaylistViewController: UITableViewDelegate {
-    
-    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return categories[section].podcasts.count
+    }
+
+
+    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> PodcastTableViewCell {
+        let podcast = categories[indexPath.section].podcasts[indexPath.row]
         
-    }
-    
-    // 3
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-}
-
-extension PodcastPlaylistViewController: UITableViewDataSource {
-
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("PodcastCell", forIndexPath: indexPath) as! PodcastTableViewCell //1
+        let cell = tableView.dequeueReusableCellWithIdentifier("PodcastCell", forIndexPath: indexPath) as! PodcastTableViewCell
         
-        let row = indexPath.row
-        //let note = podcasts![row] as Podcast
-        //cell.podcast = note
+        cell.podcast = podcast
         
         return cell
     }
     
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return Int(podcasts?.count ?? 0)
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return categories[section].name
     }
-    
+
+//    func animateTable() {
+//        tableView.reloadData()
+//        
+//        let cells = tableView.visibleCells()
+//        let tableHeight: CGFloat = tableView.bounds.size.height
+//        
+//        for i in cells {
+//            let cell: UITableViewCell = i as UITableViewCell
+//            cell.transform = CGAffineTransformMakeTranslation(0, tableHeight)
+//        }
+//        
+//        var index = 0
+//        
+//        for a in cells {
+//            let cell: UITableViewCell = a as UITableViewCell
+//            UIView.animateWithDuration(1.5, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: nil, animations: {
+//                cell.transform = CGAffineTransformMakeTranslation(0, 0);
+//                }, completion: nil)
+//            
+//            index += 1
+//        }
+//    }
+
+
 }
-
-
 

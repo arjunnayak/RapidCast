@@ -8,7 +8,6 @@
 
 import UIKit
 import AVFoundation
-import StreamingKit
 
 
 class PodcastPlayerViewController: UIViewController {
@@ -21,18 +20,13 @@ class PodcastPlayerViewController: UIViewController {
     
     var currentIndex = 0
     
-    @IBOutlet weak var pausePlay: UIButton!
-    @IBOutlet weak var podcastImage: UIImageView!
-    @IBOutlet weak var podcastTitle: UILabel!
-    @IBOutlet weak var podcastSlider: UISlider!
-    
     let playImg = UIImage(named: "Play.png")
     let pauseImg = UIImage(named: "Pause.png")
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        for (category, podcasts) in podcastPlaylist { //creates podcast queue
+        for (category, podcasts) in podcastPlaylist { //creates podcast queue of av player items
             for podcast in podcasts {
                 let item = AVPlayerItem(URL: NSURL(string: podcast.url as! String))
                 allPodcasts.append(item)
@@ -44,13 +38,44 @@ class PodcastPlayerViewController: UIViewController {
     
     }
     
+    
+    //MARK: Segue Functionality 
+    
+    @IBAction func goToPlaylist(sender: AnyObject) {
+        segueToPlaylist()
+    }
+    
+    func segueToPlaylist() {
+        self.performSegueWithIdentifier("showPlaylist", sender: self)
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "showPlaylist") {
+            var playlistController = segue.destinationViewController as! PodcastPlaylistViewController
+            
+            playlistController.podcastPlaylist = self.podcastPlaylist
+        }
+    }
+    
+    func playPodcast() {
+        
+    }
+
+    
+    //MARK: UI ELEMENTS
+    
+    @IBOutlet weak var pausePlay: UIButton!
+    @IBOutlet weak var podcastImage: UIImageView!
+    @IBOutlet weak var podcastTitle: UILabel!
+    @IBOutlet weak var podcastSlider: UISlider!
+    
     @IBAction func pressedPlayPause(sender: AnyObject) {
         
-        if (self.player.rate != 0 && self.player.error == nil) { //if player is playing
+        if (self.player.rate != 0 && self.player.error == nil) {           //if player is playing
             self.player.pause()
             pausePlay.setImage(playImg, forState: UIControlState.Normal)
         }
-        else if(self.player.rate == 0) { //if player is paused
+        else if(self.player.rate == 0) {                                   //if player is paused
             pausePlay.setImage(pauseImg, forState: UIControlState.Normal)
             self.player.play()
         }

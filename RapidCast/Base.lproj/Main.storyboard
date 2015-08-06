@@ -10,7 +10,7 @@
             <objects>
                 <tableViewController id="tXg-JQ-3Ih" userLabel="Podcast Playlist" customClass="PodcastPlaylistViewController" customModule="RapidCast" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="22" sectionFooterHeight="22" id="522-v6-C0E">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -19,12 +19,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aOT-s3-sJF" id="OTw-6x-qvy">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Episode Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szh-Bz-sIe">
-                                            <rect key="frame" x="66" y="18" width="300" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Podcast Channel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdZ-QX-YhL">
                                             <rect key="frame" x="66" y="44" width="172" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -40,6 +34,12 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zt7-wQ-1X2">
                                             <rect key="frame" x="8" y="15" width="50" height="50"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Episode Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szh-Bz-sIe">
+                                            <rect key="frame" x="66" y="15" width="300" height="24"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
@@ -47,6 +47,7 @@
                                     <outlet property="duration" destination="69E-i4-sSu" id="emX-3s-pFg"/>
                                     <outlet property="podcastImage" destination="zt7-wQ-1X2" id="GkJ-J1-cc3"/>
                                     <outlet property="title" destination="Szh-Bz-sIe" id="bKS-jG-vlu"/>
+                                    <segue destination="zd0-nn-XDP" kind="show" identifier="PlayPodcast" id="dsP-Oe-7wZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -56,7 +57,7 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Title" id="mep-R6-Imy">
+                    <navigationItem key="navigationItem" title="RapidCast" id="mep-R6-Imy">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="uQF-tY-Oey">
                             <connections>
                                 <segue destination="WnT-sc-3Qk" kind="unwind" unwindAction="prepareForUnwind:" id="sGD-iU-GtS"/>
@@ -68,7 +69,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pgz-IJ-4fE" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="WnT-sc-3Qk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1112" y="420"/>
+            <point key="canvasLocation" x="-1112" y="300"/>
         </scene>
         <!--Rapid Cast View Controller-->
         <scene sceneID="i5q-pp-gz9">
@@ -110,7 +111,7 @@
                                             <action selector="rapidCast:" destination="a1i-Ac-Ky3" eventType="touchUpInside" id="yxd-0M-Kgv"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6P-xG-NJj">
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6P-xG-NJj">
                                         <rect key="frame" x="542" y="521" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="apl-vd-2dm"/>
@@ -128,16 +129,17 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dz-rI-6ue" userLabel="Background Button">
-                                        <rect key="frame" x="499" y="521" width="81" height="49"/>
+                                        <rect key="frame" x="499" y="521" width="93" height="49"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <connections>
-                                            <segue destination="pwd-48-qvZ" kind="show" id="QJ8-Fs-w5G"/>
+                                            <action selector="currentPlaylist:" destination="a1i-Ac-Ky3" eventType="touchUpInside" id="bZ1-8F-Jkw"/>
                                         </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="0.2952371486" blue="0.22480045730000001" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="Fgp-d3-3Xc" secondAttribute="trailing" constant="48" id="8Qp-Lu-6cv"/>
                                     <constraint firstItem="Z6P-xG-NJj" firstAttribute="top" secondItem="Fgp-d3-3Xc" secondAttribute="top" id="EYp-Ig-fpv"/>
@@ -147,7 +149,7 @@
                                     <constraint firstItem="LgK-U4-E2h" firstAttribute="centerY" secondItem="Xu2-Cr-waC" secondAttribute="centerY" id="SPK-Ka-c4l"/>
                                     <constraint firstItem="4Dz-rI-6ue" firstAttribute="leading" secondItem="Fgp-d3-3Xc" secondAttribute="leading" id="cZE-jr-z7g"/>
                                     <constraint firstItem="4Dz-rI-6ue" firstAttribute="top" secondItem="Fgp-d3-3Xc" secondAttribute="top" id="eIR-ib-OBb"/>
-                                    <constraint firstAttribute="trailing" secondItem="4Dz-rI-6ue" secondAttribute="trailing" constant="20" id="rAi-Qa-8Hs"/>
+                                    <constraint firstAttribute="trailing" secondItem="4Dz-rI-6ue" secondAttribute="trailing" constant="8" id="rAi-Qa-8Hs"/>
                                     <constraint firstItem="LgK-U4-E2h" firstAttribute="centerX" secondItem="Xu2-Cr-waC" secondAttribute="centerX" id="tFc-xP-HEW"/>
                                     <constraint firstItem="Z6P-xG-NJj" firstAttribute="trailing" secondItem="Xu2-Cr-waC" secondAttribute="trailingMargin" id="weo-po-KZC"/>
                                 </constraints>
@@ -164,19 +166,25 @@
                     <connections>
                         <outlet property="rapidCastButton" destination="LgK-U4-E2h" id="4mm-o3-mgq"/>
                         <segue destination="5H8-ry-Zsh" kind="show" identifier="RapidCast" id="KKc-W6-Qth"/>
+                        <segue destination="pwd-48-qvZ" kind="show" identifier="ShowCurrentPlaylist" id="JzP-mo-Jr5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOG-sR-j4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2023" y="-63"/>
+            <point key="canvasLocation" x="-2795" y="-191"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mzc-wK-7c8">
             <objects>
                 <navigationController id="pwd-48-qvZ" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="cdZ-5N-0Ja">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="cdZ-5N-0Ja">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="1" green="0.2952371486" blue="0.22480045730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
                         <segue destination="tXg-JQ-3Ih" kind="relationship" relationship="rootViewController" id="aTZ-lE-QYY"/>
@@ -184,7 +192,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLH-3m-HGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2023" y="734"/>
+            <point key="canvasLocation" x="-1919" y="270"/>
         </scene>
         <!--Choose Topics -->
         <scene sceneID="IsD-c0-KIX">
@@ -218,23 +226,30 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q6G-u8-IWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2935" y="-63"/>
+            <point key="canvasLocation" x="-2895" y="1013"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TNd-gW-AFL">
             <objects>
                 <navigationController id="5H8-ry-Zsh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="AhO-J7-HDX">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="AhO-J7-HDX">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="1" green="0.2952371486" blue="0.22480045730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="0.0"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
                     </navigationBar>
                     <connections>
-                        <segue destination="zd0-nn-XDP" kind="relationship" relationship="rootViewController" id="PNU-lz-RRS"/>
+                        <segue destination="zd0-nn-XDP" kind="relationship" relationship="rootViewController" id="s7u-0G-tMJ"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="U9a-VD-CJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2023" y="-800"/>
+            <point key="canvasLocation" x="-1919" y="-516"/>
         </scene>
         <!--Podcast Player View Controller-->
         <scene sceneID="hle-lS-yRJ">
@@ -245,11 +260,11 @@
                         <viewControllerLayoutGuide type="bottom" id="hBF-gA-T0W"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3Wa-Wq-3eb">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVF-6H-jtL" userLabel="Pause/Play">
-                                <rect key="frame" x="277" y="504" width="46" height="50"/>
+                                <rect key="frame" x="277" y="472" width="46" height="50"/>
                                 <state key="normal" image="Play">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -258,7 +273,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zLD-ot-xXV" userLabel="Fast Forward">
-                                <rect key="frame" x="342" y="504" width="50" height="50"/>
+                                <rect key="frame" x="342" y="472" width="50" height="50"/>
                                 <state key="normal" image="Fast Forward">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -267,7 +282,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kbn-HM-S0V" userLabel="Rewind">
-                                <rect key="frame" x="198" y="504" width="50" height="50"/>
+                                <rect key="frame" x="198" y="472" width="50" height="50"/>
                                 <state key="normal" image="Rewind">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -276,19 +291,19 @@
                                 </connections>
                             </button>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="2Mf-QE-gf0">
-                                <rect key="frame" x="123" y="466" width="354" height="31"/>
+                                <rect key="frame" x="123" y="434" width="354" height="31"/>
                                 <connections>
                                     <action selector="sliderMoved:" destination="zd0-nn-XDP" eventType="valueChanged" id="NE4-Kr-Pon"/>
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giL-PY-SPc" userLabel="Volume">
-                                <rect key="frame" x="432" y="503.5" width="51" height="50"/>
+                                <rect key="frame" x="432" y="471" width="51" height="50"/>
                                 <state key="normal" image="Volume">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="podcast icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="pbP-nS-3Jb" userLabel="Placeholder Image">
-                                <rect key="frame" x="125" y="90" width="350" height="325"/>
+                                <rect key="frame" x="125" y="58" width="350" height="325"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="350" id="sAU-2A-Pm7"/>
                                 </constraints>
@@ -317,14 +332,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="ANr-Io-kl0">
-                        <barButtonItem key="leftBarButtonItem" title="&lt; Back" id="8VJ-WY-Q3G">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="8VJ-WY-Q3G">
                             <connections>
                                 <segue destination="iEc-29-nrl" kind="unwind" unwindAction="prepareForUnwind:" id="tjf-CE-oys"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" title="Playlist &gt;" id="37v-RU-3FG">
                             <connections>
-                                <segue destination="tXg-JQ-3Ih" kind="show" id="tVJ-ev-jGV"/>
+                                <action selector="goToPlaylist:" destination="zd0-nn-XDP" id="djq-lH-ghY"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -332,12 +347,13 @@
                         <outlet property="pausePlay" destination="fVF-6H-jtL" id="hNJ-ne-Mu8"/>
                         <outlet property="podcastImage" destination="pbP-nS-3Jb" id="VR1-WV-LYV"/>
                         <outlet property="podcastSlider" destination="2Mf-QE-gf0" id="jEX-Ht-5Ub"/>
+                        <segue destination="tXg-JQ-3Ih" kind="show" identifier="showPlaylist" id="OrL-BQ-b7o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIe-iw-j3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="iEc-29-nrl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1112" y="-334"/>
+            <point key="canvasLocation" x="-1040" y="-516"/>
         </scene>
     </scenes>
     <resources>
@@ -349,6 +365,7 @@
         <image name="podcast icon.jpeg" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="tVJ-ev-jGV"/>
+        <segue reference="aTZ-lE-QYY"/>
+        <segue reference="dsP-Oe-7wZ"/>
     </inferredMetricsTieBreakers>
 </document>
