@@ -7,12 +7,15 @@
 //
 
 import UIKit
+import AVFoundation
 
 class PodcastPlaylistViewController: UITableViewController {
 
     var podcastPlaylist : [String : [Podcast]] = [:]
     
     var allPodcasts : [Podcast] = []
+    
+    var indexPodcasts = NSMutableArray()
     
     var categories : [Category] = []
     
@@ -33,6 +36,7 @@ class PodcastPlaylistViewController: UITableViewController {
             
             for podcast in podcasts {
                 allPodcasts.append(podcast)
+                self.indexPodcasts.addObject(podcast as Podcast)
             }
         }
         // Do any additional setup after loading the view.
@@ -52,12 +56,30 @@ class PodcastPlaylistViewController: UITableViewController {
         if let identifier = segue.identifier {
             if(identifier == "PlayPodcast") {
                 let playerViewController = segue.destinationViewController as! PodcastPlayerViewController
-                playerViewController.playPodcast()
-                //STOP HERE
+                let path = self.tableView.indexPathForSelectedRow()!
+                let row = path.row
+                playerViewController.currentIndex = row
+                playerViewController.podcastPlaylist = self.podcastPlaylist
+                
+//                let section = path.section
+//                let urlOptional = allPodcasts[row].url
+//                if let url = urlOptional {
+//                    playerViewController.player = AVPlayer(playerItem: AVPlayerItem(URL: NSURL(string: url as String)))
+//                    playerViewController.player.play()
+//                }
+               
+                //playerViewController.allPodcasts[path]
+                
+                //CURRENT THOUGHTS:
+                //        create nsmutablearray of Podcasts, and so when a Podcast object in the table view is selected, search through the NSMutableArray using NSMutableArray.indexOfObject(Podcast selected) and set that to the current Index so that the queue functionality with currentIndex will work.
+
             }
         }
     }
 
+    
+    //CURRENT THOUGHTS:
+    //        create nsmutablearray of Podcasts, and so when a Podcast object in the table view is selected, search through the NSMutableArray using NSMutableArray.indexOfObject(Podcast selected) and set that to the current Index so that the queue functionality with currentIndex will work.
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return categories.count
