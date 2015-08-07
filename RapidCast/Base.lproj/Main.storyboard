@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="a1i-Ac-Ky3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zQm-bh-1W5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -57,19 +57,12 @@
                         </connections>
                     </tableView>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="RapidCast" id="mep-R6-Imy">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="uQF-tY-Oey">
-                            <connections>
-                                <segue destination="WnT-sc-3Qk" kind="unwind" unwindAction="prepareForUnwind:" id="sGD-iU-GtS"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Playlist" id="Hco-MO-CFa"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pgz-IJ-4fE" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="WnT-sc-3Qk" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1112" y="300"/>
+            <point key="canvasLocation" x="-980" y="270"/>
         </scene>
         <!--Rapid Cast View Controller-->
         <scene sceneID="i5q-pp-gz9">
@@ -80,14 +73,14 @@
                         <viewControllerLayoutGuide type="bottom" id="Cbh-ef-Si8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="bQf-u7-Ryu">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xu2-Cr-waC">
-                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LgK-U4-E2h">
-                                        <rect key="frame" x="188" y="275" width="225" height="50"/>
+                                        <rect key="frame" x="188" y="243" width="225" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="aYa-RN-Azw"/>
                                         </constraints>
@@ -112,7 +105,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z6P-xG-NJj">
-                                        <rect key="frame" x="542" y="521" width="50" height="50"/>
+                                        <rect key="frame" x="542" y="457" width="50" height="50"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="apl-vd-2dm"/>
                                         </constraints>
@@ -121,7 +114,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="characterWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Fgp-d3-3Xc">
-                                        <rect key="frame" x="499" y="521" width="53" height="49"/>
+                                        <rect key="frame" x="499" y="457" width="53" height="49"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="17"/>
                                         <state key="normal" title="Current Playlist ">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -129,7 +122,7 @@
                                         </state>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Dz-rI-6ue" userLabel="Background Button">
-                                        <rect key="frame" x="499" y="521" width="93" height="49"/>
+                                        <rect key="frame" x="499" y="457" width="93" height="49"/>
                                         <state key="normal">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -163,15 +156,16 @@
                             <constraint firstItem="Xu2-Cr-waC" firstAttribute="top" secondItem="bQf-u7-Ryu" secondAttribute="top" id="vQB-4w-Sva"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="6xd-w4-z9r"/>
                     <connections>
                         <outlet property="rapidCastButton" destination="LgK-U4-E2h" id="4mm-o3-mgq"/>
-                        <segue destination="5H8-ry-Zsh" kind="show" identifier="RapidCast" id="KKc-W6-Qth"/>
-                        <segue destination="pwd-48-qvZ" kind="show" identifier="ShowCurrentPlaylist" id="JzP-mo-Jr5"/>
+                        <segue destination="tXg-JQ-3Ih" kind="show" identifier="RapidCast" id="KMz-2e-rE3"/>
+                        <segue destination="tXg-JQ-3Ih" kind="show" identifier="ShowCurrentPlaylist" id="EAA-oE-P6K"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOG-sR-j4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2795" y="-191"/>
+            <point key="canvasLocation" x="-1849" y="270"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mzc-wK-7c8">
@@ -186,70 +180,10 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         </textAttributes>
                     </navigationBar>
-                    <connections>
-                        <segue destination="tXg-JQ-3Ih" kind="relationship" relationship="rootViewController" id="aTZ-lE-QYY"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qLH-3m-HGO" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1919" y="270"/>
-        </scene>
-        <!--Choose Topics -->
-        <scene sceneID="IsD-c0-KIX">
-            <objects>
-                <collectionViewController id="m0P-ya-Rwn" userLabel="Choose Topics " sceneMemberID="viewController">
-                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="uWp-R3-6FU">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="7EN-NW-pRt">
-                            <size key="itemSize" width="50" height="50"/>
-                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                        </collectionViewFlowLayout>
-                        <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="wjV-F6-PtS">
-                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                </view>
-                            </collectionViewCell>
-                        </cells>
-                        <connections>
-                            <outlet property="dataSource" destination="m0P-ya-Rwn" id="PKC-pc-n6Y"/>
-                            <outlet property="delegate" destination="m0P-ya-Rwn" id="miD-eb-VWc"/>
-                        </connections>
-                    </collectionView>
-                </collectionViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="q6G-u8-IWb" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-2895" y="1013"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="TNd-gW-AFL">
-            <objects>
-                <navigationController id="5H8-ry-Zsh" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="AhO-J7-HDX">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="1" green="0.2952371486" blue="0.22480045730000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="0.0"/>
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="zd0-nn-XDP" kind="relationship" relationship="rootViewController" id="s7u-0G-tMJ"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="U9a-VD-CJD" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1919" y="-516"/>
+            <point key="canvasLocation" x="-1811" y="-432"/>
         </scene>
         <!--Podcast Player View Controller-->
         <scene sceneID="hle-lS-yRJ">
@@ -331,29 +265,74 @@
                             <constraint firstAttribute="centerY" secondItem="Kbn-HM-S0V" secondAttribute="centerY" constant="-229" id="zO9-Mn-5YM"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="ANr-Io-kl0">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="8VJ-WY-Q3G">
-                            <connections>
-                                <segue destination="iEc-29-nrl" kind="unwind" unwindAction="prepareForUnwind:" id="tjf-CE-oys"/>
-                            </connections>
-                        </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" title="Playlist &gt;" id="37v-RU-3FG">
-                            <connections>
-                                <action selector="goToPlaylist:" destination="zd0-nn-XDP" id="djq-lH-ghY"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="ANr-Io-kl0"/>
                     <connections>
                         <outlet property="pausePlay" destination="fVF-6H-jtL" id="hNJ-ne-Mu8"/>
                         <outlet property="podcastImage" destination="pbP-nS-3Jb" id="VR1-WV-LYV"/>
                         <outlet property="podcastSlider" destination="2Mf-QE-gf0" id="jEX-Ht-5Ub"/>
-                        <segue destination="tXg-JQ-3Ih" kind="show" identifier="showPlaylist" id="OrL-BQ-b7o"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIe-iw-j3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="iEc-29-nrl" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1040" y="-516"/>
+            <point key="canvasLocation" x="-126" y="270"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="D0t-ld-Bzg">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zQm-bh-1W5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Pys-Ji-lkS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="1" green="0.2952371486" blue="0.22480045730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="a1i-Ac-Ky3" kind="relationship" relationship="rootViewController" id="Imx-E7-eid"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JGs-OP-ia9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2753" y="270"/>
+        </scene>
+        <!--Category Chooser -->
+        <scene sceneID="mQ9-l7-HTC">
+            <objects>
+                <collectionViewController id="j6S-rI-9xx" userLabel="Category Chooser " customClass="CategoryChooserCollectionViewController" customModule="RapidCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="t0F-RU-OS2">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.2952371486" blue="0.22480045730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6DC-dl-yT7">
+                            <size key="itemSize" width="50" height="50"/>
+                            <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                            <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="X4h-tr-yGB">
+                                <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                            </collectionViewCell>
+                        </cells>
+                        <connections>
+                            <outlet property="dataSource" destination="j6S-rI-9xx" id="2j2-2L-WBS"/>
+                            <outlet property="delegate" destination="j6S-rI-9xx" id="uev-36-ibJ"/>
+                        </connections>
+                    </collectionView>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cp7-Kq-mhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3257" y="927"/>
         </scene>
     </scenes>
     <resources>
@@ -365,7 +344,6 @@
         <image name="podcast icon.jpeg" width="225" height="225"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="aTZ-lE-QYY"/>
-        <segue reference="dsP-Oe-7wZ"/>
+        <segue reference="EAA-oE-P6K"/>
     </inferredMetricsTieBreakers>
 </document>

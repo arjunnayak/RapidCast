@@ -11,12 +11,8 @@ import AVFoundation
 
 class PodcastPlaylistViewController: UITableViewController {
 
+    //for setup
     var podcastPlaylist : [String : [Podcast]] = [:]
-    
-    var allPodcasts : [Podcast] = []
-    
-    var indexPodcasts = NSMutableArray()
-    
     var categories : [Category] = []
     
     struct Category {
@@ -24,12 +20,18 @@ class PodcastPlaylistViewController: UITableViewController {
         var podcasts : [Podcast]
     }
     
+    //for referencing podcasts
+    var allPodcasts : [Podcast] = []
+    var indexPodcasts = NSMutableArray()
+
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
         tableView.dataSource = self
         tableView.delegate = self
-        
+        //println("podcastPlaylist is empty: \(podcastPlaylist.isEmpty))")
         for (category, podcasts) in podcastPlaylist { //creates podcast queue of podcasts
             
             categories.append(Category(name: category, podcasts: podcasts))
@@ -39,7 +41,6 @@ class PodcastPlaylistViewController: UITableViewController {
                 self.indexPodcasts.addObject(podcast as Podcast)
             }
         }
-        // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -48,7 +49,6 @@ class PodcastPlaylistViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
     
@@ -60,16 +60,7 @@ class PodcastPlaylistViewController: UITableViewController {
                 let row = path.row
                 playerViewController.currentIndex = row
                 playerViewController.podcastPlaylist = self.podcastPlaylist
-                
-//                let section = path.section
-//                let urlOptional = allPodcasts[row].url
-//                if let url = urlOptional {
-//                    playerViewController.player = AVPlayer(playerItem: AVPlayerItem(URL: NSURL(string: url as String)))
-//                    playerViewController.player.play()
-//                }
-               
-                //playerViewController.allPodcasts[path]
-                
+
                 //CURRENT THOUGHTS:
                 //        create nsmutablearray of Podcasts, and so when a Podcast object in the table view is selected, search through the NSMutableArray using NSMutableArray.indexOfObject(Podcast selected) and set that to the current Index so that the queue functionality with currentIndex will work.
 
@@ -77,10 +68,8 @@ class PodcastPlaylistViewController: UITableViewController {
         }
     }
 
+    //MARK: Table View Implementation
     
-    //CURRENT THOUGHTS:
-    //        create nsmutablearray of Podcasts, and so when a Podcast object in the table view is selected, search through the NSMutableArray using NSMutableArray.indexOfObject(Podcast selected) and set that to the current Index so that the queue functionality with currentIndex will work.
-
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         return categories.count
     }
@@ -103,30 +92,6 @@ class PodcastPlaylistViewController: UITableViewController {
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return categories[section].name
     }
-
-//    func animateTable() {
-//        tableView.reloadData()
-//        
-//        let cells = tableView.visibleCells()
-//        let tableHeight: CGFloat = tableView.bounds.size.height
-//        
-//        for i in cells {
-//            let cell: UITableViewCell = i as UITableViewCell
-//            cell.transform = CGAffineTransformMakeTranslation(0, tableHeight)
-//        }
-//        
-//        var index = 0
-//        
-//        for a in cells {
-//            let cell: UITableViewCell = a as UITableViewCell
-//            UIView.animateWithDuration(1.5, delay: 0.05 * Double(index), usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: nil, animations: {
-//                cell.transform = CGAffineTransformMakeTranslation(0, 0);
-//                }, completion: nil)
-//            
-//            index += 1
-//        }
-//    }
-
 
 }
 

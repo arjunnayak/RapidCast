@@ -16,6 +16,8 @@
 		4768FF521B5038620012C80F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4768FF501B5038620012C80F /* Main.storyboard */; };
 		4768FF541B5038620012C80F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4768FF531B5038620012C80F /* Images.xcassets */; };
 		4768FF631B5038620012C80F /* RapidCastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4768FF621B5038620012C80F /* RapidCastTests.swift */; };
+		479579341B7436C8003CE451 /* CategoryChooserCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479579331B7436C8003CE451 /* CategoryChooserCollectionViewController.swift */; };
+		479579361B743788003CE451 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479579351B743788003CE451 /* CategoryCollectionViewCell.swift */; };
 		47D3FC821B5DC59D00EAE1EF /* RapidCastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3FC811B5DC59D00EAE1EF /* RapidCastViewController.swift */; };
 		47D3FC891B60181000EAE1EF /* iTunesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3FC881B60181000EAE1EF /* iTunesHelper.swift */; };
 		47D3FC8B1B6018CA00EAE1EF /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3FC8A1B6018CA00EAE1EF /* JSONParser.swift */; };
@@ -51,6 +53,8 @@
 		4768FF5C1B5038620012C80F /* RapidCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RapidCastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4768FF611B5038620012C80F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4768FF621B5038620012C80F /* RapidCastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidCastTests.swift; sourceTree = "<group>"; };
+		479579331B7436C8003CE451 /* CategoryChooserCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryChooserCollectionViewController.swift; sourceTree = "<group>"; };
+		479579351B743788003CE451 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		47D3FC811B5DC59D00EAE1EF /* RapidCastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidCastViewController.swift; sourceTree = "<group>"; };
 		47D3FC881B60181000EAE1EF /* iTunesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesHelper.swift; sourceTree = "<group>"; };
 		47D3FC8A1B6018CA00EAE1EF /* JSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
@@ -87,6 +91,7 @@
 				47018D7C1B54693D009A7870 /* PodcastPlayerViewController.swift */,
 				4730DF8F1B56CF0E0040B15B /* PodcastPlaylistViewController.swift */,
 				47D3FC811B5DC59D00EAE1EF /* RapidCastViewController.swift */,
+				479579331B7436C8003CE451 /* CategoryChooserCollectionViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -169,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				47FEB0CE1B5815F20091725D /* PodcastTableViewCell.swift */,
+				479579351B743788003CE451 /* CategoryCollectionViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -350,11 +356,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				479579341B7436C8003CE451 /* CategoryChooserCollectionViewController.swift in Sources */,
 				47018D7D1B54693D009A7870 /* PodcastPlayerViewController.swift in Sources */,
 				4730DF901B56CF0E0040B15B /* PodcastPlaylistViewController.swift in Sources */,
 				47D3FC8B1B6018CA00EAE1EF /* JSONParser.swift in Sources */,
 				47D3FC8D1B60545000EAE1EF /* RequestHelper.swift in Sources */,
 				475D19BF1B68270300C453A9 /* ContentGenerator.swift in Sources */,
+				479579361B743788003CE451 /* CategoryCollectionViewCell.swift in Sources */,
 				475D19BA1B62FB9000C453A9 /* XMLParser.swift in Sources */,
 				47FEB0D21B58200B0091725D /* Podcast.swift in Sources */,
 				4768FF4D1B5038620012C80F /* AppDelegate.swift in Sources */,

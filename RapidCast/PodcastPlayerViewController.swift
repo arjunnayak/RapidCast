@@ -12,7 +12,7 @@ import AVFoundation
 
 class PodcastPlayerViewController: UIViewController {
     
-    
+    //data references
     var categories : [Category] = [] //when you get this to work, clean up the previous logic with allpodcasts/currentindex and have rapidcastviewcontroller set up the categories array and have it send to the other view controllers
     
     struct Category {
@@ -21,22 +21,18 @@ class PodcastPlayerViewController: UIViewController {
     }
     
     var podcastPlaylist : [String : [Podcast]] = [:]
-    
-    var player = AVPlayer()
-    
     var allPodcasts : [AVPlayerItem] = []
-    
     var indexPodcasts = NSMutableArray()
-
-    
     var podcasts : [Podcast] = []
-    
-    
-    
     var currentIndex = 0
     
+    //audio
+    var player = AVPlayer()
+    
+    //other
     let playImg = UIImage(named: "Play.png")
     let pauseImg = UIImage(named: "Pause.png")
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,21 +53,15 @@ class PodcastPlayerViewController: UIViewController {
         }
         self.player = AVPlayer(playerItem: self.allPodcasts[currentIndex])
         self.player.play()
+        self.podcastImage.image = self.podcasts[currentIndex].image
         pausePlay.setImage(pauseImg, forState: UIControlState.Normal)
-        
-        
-        
-        //allPodcasts2.index
-        
-      
-    
     }
     
     
     //MARK: Segue Functionality 
-    
+    /*
     @IBAction func goToPlaylist(sender: AnyObject) {
-        segueToPlaylist()
+        
     }
     
     func segueToPlaylist() {
@@ -85,10 +75,7 @@ class PodcastPlayerViewController: UIViewController {
             playlistController.podcastPlaylist = self.podcastPlaylist
         }
     }
-    
-    func playPodcast() {
-        
-    }
+*/
 
     
     //MARK: UI ELEMENTS
@@ -126,6 +113,7 @@ class PodcastPlayerViewController: UIViewController {
         let podcast = podcasts[currentIndex]
         println("Next Podcast: \(podcast.title)")
         
+        self.podcastImage.image = podcasts[currentIndex].image
         self.player = AVPlayer(playerItem: allPodcasts[currentIndex])
         self.player.play()
 
@@ -142,6 +130,8 @@ class PodcastPlayerViewController: UIViewController {
         let podcast = podcasts[currentIndex]
         println("Previous Podcast: \(podcast.title)")
         
+        
+        self.podcastImage.image = podcasts[currentIndex].image
         self.player = AVPlayer(playerItem: allPodcasts[currentIndex])
         self.player.play()
     }

@@ -14,12 +14,11 @@ class RapidCastViewController: UIViewController {
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) { }
     
     @IBAction func rapidCast(sender: AnyObject) {
-        segueToPlayer()
+        generateContent()
     }
     
     @IBAction func currentPlaylist(sender: AnyObject) {
-        println("current playlist button pressed")
-        segueToPlaylist()
+        self.performSegueWithIdentifier("ShowCurrentPlaylist", sender: self)
     }
     
     var categories: [String]?
@@ -30,9 +29,19 @@ class RapidCastViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         rapidCastButton.layer.borderColor = UIColor.whiteColor().CGColor
-        
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
         //REALM STUFF TO GET CATEGORIES
         categories = ["Comedy", "Education", "Technology", "Arts"]
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.setNavigationBarHidden(true, animated: true)
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.setNavigationBarHidden(false, animated: true)
     }
 
     override func didReceiveMemoryWarning() {
@@ -43,36 +52,26 @@ class RapidCastViewController: UIViewController {
     //MARK: Segue functionality
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        
+        
         if let identifier = segue.identifier {
             switch (identifier) {
-                case "RapidCast":
-                    var navController: UINavigationController = segue.destinationViewController as! UINavigationController
-                    var playerController: PodcastPlayerViewController = navController.viewControllers[0] as! PodcastPlayerViewController
-                    
-                    playerController.podcastPlaylist = finalPlaylist
-                case "ShowCurrentPlaylist":
-                    println("show current playlist")
-                    let navController: UINavigationController = segue.destinationViewController as! UINavigationController
-                    let playerController: PodcastPlaylistViewController = navController.viewControllers[0] as! PodcastPlaylistViewController
-                    
-                    playerController.podcastPlaylist = finalPlaylist
+                case "RapidCast", "ShowCurrentPlaylist":
+                    let playlistController: PodcastPlaylistViewController = segue.destinationViewController as! PodcastPlaylistViewController
+                    playlistController.podcastPlaylist = finalPlaylist
                 default:
                     println("segue error")
             }
+            
         }
     }
     
-    func segueToPlayer() {
+    func generateContent() {
         if let categories = self.categories {
             ContentGenerator.generate(categories) { finalPlaylist in //final playlist created
                 self.finalPlaylist = finalPlaylist
-                
                 self.performSegueWithIdentifier("RapidCast", sender: self)
             }
         }
-    }
-    
-    func segueToPlaylist() {
-        self.performSegueWithIdentifier("ShowCurrentPlaylist", sender: self)
     }
 }
