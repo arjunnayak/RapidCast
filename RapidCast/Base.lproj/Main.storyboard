@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="zQm-bh-1W5">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="tuq-Hh-Bw5">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -62,7 +62,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pgz-IJ-4fE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-980" y="270"/>
+            <point key="canvasLocation" x="-168" y="270"/>
         </scene>
         <!--Rapid Cast View Controller-->
         <scene sceneID="i5q-pp-gz9">
@@ -165,7 +165,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eOG-sR-j4u" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1849" y="270"/>
+            <point key="canvasLocation" x="-1037" y="270"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mzc-wK-7c8">
@@ -274,7 +274,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIe-iw-j3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-126" y="270"/>
+            <point key="canvasLocation" x="686" y="270"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="D0t-ld-Bzg">
@@ -297,31 +297,57 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JGs-OP-ia9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2753" y="270"/>
+            <point key="canvasLocation" x="-1941" y="270"/>
         </scene>
         <!--Category Chooser -->
         <scene sceneID="mQ9-l7-HTC">
             <objects>
                 <collectionViewController id="j6S-rI-9xx" userLabel="Category Chooser " customClass="CategoryChooserCollectionViewController" customModule="RapidCast" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="t0F-RU-OS2">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="0.2952371486" blue="0.22480045730000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="6DC-dl-yT7">
-                            <size key="itemSize" width="50" height="50"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="5" minimumInteritemSpacing="0.0" id="p83-nr-mX1">
+                            <size key="itemSize" width="295" height="185"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="X4h-tr-yGB">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="X4h-tr-yGB" customClass="CategoryCollectionViewCell" customModule="RapidCast" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                    <rect key="frame" x="0.0" y="0.0" width="50" height="50"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="295" height="185"/>
                                     <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y9E-a0-xMf">
+                                            <rect key="frame" x="8" y="8" width="279" height="135"/>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyv-2K-e61">
+                                            <rect key="frame" x="8" y="156" width="279" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 </view>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Y9E-a0-xMf" firstAttribute="leading" secondItem="X4h-tr-yGB" secondAttribute="leadingMargin" id="7fZ-4I-fb3"/>
+                                    <constraint firstItem="cyv-2K-e61" firstAttribute="centerX" secondItem="Y9E-a0-xMf" secondAttribute="centerX" id="AI6-wU-vlq"/>
+                                    <constraint firstAttribute="centerX" secondItem="Y9E-a0-xMf" secondAttribute="centerX" constant="0.5" id="C8Y-E2-oHE"/>
+                                    <constraint firstAttribute="bottomMargin" secondItem="cyv-2K-e61" secondAttribute="bottom" id="II6-ma-fGx"/>
+                                    <constraint firstItem="Y9E-a0-xMf" firstAttribute="top" secondItem="X4h-tr-yGB" secondAttribute="topMargin" id="Kxy-3B-hvH"/>
+                                    <constraint firstAttribute="centerY" secondItem="Y9E-a0-xMf" secondAttribute="centerY" constant="17" id="OjU-1E-TGP"/>
+                                    <constraint firstItem="cyv-2K-e61" firstAttribute="top" secondItem="Y9E-a0-xMf" secondAttribute="bottom" constant="13" id="V42-M6-xCI"/>
+                                </constraints>
+                                <size key="customSize" width="295" height="185"/>
+                                <connections>
+                                    <outlet property="categoryImage" destination="Y9E-a0-xMf" id="Gus-Q2-MKt"/>
+                                    <outlet property="categoryName" destination="cyv-2K-e61" id="3Ul-Pi-he5"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>
@@ -329,10 +355,37 @@
                             <outlet property="delegate" destination="j6S-rI-9xx" id="uev-36-ibJ"/>
                         </connections>
                     </collectionView>
+                    <navigationItem key="navigationItem" title="Podcast Category Selection" id="BbT-Ex-kus">
+                        <barButtonItem key="rightBarButtonItem" style="done" systemItem="done" id="khI-g9-NNC"/>
+                    </navigationItem>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cp7-Kq-mhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3257" y="927"/>
+            <point key="canvasLocation" x="-2567" y="588"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="mu5-lv-cMd">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="tuq-Hh-Bw5" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="52n-8z-aDQ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="1" green="0.2952371486" blue="0.22480045730000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <textAttributes key="titleTextAttributes">
+                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </textAttributes>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="j6S-rI-9xx" kind="relationship" relationship="rootViewController" id="gaM-HT-30t"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="C8c-Ix-Jzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-3379" y="588"/>
         </scene>
     </scenes>
     <resources>
