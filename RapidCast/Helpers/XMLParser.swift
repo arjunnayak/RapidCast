@@ -37,6 +37,12 @@ class XMLParser : NSObject, NSXMLParserDelegate {
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName: String?, attributes: [NSObject : AnyObject]) {
         
         if(self.podcastCount < 3) {
+            if(elementName == "itunes:image") {
+                if(elementName == "itunes:image") {
+                    currentPodcast.image = UIImage(data: NSData(contentsOfURL: NSURL(string: attributes["href"] as! String)!)!)!
+                }
+            }
+            
             if(elementName == "item") {
                 item = true
             }
@@ -47,9 +53,9 @@ class XMLParser : NSObject, NSXMLParserDelegate {
                 else if(elementName == "enclosure") { //url
                     currentPodcast.url = attributes["url"] as? NSString //work on this
                 }
-                else if(elementName == "media:thumbnail") { //image
-                    currentPodcast.image = UIImage(data: NSData(contentsOfURL: NSURL(string: attributes["url"] as! String)!)!)!
-                }
+//                else if(elementName == "media:thumbnail") { //image
+//                    currentPodcast.image = UIImage(data: NSData(contentsOfURL: NSURL(string: attributes["url"] as! String)!)!)!
+//                }
             }
             
         }

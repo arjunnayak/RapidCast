@@ -28,10 +28,13 @@ class RapidCastViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        println(categories)
+        
         rapidCastButton.layer.borderColor = UIColor.whiteColor().CGColor
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         //REALM STUFF TO GET CATEGORIES
-        categories = ["Comedy", "Education", "Technology", "Arts"]
+        //categories = ["Comedy", "Education", "Technology", "Arts"]
     }
     
     override func viewWillAppear(animated: Bool) {
