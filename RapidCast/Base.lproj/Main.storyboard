@@ -311,7 +311,7 @@
                             <size key="itemSize" width="295" height="185"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
                             <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                            <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="0.0"/>
+                            <inset key="sectionInset" minX="5" minY="5" maxX="5" maxY="5"/>
                         </collectionViewFlowLayout>
                         <cells>
                             <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.24999999999999967" contentMode="center" reuseIdentifier="CategoryCell" id="X4h-tr-yGB" customClass="CategoryCollectionViewCell" customModule="RapidCast" customModuleProvider="target">
@@ -324,8 +324,8 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Y9E-a0-xMf">
                                             <rect key="frame" x="8" y="8" width="279" height="135"/>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyv-2K-e61">
-                                            <rect key="frame" x="8" y="156" width="279" height="21"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyv-2K-e61">
+                                            <rect key="frame" x="126.5" y="156" width="42" height="21"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
@@ -355,14 +355,14 @@
                             <outlet property="delegate" destination="j6S-rI-9xx" id="uev-36-ibJ"/>
                         </connections>
                     </collectionView>
-                    <navigationItem key="navigationItem" title="Podcast Category Selection" id="BbT-Ex-kus"/>
+                    <navigationItem key="navigationItem" title="Category Selection" id="BbT-Ex-kus"/>
                     <connections>
                         <segue destination="zQm-bh-1W5" kind="show" identifier="RapidCast" id="ACI-EH-h5B"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cp7-Kq-mhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2723" y="406"/>
+            <point key="canvasLocation" x="-2662" y="439"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mu5-lv-cMd">

@@ -7,19 +7,11 @@
 //
 
 import UIKit
+import RealmSwift
 
 class RapidCastViewController: UIViewController {
     
-    @IBOutlet weak var rapidCastButton: UIButton!
-    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) { }
-    
-    @IBAction func rapidCast(sender: AnyObject) {
-        generateContent()
-    }
-    
-    @IBAction func currentPlaylist(sender: AnyObject) {
-        self.performSegueWithIdentifier("ShowCurrentPlaylist", sender: self)
-    }
+    var chosenCategories : ChosenCategories?
     
     var categories: [String]?
     
@@ -29,12 +21,19 @@ class RapidCastViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        println(categories)
+        println("previous category object: \(categories)")
+        
+        let realm = Realm()
+        if let get = realm.objects(ChosenCategories).first {
+            println("realm categories \(get.categoriesToStore.count)")
+        }
+        
+        
+        //println("realm categories object: \(self.chosenCategories.categoriesToStore)")
         
         rapidCastButton.layer.borderColor = UIColor.whiteColor().CGColor
         self.navigationController?.setNavigationBarHidden(true, animated: true)
-        //REALM STUFF TO GET CATEGORIES
-        //categories = ["Comedy", "Education", "Technology", "Arts"]
+
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -76,5 +75,18 @@ class RapidCastViewController: UIViewController {
                 self.performSegueWithIdentifier("RapidCast", sender: self)
             }
         }
+    }
+    
+    //MARK: UI Elements/Functionality
+    
+    @IBOutlet weak var rapidCastButton: UIButton!
+    @IBAction func prepareForUnwind(segue: UIStoryboardSegue) { }
+    
+    @IBAction func rapidCast(sender: AnyObject) {
+        generateContent()
+    }
+    
+    @IBAction func currentPlaylist(sender: AnyObject) {
+        self.performSegueWithIdentifier("ShowCurrentPlaylist", sender: self)
     }
 }

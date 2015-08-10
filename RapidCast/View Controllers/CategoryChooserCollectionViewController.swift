@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 let reuseIdentifier = "Cell"
 
@@ -23,7 +24,7 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
     
     var doneButton : UIBarButtonItem?
     
-    var chosenCategories : [String] = []
+    var chosenCategories : ChosenCategories = ChosenCategories() //REALM CLASS
     
     var categories : [Category] = [Category(name: "Arts", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
         Category(name: "Comedy", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
@@ -39,25 +40,36 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
         Category(name: "Business", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
         Category(name: "Games & Hobbies", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
         Category(name: "Society & Culture", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Government & Organizations", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false)]
+        Category(name: "Government", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false)]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //println("\(self.chosenCategories.categoriesToStore)")
         
         doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "segueToHomeScreen")
         
         collectionView?.delegate = self
         collectionView?.dataSource = self
+        collectionView?.allowsMultipleSelection = true
         
         if let cvl = collectionViewLayout as? UICollectionViewFlowLayout {
             let widthOfCollectionView = cvl.collectionViewContentSize().width
             cvl.itemSize.width = widthOfCollectionView/2.1
             
         }
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        //write the chosenCategory realm object
         
+        println("before disappearing: saved category count = \(self.chosenCategories.categoriesToStore.count)")
+        let realm = Realm()
         
-        
-        collectionView?.allowsMultipleSelection = true
+        realm.write {
+            realm.add(self.chosenCategories, update: false)
+        }
     }
     
     func segueToHomeScreen() {
@@ -78,7 +90,7 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
             let navigationController = segue.destinationViewController as! UINavigationController
             let rapidCastController : RapidCastViewController = navigationController.viewControllers[0] as! RapidCastViewController
             
-            rapidCastController.categories = self.chosenCategories
+            //rapidCastController.chosenCategories = self.chosenCategories //send realm object to rapid cast controller
             
         }
     }
@@ -118,39 +130,62 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
     // MARK: UICollectionViewDelegate
 
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
         var category = categories[indexPath.row]
-        if !(contains(self.chosenCategories, category.name)) {
-            self.chosenCategories.append(category.name)
+
+//        if !(contains(self.chosenCategories.categoriesToStore, category.name)) {
+//            self.chosenCategories.categoriesToStore.append(category.name)
+//        }
+        
+        var rCategory = RealmCategory()
+        rCategory.value = category.name
+        if(self.chosenCategories.categoriesToStore.indexOf(rCategory) == nil) { //if category is NOT in array
+            self.chosenCategories.categoriesToStore.append(rCategory)
         }
+        
         let cell = collectionView.cellForItemAtIndexPath(indexPath)
         cell?.alpha = 0.5
         categories[indexPath.row].isSelected = true
         
         self.navigationItem.rightBarButtonItem = doneButton
+        
+        println("adding: \(self.chosenCategories.categoriesToStore)")
     }
     
     override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         let category = categories[indexPath.row]
-        if let index = find(self.chosenCategories, category.name) {
-            self.chosenCategories.removeAtIndex(index)
-            
+        
+//        if let index = find(self.chosenCategories.categoriesToStore, category.name) {
+//            self.chosenCategories.categoriesToStore.removeAtIndex(index)
+//            
+//        }
+        
+        var rCategory = RealmCategory()
+        rCategory.value = category.name
+        var found = false
+        var index = -1
+        for(var i = 0; i < self.chosenCategories.categoriesToStore.count; i++) {
+            if(rCategory.value == self.chosenCategories.categoriesToStore[i].value) {
+                found = true
+                index = i
+            }
         }
+        if(index != -1) {
+            self.chosenCategories.categoriesToStore.removeAtIndex(index)
+            println("removing: \(self.chosenCategories.categoriesToStore)")
+        }
+
         let cell = collectionView.cellForItemAtIndexPath(indexPath)
         cell?.alpha = 1
         categories[indexPath.row].isSelected = false
         
-        if(chosenCategories.isEmpty) {
+        if(self.chosenCategories.categoriesToStore.count == 0) {
             self.navigationItem.rightBarButtonItem = nil
         }
+        
+        
     }
     
-//    // Uncomment this method to specify if the specified item should be highlighted during tracking
-//    override func collectionView(collectionView: UICollectionView, shouldHighlightItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-//        return true
-//    }
-
-    
-    // Uncomment this method to specify if the specified item should be selected
     override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
@@ -158,25 +193,6 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, shouldDeselectItemAtIndexPath indexPath: NSIndexPath) -> Bool {
         return true
     }
-
-    
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    
-    /*
-    override func collectionView(collectionView: UICollectionView, shouldShowMenuForItemAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-
-    override func collectionView(collectionView: UICollectionView, canPerformAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) -> Bool {
-        return true
-    }
-
-    override func collectionView(collectionView: UICollectionView, performAction action: Selector, forItemAtIndexPath indexPath: NSIndexPath, withSender sender: AnyObject?) {
-        
-        println(categories[indexPath.row].name)
-    
-    }
-*/
     
 
 }
