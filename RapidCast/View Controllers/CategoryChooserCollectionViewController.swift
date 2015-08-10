@@ -153,8 +153,6 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
         if(self.chosenCategories.categoriesToStore.count == 0) {
             self.navigationItem.rightBarButtonItem = nil
         }
-        
-        
     }
     
     override func collectionView(collectionView: UICollectionView, shouldSelectItemAtIndexPath indexPath: NSIndexPath) -> Bool {

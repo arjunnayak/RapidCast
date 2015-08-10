@@ -11,9 +11,9 @@ import RealmSwift
 
 class RapidCastViewController: UIViewController {
     
-    var chosenCategories : ChosenCategories?
+    var chosenCategories : ChosenCategories = ChosenCategories()
     
-    var categories: [String]?
+    var categories: [String] = []
     
     var finalPlaylist : [String : [Podcast]] = [:]
 
@@ -25,7 +25,14 @@ class RapidCastViewController: UIViewController {
         
         let realm = Realm()
         if let get = realm.objects(ChosenCategories).last {
+            self.chosenCategories = get
             println("realm categories \(get.categoriesToStore.count)")
+            
+            for cat in self.chosenCategories.categoriesToStore {
+                categories.append(cat.value)
+            }
+            
+            println(categories)
         }
         
         
@@ -69,10 +76,17 @@ class RapidCastViewController: UIViewController {
     }
     
     func generateContent() {
-        if let categories = self.categories {
+        if self.categories.count > 0 {
             ContentGenerator.generate(categories) { finalPlaylist in //final playlist created
                 self.finalPlaylist = finalPlaylist
-                self.performSegueWithIdentifier("RapidCast", sender: self)
+//                dispatch_async(dispatch_get_main_queue(), ^{[self performSegueWithIdentifier:@"login_success_new" sender:self];});
+                
+                dispatch_async(dispatch_get_main_queue()) {
+                        self.performSegueWithIdentifier("RapidCast", sender: self)
+                        print("should segue NOW")
+                }
+                
+                
             }
         }
     }

@@ -22,7 +22,9 @@ class PodcastPlaylistViewController: UITableViewController {
     
     //for referencing podcasts
     var allPodcasts : [Podcast] = []
-    var indexPodcasts = NSMutableArray()
+    //var indexPodcasts = NSMutableArray()
+    
+    var selectedPodcastIndex = 0
 
     
     override func viewDidLoad() {
@@ -38,7 +40,7 @@ class PodcastPlaylistViewController: UITableViewController {
             
             for podcast in podcasts {
                 allPodcasts.append(podcast)
-                self.indexPodcasts.addObject(podcast as Podcast)
+                //self.indexPodcasts.addObject(podcast as Podcast)
             }
         }
     }
@@ -57,8 +59,8 @@ class PodcastPlaylistViewController: UITableViewController {
             if(identifier == "PlayPodcast") {
                 let playerViewController = segue.destinationViewController as! PodcastPlayerViewController
                 let path = self.tableView.indexPathForSelectedRow()!
-                let row = path.row
-                playerViewController.currentIndex = row
+
+                playerViewController.currentIndex = self.selectedPodcastIndex
                 playerViewController.podcastPlaylist = self.podcastPlaylist
 
                 //CURRENT THOUGHTS:
@@ -87,6 +89,25 @@ class PodcastPlaylistViewController: UITableViewController {
         cell.podcast = podcast
         
         return cell
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let podcast = categories[indexPath.section].podcasts[indexPath.row]
+        //self.selectedPodcastIndex = allPodcasts.find { $0 == podcast }!
+        
+        
+        //this block of code finds the right podcast to display on the player based on what cell was selected. 
+        //this is necessary because of the headers, the rows of the index path were reset with every new header
+        var index = 0
+        finding: for i in (0...allPodcasts.count) {
+            if(podcast.url == allPodcasts[i].url) {
+                index = i
+                break finding
+            }
+        }
+        self.selectedPodcastIndex = index
+        
+        performSegueWithIdentifier("PlayPodcast", sender: self)
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

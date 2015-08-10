@@ -47,7 +47,6 @@
                                     <outlet property="duration" destination="69E-i4-sSu" id="emX-3s-pFg"/>
                                     <outlet property="podcastImage" destination="zt7-wQ-1X2" id="GkJ-J1-cc3"/>
                                     <outlet property="title" destination="Szh-Bz-sIe" id="bKS-jG-vlu"/>
-                                    <segue destination="zd0-nn-XDP" kind="show" identifier="PlayPodcast" id="dsP-Oe-7wZ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -59,6 +58,9 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Playlist" id="Hco-MO-CFa"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <segue destination="zd0-nn-XDP" kind="show" identifier="PlayPodcast" id="ABp-dq-wos"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pgz-IJ-4fE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -231,10 +233,16 @@
                                 </connections>
                             </slider>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giL-PY-SPc" userLabel="Volume">
-                                <rect key="frame" x="432" y="471" width="51" height="50"/>
+                                <rect key="frame" x="422" y="471" width="51" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="51" id="b2p-Db-jgr"/>
+                                </constraints>
                                 <state key="normal" image="Volume">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="volumeToggle:" destination="zd0-nn-XDP" eventType="touchUpInside" id="zy8-51-WgK"/>
+                                </connections>
                             </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="podcast icon.jpeg" translatesAutoresizingMaskIntoConstraints="NO" id="pbP-nS-3Jb" userLabel="Placeholder Image">
                                 <rect key="frame" x="125" y="58" width="350" height="325"/>
@@ -242,34 +250,61 @@
                                     <constraint firstAttribute="width" constant="350" id="sAU-2A-Pm7"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y1t-o6-G79">
+                                <rect key="frame" x="125" y="8" width="350" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Author" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aF5-28-f6T">
+                                <rect key="frame" x="125" y="37" width="348" height="21"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerY" secondItem="2Mf-QE-gf0" secondAttribute="centerY" constant="-181" id="3mF-qu-Jlu"/>
                             <constraint firstItem="2Mf-QE-gf0" firstAttribute="leading" secondItem="pbP-nS-3Jb" secondAttribute="leading" id="7hq-V3-Pio"/>
-                            <constraint firstAttribute="centerX" secondItem="giL-PY-SPc" secondAttribute="centerX" constant="-157.5" id="EOF-gg-v9U"/>
+                            <constraint firstItem="y1t-o6-G79" firstAttribute="leading" secondItem="3Wa-Wq-3eb" secondAttribute="leadingMargin" constant="5" id="AuA-yQ-jOQ"/>
+                            <constraint firstItem="giL-PY-SPc" firstAttribute="leading" secondItem="zLD-ot-xXV" secondAttribute="trailing" constant="30" id="HYi-Tf-WpY"/>
+                            <constraint firstAttribute="centerX" secondItem="aF5-28-f6T" secondAttribute="centerX" constant="1" id="Jkk-Fn-yo4"/>
                             <constraint firstItem="fVF-6H-jtL" firstAttribute="top" secondItem="pbP-nS-3Jb" secondAttribute="bottom" constant="89" id="Mda-Ch-b9u"/>
+                            <constraint firstAttribute="centerY" secondItem="y1t-o6-G79" secondAttribute="centerY" constant="249.5" id="Mwi-iB-KMQ"/>
                             <constraint firstAttribute="centerX" secondItem="pbP-nS-3Jb" secondAttribute="centerX" constant="-0.5" id="TUD-3i-uzY"/>
+                            <constraint firstItem="aF5-28-f6T" firstAttribute="leading" secondItem="3Wa-Wq-3eb" secondAttribute="leadingMargin" constant="5" id="U6l-g5-pEt"/>
                             <constraint firstAttribute="centerY" secondItem="fVF-6H-jtL" secondAttribute="centerY" constant="-229" id="UdU-fm-ace"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="y1t-o6-G79" secondAttribute="trailing" constant="5" id="Vf7-al-Vh1"/>
                             <constraint firstAttribute="centerY" secondItem="zLD-ot-xXV" secondAttribute="centerY" constant="-229" id="W2m-YJ-45T"/>
                             <constraint firstItem="zLD-ot-xXV" firstAttribute="leading" secondItem="fVF-6H-jtL" secondAttribute="trailing" constant="19" id="WJk-ao-az9"/>
-                            <constraint firstAttribute="centerY" secondItem="giL-PY-SPc" secondAttribute="centerY" constant="-228.5" id="Wjc-XI-EmD"/>
                             <constraint firstAttribute="centerX" secondItem="zLD-ot-xXV" secondAttribute="centerX" constant="-67" id="YRV-TQ-XaO"/>
                             <constraint firstItem="fVF-6H-jtL" firstAttribute="top" secondItem="2Mf-QE-gf0" secondAttribute="bottom" constant="8" symbolic="YES" id="dGA-ah-GyS"/>
+                            <constraint firstAttribute="centerX" secondItem="y1t-o6-G79" secondAttribute="centerX" id="h0h-aw-Gtj"/>
                             <constraint firstAttribute="centerX" secondItem="2Mf-QE-gf0" secondAttribute="centerX" id="iHP-7g-1ey"/>
                             <constraint firstAttribute="centerY" secondItem="pbP-nS-3Jb" secondAttribute="centerY" constant="47.5" id="lA2-8n-pY9"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aF5-28-f6T" secondAttribute="trailing" constant="5" id="mgb-DK-AIF"/>
                             <constraint firstAttribute="centerX" secondItem="fVF-6H-jtL" secondAttribute="centerX" id="n76-Bb-qMo"/>
                             <constraint firstAttribute="centerX" secondItem="Kbn-HM-S0V" secondAttribute="centerX" constant="77" id="s94-Wy-w13"/>
+                            <constraint firstAttribute="centerY" secondItem="aF5-28-f6T" secondAttribute="centerY" constant="220.5" id="t4G-4K-1Fy"/>
                             <constraint firstItem="fVF-6H-jtL" firstAttribute="leading" secondItem="Kbn-HM-S0V" secondAttribute="trailing" constant="29" id="vCJ-vL-l6R"/>
-                            <constraint firstItem="giL-PY-SPc" firstAttribute="leading" secondItem="zLD-ot-xXV" secondAttribute="trailing" constant="40" id="w5v-oK-yAP"/>
+                            <constraint firstItem="giL-PY-SPc" firstAttribute="top" secondItem="2Mf-QE-gf0" secondAttribute="bottom" constant="7" id="y7c-lJ-y0T"/>
                             <constraint firstAttribute="centerY" secondItem="Kbn-HM-S0V" secondAttribute="centerY" constant="-229" id="zO9-Mn-5YM"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="mgb-DK-AIF"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="ANr-Io-kl0"/>
                     <connections>
+                        <outlet property="authorLabel" destination="aF5-28-f6T" id="Wg2-fB-BBY"/>
                         <outlet property="pausePlay" destination="fVF-6H-jtL" id="hNJ-ne-Mu8"/>
                         <outlet property="podcastImage" destination="pbP-nS-3Jb" id="VR1-WV-LYV"/>
                         <outlet property="podcastSlider" destination="2Mf-QE-gf0" id="jEX-Ht-5Ub"/>
+                        <outlet property="titleLabel" destination="y1t-o6-G79" id="Dzz-0w-uCA"/>
+                        <outlet property="volumeButton" destination="giL-PY-SPc" id="RM3-bQ-tbj"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIe-iw-j3l" userLabel="First Responder" sceneMemberID="firstResponder"/>

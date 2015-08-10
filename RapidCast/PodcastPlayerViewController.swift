@@ -26,19 +26,23 @@ class PodcastPlayerViewController: UIViewController {
     var podcasts : [Podcast] = []
     var currentIndex = 0
     
+    var volumeToggleState = 1
+    
     //audio
     var player = AVPlayer()
     
     //other
     let playImg = UIImage(named: "Play.png")
     let pauseImg = UIImage(named: "Pause.png")
+    let volume = UIImage(named: "Volume.png")
+    let volumeMuted = UIImage(named: "VolumeMuted.png")
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if(podcastPlaylist.isEmpty) {
-            println("you're fucked")
+            println("error: playlist is empty")
         }
         for (category, podcasts) in podcastPlaylist { //creates podcast queue of av player items
             categories.append(Category(name: category, podcasts: podcasts))
@@ -53,30 +57,17 @@ class PodcastPlayerViewController: UIViewController {
         }
         self.player = AVPlayer(playerItem: self.allPodcasts[currentIndex])
         self.player.play()
-        self.podcastImage.image = self.podcasts[currentIndex].image
+        
+        setupPodcast()
+        
         pausePlay.setImage(pauseImg, forState: UIControlState.Normal)
     }
     
-    
-    //MARK: Segue Functionality 
-    /*
-    @IBAction func goToPlaylist(sender: AnyObject) {
-        
+    func setupPodcast() {
+        self.podcastImage.image = self.podcasts[currentIndex].image
+        self.titleLabel.text = self.podcasts[currentIndex].title
+        self.authorLabel.text = self.podcasts[currentIndex].author
     }
-    
-    func segueToPlaylist() {
-        self.performSegueWithIdentifier("showPlaylist", sender: self)
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if(segue.identifier == "showPlaylist") {
-            var playlistController = segue.destinationViewController as! PodcastPlaylistViewController
-            self.player.pause()
-            playlistController.podcastPlaylist = self.podcastPlaylist
-        }
-    }
-*/
-
     
     //MARK: UI ELEMENTS
     
@@ -84,6 +75,10 @@ class PodcastPlayerViewController: UIViewController {
     @IBOutlet weak var podcastImage: UIImageView!
     @IBOutlet weak var podcastTitle: UILabel!
     @IBOutlet weak var podcastSlider: UISlider!
+    @IBOutlet weak var volumeButton: UIButton!
+    
+    @IBOutlet weak var authorLabel: UILabel!
+    @IBOutlet weak var titleLabel: UILabel!
     
     @IBAction func pressedPlayPause(sender: AnyObject) {
         
@@ -113,9 +108,10 @@ class PodcastPlayerViewController: UIViewController {
         let podcast = podcasts[currentIndex]
         println("Next Podcast: \(podcast.title)")
         
-        self.podcastImage.image = podcasts[currentIndex].image
-        self.player = AVPlayer(playerItem: allPodcasts[currentIndex])
+        //self.player = AVPlayer(playerItem: allPodcasts[currentIndex])
+        self.player.replaceCurrentItemWithPlayerItem(allPodcasts[currentIndex])
         self.player.play()
+        setupPodcast()
 
     }
     
@@ -130,10 +126,24 @@ class PodcastPlayerViewController: UIViewController {
         let podcast = podcasts[currentIndex]
         println("Previous Podcast: \(podcast.title)")
         
-        
-        self.podcastImage.image = podcasts[currentIndex].image
-        self.player = AVPlayer(playerItem: allPodcasts[currentIndex])
+//        self.player = AVPlayer(playerItem: allPodcasts[currentIndex])
+        self.player.replaceCurrentItemWithPlayerItem(allPodcasts[currentIndex])
         self.player.play()
+        setupPodcast()
+    }
+    
+    @IBAction func volumeToggle(sender: AnyObject) {
+        //if(volumeButton.imageView?.description)
+        if(volumeToggleState == 1) {
+            self.player.muted = true
+            volumeButton.setImage(volumeMuted, forState: UIControlState.Normal)
+            volumeToggleState = 2
+        }
+        else if(volumeToggleState == 2) {
+            self.player.muted = false
+            volumeButton.setImage(volume, forState: UIControlState.Normal)
+            volumeToggleState = 1
+        }
     }
     
     @IBAction func sliderMoved(sender: AnyObject) {
