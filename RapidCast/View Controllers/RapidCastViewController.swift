@@ -24,7 +24,7 @@ class RapidCastViewController: UIViewController {
         println("previous category object: \(categories)")
         
         let realm = Realm()
-        if let get = realm.objects(ChosenCategories).first {
+        if let get = realm.objects(ChosenCategories).last {
             println("realm categories \(get.categoriesToStore.count)")
         }
         

@@ -9,12 +9,7 @@
 import UIKit
 import RealmSwift
 
-let reuseIdentifier = "Cell"
-
 class CategoryChooserCollectionViewController: UICollectionViewController {
-    
-    private let reuseIdentifier = "CategoryCell"
-    private let sectionInsets = UIEdgeInsets(top: 50.0, left: 20.0, bottom: 50.0, right: 20.0)
     
     struct Category {
         var name : String
@@ -25,23 +20,6 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
     var doneButton : UIBarButtonItem?
     
     var chosenCategories : ChosenCategories = ChosenCategories() //REALM CLASS
-    
-    var categories : [Category] = [Category(name: "Arts", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Comedy", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Education", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Kids & Family", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Health", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "TV & Film", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Music", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "News & Politics", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Science & Medicine", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Sports & Recreation", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Technology", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Business", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Games & Hobbies", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Society & Culture", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Government", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false)]
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,12 +42,13 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
     override func viewWillDisappear(animated: Bool) {
         //write the chosenCategory realm object
         
-        println("before disappearing: saved category count = \(self.chosenCategories.categoriesToStore.count)")
         let realm = Realm()
         
         realm.write {
             realm.add(self.chosenCategories, update: false)
+            var objs = realm.objects(ChosenCategories)
         }
+        
     }
     
     func segueToHomeScreen() {
@@ -132,10 +111,6 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
     override func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         var category = categories[indexPath.row]
-
-//        if !(contains(self.chosenCategories.categoriesToStore, category.name)) {
-//            self.chosenCategories.categoriesToStore.append(category.name)
-//        }
         
         var rCategory = RealmCategory()
         rCategory.value = category.name
@@ -153,12 +128,8 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        let category = categories[indexPath.row]
         
-//        if let index = find(self.chosenCategories.categoriesToStore, category.name) {
-//            self.chosenCategories.categoriesToStore.removeAtIndex(index)
-//            
-//        }
+        let category = categories[indexPath.row]
         
         var rCategory = RealmCategory()
         rCategory.value = category.name
@@ -194,5 +165,22 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
         return true
     }
     
+    //MARK: Category list
+    
+    var categories : [Category] = [Category(name: "Arts", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
+        Category(name: "Comedy", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
+        Category(name: "Education", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
+        Category(name: "Kids & Family", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
+        Category(name: "Health", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
+        Category(name: "TV & Film", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
+        Category(name: "Music", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
+        Category(name: "News & Politics", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
+        Category(name: "Science & Medicine", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
+        Category(name: "Sports & Recreation", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
+        Category(name: "Technology", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
+        Category(name: "Business", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
+        Category(name: "Games & Hobbies", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
+        Category(name: "Society & Culture", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
+        Category(name: "Government", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false)]
 
 }
