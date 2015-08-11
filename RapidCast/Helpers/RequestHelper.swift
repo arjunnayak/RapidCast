@@ -19,7 +19,6 @@ class RequestHelper {
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
             var responseString = NSString(data: data, encoding: NSUTF8StringEncoding)!
             returningID = JSONParser.parseForLookupID(responseString)
-            
             completionBlock(returningID)
         }
         task.resume()

@@ -19,7 +19,7 @@ class iTunesHelper {
         var iTunesLinks = [NSURL]()
         for (var i = 0; i < genreIDs.count; i++) {
             //get ids from rss link
-            iTunesLinks.append(NSURL(string: "https://itunes.apple.com/us/rss/toppodcasts/limit=1/genre=\(genreIDs[i])/json")!)
+            iTunesLinks.append(NSURL(string: "https://itunes.apple.com/us/rss/toppodcasts/limit=25/genre=\(genreIDs[i])/json")!)
         }
         return iTunesLinks
     }

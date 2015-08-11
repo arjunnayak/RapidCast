@@ -24,7 +24,7 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //println("\(self.chosenCategories.categoriesToStore)")
+        NSUserDefaults.standardUserDefaults().setObject("initialOpen", forKey: "first")
         
         doneButton = UIBarButtonItem(barButtonSystemItem: .Done, target: self, action: "segueToHomeScreen")
         
@@ -35,7 +35,6 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
         if let cvl = collectionViewLayout as? UICollectionViewFlowLayout {
             let widthOfCollectionView = cvl.collectionViewContentSize().width
             cvl.itemSize.width = widthOfCollectionView/2.1
-            
         }
     }
     

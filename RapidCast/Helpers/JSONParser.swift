@@ -14,11 +14,11 @@ class JSONParser {
     static func parseForLookupID(dataFromRequest : NSString) -> String {
     
         let dataFromString = dataFromRequest.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
-
+        var lookupID = ""
         let json = JSON(data: dataFromString!)
-        let feed = json["feed"]["entry"]["id"]
-        let id = feed["attributes"]["im:id"].string!
-        return id
+        let id = json["feed"]["entry"][0]["id"]["attributes"]["im:id"]
+        return id.stringValue
+        
     }
     
     static func parseForFeedURL(dataFromRequest: NSString) -> String {

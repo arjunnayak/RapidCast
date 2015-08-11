@@ -13,7 +13,6 @@ class ChosenCategories : Object {
     
     dynamic var categoriesToStore : List<RealmCategory> = List<RealmCategory>()
     dynamic var _myID = "0"
-    
 //    override class func primaryKey() -> String {
 //        return _myID
 //    }

@@ -38,8 +38,8 @@ class XMLParser : NSObject, NSXMLParserDelegate {
         
         if(self.podcastCount < 3) {
             if(elementName == "itunes:image") {
-                if(elementName == "itunes:image") {
-                    currentPodcast.image = UIImage(data: NSData(contentsOfURL: NSURL(string: attributes["href"] as! String)!)!)!
+                if let image = UIImage(data: NSData(contentsOfURL: NSURL(string: attributes["href"] as! String)!)!) {
+                    currentPodcast.image = image
                 }
             }
             

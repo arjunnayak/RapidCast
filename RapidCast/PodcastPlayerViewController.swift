@@ -61,6 +61,8 @@ class PodcastPlayerViewController: UIViewController {
         setupPodcast()
         
         pausePlay.setImage(pauseImg, forState: UIControlState.Normal)
+        
+
     }
     
     func setupPodcast() {

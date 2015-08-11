@@ -20,6 +20,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
        
         //NSFileManager.defaultManager().removeItemAtPath(RLMRealm.defaultRealmPath(), error: nil)
+        if let firstOpen = NSUserDefaults.standardUserDefaults().objectForKey("first") as? String { //if app has opened already
+            //let natural launch view controller happen
+        }
+        else { //first time user has opened app
+            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+            let vc : CategoryChooserCollectionViewController = storyBoard.instantiateViewControllerWithIdentifier("choosefuckingcategories") as! CategoryChooserCollectionViewController
+            
+            let navigationController = UINavigationController(rootViewController: vc)
+            
+            self.window?.rootViewController?.presentViewController(navigationController, animated: true, completion: nil)
+            
+        }
+    
         return true
     }
 

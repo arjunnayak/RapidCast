@@ -21,9 +21,8 @@ class RapidCastViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        println("previous category object: \(categories)")
-        
         let realm = Realm()
+        
         if let get = realm.objects(ChosenCategories).last {
             self.chosenCategories = get
             println("realm categories \(get.categoriesToStore.count)")
