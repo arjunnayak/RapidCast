@@ -11,13 +11,28 @@ import SwiftyJSON
 
 class JSONParser {
     
-    static func parseForLookupID(dataFromRequest : NSString) -> String {
+    static func parseForLookupID(dataFromRequest : NSString) -> [String] {
     
+        var lookupIDs : [String] = []
+        
         let dataFromString = dataFromRequest.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
-        var lookupID = ""
         let json = JSON(data: dataFromString!)
-        let id = json["feed"]["entry"][0]["id"]["attributes"]["im:id"]
-        return id.stringValue
+        
+        //grab 3 random numbers
+        var randomIndexes : [Int] = []
+        for i in (0...2) {
+            randomIndexes.append(Int(arc4random_uniform(25)))
+        }
+        
+        let entryArray = json["feed"]["entry"]
+        
+        //get the 3 podcast channel ids for the generated random indexes
+        for index  in randomIndexes {
+            let id = json["feed"]["entry"][index]["id"]["attributes"]["im:id"].stringValue
+            lookupIDs.append(id)
+        }
+        
+        return lookupIDs
         
     }
     

@@ -14,35 +14,46 @@ class XMLParser : NSObject, NSXMLParserDelegate {
     var parser : NSXMLParser?
     var feedURL : NSURL
     var podcastArray = [Podcast]()
-    var podcastCount : Int
-    var currentPodcast = Podcast()
+    //var podcastCount : Int
+    
+    var currentPodcast : Podcast?
     var currentParsedElement = String()
     var item = false
+    var gotPodcast = false
     
     init(feedURL : NSURL) {
         self.feedURL = feedURL
-        self.podcastCount = 0
+        //self.podcastCount = 0
     }
     
-    func beginParse() -> [Podcast] {
+    func beginParse() -> Podcast {
         parser = NSXMLParser(contentsOfURL: self.feedURL)
-        println(self.feedURL)
+       // println(self.feedURL)
         parser?.delegate = self
+        currentPodcast = Podcast()
         parser?.parse()
-        return podcastArray
+        return currentPodcast!
+        //return podcastArray
     }
     
     // MARK: - Parser delegates
     
     func parser(parser: NSXMLParser, didStartElement elementName: String, namespaceURI: String?, qualifiedName: String?, attributes: [NSObject : AnyObject]) {
         
-        if(self.podcastCount < 3) {
+        if(!gotPodcast) {
             if(elementName == "itunes:image") {
+                
+                //var img : String? = attributes["href"] as? String
                 if let image = UIImage(data: NSData(contentsOfURL: NSURL(string: attributes["href"] as! String)!)!) {
-                    currentPodcast.image = image
+                    currentPodcast!.image = image
+                }
+                else if let image = UIImage(data: NSData(contentsOfURL: NSURL(string: attributes["url"] as! String)!)!) {
+                    currentPodcast!.image = image
+                }
+                else {
+                    currentPodcast!.image = UIImage(contentsOfFile: "podcast icon.jpeg")
                 }
             }
-            
             if(elementName == "item") {
                 item = true
             }
@@ -51,13 +62,13 @@ class XMLParser : NSObject, NSXMLParserDelegate {
                     currentParsedElement = elementName
                 }
                 else if(elementName == "enclosure") { //url
-                    currentPodcast.url = attributes["url"] as? NSString //work on this
+                    currentPodcast?.url = attributes["url"] as? NSString //work on this
                 }
-//                else if(elementName == "media:thumbnail") { //image
-//                    currentPodcast.image = UIImage(data: NSData(contentsOfURL: NSURL(string: attributes["url"] as! String)!)!)!
-//                }
             }
-            
+        }
+        else {
+            //println("done parsing current file")
+            self.parser?.abortParsing()
         }
     }
     
@@ -65,11 +76,11 @@ class XMLParser : NSObject, NSXMLParserDelegate {
         if(item) {
             switch (currentParsedElement) {
                 case "title":
-                    currentPodcast.title = foundCharacters! //title
+                    currentPodcast?.title = foundCharacters! //title
                 case "itunes:author":
-                    currentPodcast.author = foundCharacters! //author
+                    currentPodcast?.author = foundCharacters! //author
                 case "itunes:duration":
-                    currentPodcast.duration = foundCharacters! //duration
+                    currentPodcast?.duration = foundCharacters! //duration
                 default: break
             }
         }
@@ -88,11 +99,16 @@ class XMLParser : NSObject, NSXMLParserDelegate {
                     break
             }
             if(elementName == "item") {
-                podcastArray.append(currentPodcast)
-                currentPodcast.printPodcast()
-                podcastCount++
-                currentPodcast = Podcast() //reset
-                item = false
+                if let podcast = currentPodcast {
+                    podcastArray.append(podcast)
+                    podcast.printPodcast()
+                    gotPodcast = true
+                    item = true
+                }
+                else {
+                    println("podcast turned out null")
+                }
+                
             }
         }
     }

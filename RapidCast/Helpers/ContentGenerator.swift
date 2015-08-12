@@ -11,36 +11,68 @@ import Foundation
 class ContentGenerator {
     
     static func generate(categories: [String], completionBlock: [String : [Podcast]] -> Void) {
-        var counter = 0
+        
+        
         var lookupIDs = [String]()
         var iTunesLinks : [NSURL] = iTunesHelper.getiTunesLinksFromRSS(categories)
-        //println(iTunesLinks.count)
+        //this gets the top 25 podcast channels for each category
         
         var podcastPlaylist: [Podcast] = []
         
         var finalPlaylist : [String : [Podcast]] = [:]
         
+        var totalPodcastCount = 0
+        var expectedPodcastCount = 3*iTunesLinks.count
         
-        for link in iTunesLinks {
+        var xmlParser : XMLParser?
+        
+        for(var categoryCount = 0; categoryCount < iTunesLinks.count; categoryCount++) {
+            println(categoryCount)
+            println(iTunesLinks[categoryCount])
+            let categoryCountInternal = categoryCount
             
-            RequestHelper.makeRequestForLookupID(link) { savedID in //lookupID
+            RequestHelper.makeRequestForLookupID(iTunesLinks[categoryCount]) { savedIDs in //make the http request for the first category
                 
-                var lookupURL  = iTunesHelper.getiTunesLookupURLs(savedID)
+
+                var lookupURLs : [NSURL] = iTunesHelper.getiTunesLookupURLs(savedIDs) //3 lookupUrls for podcast channels
                 
-                RequestHelper.makeRequestForFeedURL(lookupURL) { feedURL in //got feedURL
-                    counter++
-                    var xmlParser = XMLParser(feedURL: feedURL)
-                    podcastPlaylist = xmlParser.beginParse()
-                    println(counter)
+                //var channelCount = 0
+                var podcastPlaylistPerCategory : [Podcast] = []
+                
+                for(var channelCount = 0;  channelCount < lookupURLs.count; channelCount++) {
                     
-                    if counter ==  iTunesLinks.count {
-                        finalPlaylist[categories[counter - 1]] = podcastPlaylist
-                        completionBlock(finalPlaylist)
-                    }
-                    else {
-                        finalPlaylist[categories[counter - 1]] = podcastPlaylist
+                    RequestHelper.makeRequestForFeedURL(lookupURLs[channelCount]) { feedURL in //got feedURL
+                        
+                        println(feedURL)
+                        if(feedURL == "") {
+                            totalPodcastCount++
+                        }
+                        else {
+                            xmlParser = XMLParser(feedURL: feedURL)
+                            let podcast = xmlParser!.beginParse()
+                            if(podcast.url != nil){
+                                podcastPlaylistPerCategory.append(podcast)
+                            }
+                            else {
+                                println("shit")
+                            }
+                            //saves podcasts for each category to be appended later
+                            totalPodcastCount++
+                        }
+
+                        if totalPodcastCount ==  expectedPodcastCount { //we've collected all podcasts
+                            
+                            finalPlaylist[categories[categoryCountInternal]] = podcastPlaylistPerCategory
+                            completionBlock(finalPlaylist)
+                        }
+                        else {
+                            finalPlaylist[categories[categoryCountInternal]] = podcastPlaylistPerCategory
+                        }
                     }
                 }
+                //
+                //                counter++ //increments every time we've parsed 3 podcast channels per category
+                //                println(counter)
             }
         }
     }

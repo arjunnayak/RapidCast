@@ -28,9 +28,13 @@ class iTunesHelper {
     /*
     * @parm in the lookup ID from rss link generator
     */
-    static func getiTunesLookupURLs(lookupID: String) -> NSURL {
+    static func getiTunesLookupURLs(lookupIDs: [String]) -> [NSURL] {
         
-        return NSURL(string: "https://itunes.apple.com/lookup?id=\(lookupID)")!
+        var lookupURLs : [NSURL] = []
+        for id in lookupIDs {
+            lookupURLs.append(NSURL(string: "https://itunes.apple.com/lookup?id=\(id)")!)
+        }
+        return lookupURLs
     }
     
     static func getGenres() -> Dictionary<String, String> {
@@ -52,7 +56,7 @@ class iTunesHelper {
         "Business" : "1321",
         "Games & Hobbies" : "1323",
         "Society & Culture" : "1324",
-        "Government & Organizations" : "1325"
+        "Government" : "1325"
     ]
     
 }

@@ -118,7 +118,7 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
         }
         
         let cell = collectionView.cellForItemAtIndexPath(indexPath)
-        cell?.alpha = 0.5
+        cell?.alpha = 0.25
         categories[indexPath.row].isSelected = true
         
         self.navigationItem.rightBarButtonItem = doneButton
@@ -164,20 +164,20 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
     
     //MARK: Category list
     
-    var categories : [Category] = [Category(name: "Arts", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Comedy", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Education", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Kids & Family", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Health", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "TV & Film", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Music", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "News & Politics", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Science & Medicine", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Sports & Recreation", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Technology", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Business", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Games & Hobbies", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Society & Culture", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false),
-        Category(name: "Government", image: UIImage(named: "podcast icon.jpeg")!, isSelected: false)]
+    var categories : [Category] = [Category(name: "Arts", image: UIImage(named: "Arts")!, isSelected: false),
+        Category(name: "Comedy", image: UIImage(named: "Comedy")!, isSelected: false),
+        Category(name: "Education", image: UIImage(named: "Education")!, isSelected: false),
+        Category(name: "Kids & Family", image: UIImage(named: "Kids&Family")!, isSelected: false),
+        Category(name: "Health", image: UIImage(named: "Health")!, isSelected: false),
+        Category(name: "TV & Film", image: UIImage(named: "TV&Film")!, isSelected: false),
+        Category(name: "Music", image: UIImage(named: "Music")!, isSelected: false),
+        Category(name: "News & Politics", image: UIImage(named: "News&Politics")!, isSelected: false),
+        Category(name: "Science & Medicine", image: UIImage(named: "Science&Medicine")!, isSelected: false),
+        Category(name: "Sports & Recreation", image: UIImage(named: "Sports&Recreation")!, isSelected: false),
+        Category(name: "Technology", image: UIImage(named: "Technology")!, isSelected: false),
+        Category(name: "Business", image: UIImage(named: "Business")!, isSelected: false),
+        Category(name: "Games & Hobbies", image: UIImage(named: "Games&Hobbies")!, isSelected: false),
+        Category(name: "Society & Culture", image: UIImage(named: "Society&Culture")!, isSelected: false),
+        Category(name: "Government", image: UIImage(named: "Government")!, isSelected: false)]
 
 }

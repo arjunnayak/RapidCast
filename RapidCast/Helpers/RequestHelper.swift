@@ -13,9 +13,9 @@ class RequestHelper {
     private static var currentID : String =  ""
     private static var currentLink : NSURL? =  NSURL(string: "")
     
-    static func makeRequestForLookupID(url: NSURL, completionBlock: String -> Void) {
+    static func makeRequestForLookupID(url: NSURL, completionBlock: [String] -> Void) {
         
-        var returningID = ""
+        var returningID : [String] = []
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
             var responseString = NSString(data: data, encoding: NSUTF8StringEncoding)!
             returningID = JSONParser.parseForLookupID(responseString)
