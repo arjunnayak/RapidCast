@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import QuartzCore
 
 class ContentGenerator {
     
@@ -40,22 +41,23 @@ class ContentGenerator {
                 var podcastPlaylistPerCategory : [Podcast] = []
                 
                 for(var channelCount = 0;  channelCount < lookupURLs.count; channelCount++) {
-                    
+
                     RequestHelper.makeRequestForFeedURL(lookupURLs[channelCount]) { feedURL in //got feedURL
-                        
+
                         println(feedURL)
                         if(feedURL == "") {
+                            println("is this taking long?")
                             totalPodcastCount++
                         }
                         else {
+                            var startXMLParse = CACurrentMediaTime()
                             xmlParser = XMLParser(feedURL: feedURL)
                             let podcast = xmlParser!.beginParse()
-                            if(podcast.url != nil){
-                                podcastPlaylistPerCategory.append(podcast)
-                            }
-                            else {
-                                println("shit")
-                            }
+//                            if let pod = podcast {
+                            var finishXMLParse = CACurrentMediaTime()
+                            println("Request Finished for XML Parsing: \(finishXMLParse - startXMLParse)")
+                            podcastPlaylistPerCategory.append(podcast!)
+//                            }
                             //saves podcasts for each category to be appended later
                             totalPodcastCount++
                         }
@@ -70,9 +72,6 @@ class ContentGenerator {
                         }
                     }
                 }
-                //
-                //                counter++ //increments every time we've parsed 3 podcast channels per category
-                //                println(counter)
             }
         }
     }

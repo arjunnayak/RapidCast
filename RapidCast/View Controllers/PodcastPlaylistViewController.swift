@@ -47,6 +47,8 @@ class PodcastPlaylistViewController: UITableViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        //self.navigationController?.setNavigationBarHidden(false, animated: true)
+        self.navigationController?.navigationItem.title = "Playlist"
     }
 
     override func didReceiveMemoryWarning() {

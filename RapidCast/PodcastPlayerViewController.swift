@@ -48,11 +48,12 @@ class PodcastPlayerViewController: UIViewController {
             categories.append(Category(name: category, podcasts: podcasts))
             
             for podcast in podcasts {
-                self.indexPodcasts.addObject(podcast as Podcast)
-                self.podcasts.append(podcast)
-                let item = AVPlayerItem(URL: NSURL(string: podcast.url as! String))
-                self.allPodcasts.append(item)
-               
+                if(podcast.title != nil) {
+                    self.indexPodcasts.addObject(podcast as Podcast)
+                    self.podcasts.append(podcast)
+                    let item = AVPlayerItem(URL: NSURL(string: podcast.url as! String))
+                    self.allPodcasts.append(item)
+                }
             }
         }
         self.player = AVPlayer(playerItem: self.allPodcasts[currentIndex])

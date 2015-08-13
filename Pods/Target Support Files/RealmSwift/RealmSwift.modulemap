@@ -1,5 +1,5 @@
 framework module RealmSwift {
-  umbrella header "Pods-RapidCast-RealmSwift-umbrella.h"
+  umbrella header "RealmSwift-umbrella.h"
 
   export *
   module * { export * }

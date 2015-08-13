@@ -4,7 +4,8 @@ use_frameworks!
 
 target 'RapidCast' do
 	pod 'SwiftyJSON', '~> 2.2.0'
-    pod 'RealmSwift'
+	pod 'RealmSwift'
+
 end
 
 target 'RapidCastTests' do

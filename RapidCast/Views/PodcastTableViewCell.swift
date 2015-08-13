@@ -33,7 +33,7 @@ class PodcastTableViewCell: UITableViewCell {
                 self.title.text = podcast.title
                 self.author.text = podcast.author
                 self.podcastImage.image = podcast.image
-                self.duration.text = podcast.duration
+                //self.duration.text = podcast.duration
                 let track = podcast.url
             }
         }

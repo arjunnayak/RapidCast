@@ -12,6 +12,7 @@ import UIKit
 class XMLParser : NSObject, NSXMLParserDelegate {
     
     var parser : NSXMLParser?
+    
     var feedURL : NSURL
     var podcastArray = [Podcast]()
     //var podcastCount : Int
@@ -23,10 +24,14 @@ class XMLParser : NSObject, NSXMLParserDelegate {
     
     init(feedURL : NSURL) {
         self.feedURL = feedURL
+        if(feedURL == "") {
+            println("error here")
+        }
+        self.gotPodcast = false
         //self.podcastCount = 0
     }
     
-    func beginParse() -> Podcast {
+    func beginParse() -> Podcast? {
         parser = NSXMLParser(contentsOfURL: self.feedURL)
        // println(self.feedURL)
         parser?.delegate = self
@@ -44,30 +49,53 @@ class XMLParser : NSObject, NSXMLParserDelegate {
             if(elementName == "itunes:image") {
                 
                 //var img : String? = attributes["href"] as? String
-                if let image = UIImage(data: NSData(contentsOfURL: NSURL(string: attributes["href"] as! String)!)!) {
-                    currentPodcast!.image = image
+                if attributes.isEmpty {
+                    currentPodcast!.image = UIImage(named: "podcast icon.jpeg")
                 }
-                else if let image = UIImage(data: NSData(contentsOfURL: NSURL(string: attributes["url"] as! String)!)!) {
+                else if let img: AnyObject = attributes["href"] {
+                    if(img as? String == "") {
+                        currentPodcast!.image = UIImage(named: "podcast icon.jpeg")!
+                    }
+                    else {
+                        var string = img as! String
+                        var url = NSURL(string: string)
+                        var image = UIImage()
+                        if let nsdata = NSData(contentsOfURL: url!) {
+                            image = UIImage(data: nsdata)!
+                        }
+                        else {
+                            image = UIImage(named: "podcast icon.jpeg")!
+                        }
+                        currentPodcast!.image = image
+                    }
+                }
+                else if let image : AnyObject = attributes["url"] {
+                    var string = image as! String
+                    var url = NSURL(string: string)
+                    var nsdata = NSData(contentsOfURL: url!)
+                    var image = UIImage(data: nsdata!)
                     currentPodcast!.image = image
                 }
                 else {
                     currentPodcast!.image = UIImage(contentsOfFile: "podcast icon.jpeg")
                 }
             }
-            if(elementName == "item") {
+            else if(elementName == "item") {
                 item = true
             }
+            
             if (item){
                 if(elementName == "title" || elementName == "itunes:author" || elementName == "itunes:duration") {
                     currentParsedElement = elementName
                 }
                 else if(elementName == "enclosure") { //url
                     currentPodcast?.url = attributes["url"] as? NSString //work on this
+                    //gotPodcast = true
                 }
             }
         }
         else {
-            //println("done parsing current file")
+            println("aborting parser")
             self.parser?.abortParsing()
         }
     }
@@ -87,6 +115,23 @@ class XMLParser : NSObject, NSXMLParserDelegate {
     }
     
     func parser(parser: NSXMLParser, didEndElement elementName: String, namespaceURI: String?, qualifiedName: String?) {
+        if(!gotPodcast) {
+            if(elementName == "item") {
+                if let podcast = currentPodcast {
+                    podcastArray.append(podcast)
+                    
+                    //podcast.printPodcast()
+                    
+                    gotPodcast = true
+                    
+                    //item = true
+                }
+                else {
+                    println("podcast turned out null")
+                }
+                
+            }
+        }
         if(item){
             switch (elementName) {
                 case "title":
@@ -98,18 +143,7 @@ class XMLParser : NSObject, NSXMLParserDelegate {
                 default:
                     break
             }
-            if(elementName == "item") {
-                if let podcast = currentPodcast {
-                    podcastArray.append(podcast)
-                    podcast.printPodcast()
-                    gotPodcast = true
-                    item = true
-                }
-                else {
-                    println("podcast turned out null")
-                }
-                
-            }
         }
+        
     }
 }

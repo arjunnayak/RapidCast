@@ -4,22 +4,22 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Pods-RapidCast-Realm.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-RapidCast-RealmSwift.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-RapidCast-SwiftyJSON.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-RapidCast.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Realm.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>RealmSwift.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,22 +27,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0EAD0545B5923DDCCA652622</key>
+		<key>8530DEDBC37DD75056E54EB064F88745</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>236B39B8EC9B427FD5A73B35</key>
+		<key>A50B4F8A1B812D2C99E90E785DF5A175</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3AD8D6743AB6C3DDA72D8988</key>
+		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>76E3A29E4797B71B273E99E0</key>
+		<key>EE8A82B14FCE3C979FBD94FA3EA2CB68</key>
 		<dict>
 			<key>primary</key>
 			<true/>
