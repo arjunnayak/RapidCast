@@ -51,7 +51,6 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Playlist" id="Hco-MO-CFa">
-                        <barButtonItem key="backBarButtonItem" title="Home" id="HsC-q5-PN1"/>
                         <barButtonItem key="leftBarButtonItem" id="frz-Kq-9KQ"/>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -63,7 +62,7 @@
             </objects>
             <point key="canvasLocation" x="-168" y="270"/>
         </scene>
-        <!--Rapid Cast View Controller-->
+        <!--Home-->
         <scene sceneID="i5q-pp-gz9">
             <objects>
                 <viewController id="a1i-Ac-Ky3" customClass="RapidCastViewController" customModule="RapidCast" customModuleProvider="target" sceneMemberID="viewController">
@@ -211,7 +210,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="6xd-w4-z9r"/>
+                    <navigationItem key="navigationItem" title="Home" id="6xd-w4-z9r"/>
                     <connections>
                         <outlet property="noteLabel" destination="Fa7-be-k8C" id="BKb-lh-YnP"/>
                         <outlet property="rapidCastButton" destination="LgK-U4-E2h" id="4mm-o3-mgq"/>
@@ -331,9 +330,7 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="ANr-Io-kl0">
-                        <barButtonItem key="backBarButtonItem" title="Playlist" id="evQ-1E-fZ2"/>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="ANr-Io-kl0"/>
                     <connections>
                         <outlet property="authorLabel" destination="aF5-28-f6T" id="Wg2-fB-BBY"/>
                         <outlet property="pausePlay" destination="fVF-6H-jtL" id="hNJ-ne-Mu8"/>
@@ -345,29 +342,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIe-iw-j3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="686" y="270"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="D0t-ld-Bzg">
-            <objects>
-                <navigationController storyboardIdentifier="RapidCastNavController" automaticallyAdjustsScrollViewInsets="NO" id="zQm-bh-1W5" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" barStyle="black" translucent="NO" id="Pys-Ji-lkS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="1" green="0.2952371486" blue="0.22480045730000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <textAttributes key="titleTextAttributes">
-                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        </textAttributes>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="a1i-Ac-Ky3" kind="relationship" relationship="rootViewController" id="Imx-E7-eid"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="JGs-OP-ia9" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1841" y="270"/>
         </scene>
         <!--Category Chooser -->
         <scene sceneID="mQ9-l7-HTC">
@@ -427,12 +401,12 @@
                     </collectionView>
                     <navigationItem key="navigationItem" title="Category Selection" id="BbT-Ex-kus"/>
                     <connections>
-                        <segue destination="zQm-bh-1W5" kind="show" identifier="RapidCast" id="ACI-EH-h5B"/>
+                        <segue destination="a1i-Ac-Ky3" kind="show" identifier="RapidCast" id="xF1-tP-KvA"/>
                     </connections>
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cp7-Kq-mhi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-2662" y="439"/>
+            <point key="canvasLocation" x="-1878" y="270"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="mu5-lv-cMd">
@@ -456,7 +430,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C8c-Ix-Jzy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-3379" y="588"/>
+            <point key="canvasLocation" x="-2713" y="270"/>
         </scene>
     </scenes>
     <resources>
