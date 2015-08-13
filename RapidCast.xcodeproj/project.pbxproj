@@ -11,7 +11,6 @@
 		4709A4931B77F17000D64F41 /* RealmCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4709A4921B77F17000D64F41 /* RealmCategory.swift */; };
 		4730DF8B1B558C730040B15B /* jazzy.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4730DF8A1B558C730040B15B /* jazzy.mp3.mp3 */; };
 		4730DF901B56CF0E0040B15B /* PodcastPlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730DF8F1B56CF0E0040B15B /* PodcastPlaylistViewController.swift */; };
-		474107A81B7C1E4700E644CB /* KissXMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474107A71B7C1E4700E644CB /* KissXMLParser.swift */; };
 		475D19BA1B62FB9000C453A9 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475D19B91B62FB9000C453A9 /* XMLParser.swift */; };
 		475D19BF1B68270300C453A9 /* ContentGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475D19BE1B68270300C453A9 /* ContentGenerator.swift */; };
 		4768FF4D1B5038620012C80F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4768FF4C1B5038620012C80F /* AppDelegate.swift */; };
@@ -47,7 +46,6 @@
 		4709A4921B77F17000D64F41 /* RealmCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCategory.swift; sourceTree = "<group>"; };
 		4730DF8A1B558C730040B15B /* jazzy.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = jazzy.mp3.mp3; path = ../../../Downloads/jazzy.mp3.mp3; sourceTree = "<group>"; };
 		4730DF8F1B56CF0E0040B15B /* PodcastPlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastPlaylistViewController.swift; sourceTree = "<group>"; };
-		474107A71B7C1E4700E644CB /* KissXMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KissXMLParser.swift; sourceTree = "<group>"; };
 		475D19B91B62FB9000C453A9 /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		475D19BE1B68270300C453A9 /* ContentGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentGenerator.swift; sourceTree = "<group>"; };
 		4768FF471B5038620012C80F /* RapidCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RapidCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -172,7 +170,6 @@
 				47D3FC8C1B60545000EAE1EF /* RequestHelper.swift */,
 				475D19B91B62FB9000C453A9 /* XMLParser.swift */,
 				475D19BE1B68270300C453A9 /* ContentGenerator.swift */,
-				474107A71B7C1E4700E644CB /* KissXMLParser.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -372,7 +369,6 @@
 				4730DF901B56CF0E0040B15B /* PodcastPlaylistViewController.swift in Sources */,
 				47D3FC8B1B6018CA00EAE1EF /* JSONParser.swift in Sources */,
 				47D3FC8D1B60545000EAE1EF /* RequestHelper.swift in Sources */,
-				474107A81B7C1E4700E644CB /* KissXMLParser.swift in Sources */,
 				475D19BF1B68270300C453A9 /* ContentGenerator.swift in Sources */,
 				479579361B743788003CE451 /* CategoryCollectionViewCell.swift in Sources */,
 				475D19BA1B62FB9000C453A9 /* XMLParser.swift in Sources */,

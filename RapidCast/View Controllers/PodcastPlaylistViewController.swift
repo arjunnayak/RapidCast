@@ -39,7 +39,10 @@ class PodcastPlaylistViewController: UITableViewController {
             categories.append(Category(name: category, podcasts: podcasts))
             
             for podcast in podcasts {
-                allPodcasts.append(podcast)
+                if (podcast.url != nil) {
+                    allPodcasts.append(podcast)
+                }
+                
                 //self.indexPodcasts.addObject(podcast as Podcast)
             }
         }

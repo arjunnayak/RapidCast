@@ -18,9 +18,10 @@ class XMLParser : NSObject, NSXMLParserDelegate {
     //var podcastCount : Int
     
     var currentPodcast : Podcast?
-    var currentParsedElement = String()
+    var currentParsedElement = ""
     var item = false
     var gotPodcast = false
+    var mutableString = NSMutableString(string: "")
     
     init(feedURL : NSURL) {
         self.feedURL = feedURL
@@ -104,11 +105,29 @@ class XMLParser : NSObject, NSXMLParserDelegate {
         if(item) {
             switch (currentParsedElement) {
                 case "title":
-                    currentPodcast?.title = foundCharacters! //title
+                    if(mutableString == "") {
+                        mutableString = NSMutableString(string: foundCharacters!)
+                    }
+                    else {
+                        mutableString.appendString(foundCharacters!)
+                    }
+                    currentPodcast!.title = mutableString as String
                 case "itunes:author":
-                    currentPodcast?.author = foundCharacters! //author
+                    if(mutableString == "") {
+                        mutableString = NSMutableString(string: foundCharacters!)
+                    }
+                    else {
+                        mutableString.appendString(foundCharacters!)
+                    }
+                    currentPodcast!.author = mutableString as String
                 case "itunes:duration":
-                    currentPodcast?.duration = foundCharacters! //duration
+                    if(mutableString == "") {
+                        mutableString = NSMutableString(string: foundCharacters!)
+                    }
+                    else {
+                        mutableString.appendString(foundCharacters!)
+                    }
+                    currentPodcast!.duration = mutableString as String
                 default: break
             }
         }
@@ -119,11 +138,7 @@ class XMLParser : NSObject, NSXMLParserDelegate {
             if(elementName == "item") {
                 if let podcast = currentPodcast {
                     podcastArray.append(podcast)
-                    
-                    //podcast.printPodcast()
-                    
                     gotPodcast = true
-                    
                     //item = true
                 }
                 else {
@@ -134,12 +149,9 @@ class XMLParser : NSObject, NSXMLParserDelegate {
         }
         if(item){
             switch (elementName) {
-                case "title":
+                case "title", "itunes:author", "itunes:duration":
                     currentParsedElement = ""
-                case "itunes:author":
-                    currentParsedElement = ""
-                case "itunes:duration":
-                    currentParsedElement = ""
+                    mutableString = ""
                 default:
                     break
             }
