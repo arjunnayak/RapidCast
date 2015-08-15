@@ -13,7 +13,6 @@ class ContentGenerator {
     
     static func generate(categories: [String], completionBlock: [String : [Podcast]] -> Void) {
         
-        
         var lookupIDs = [String]()
         var iTunesLinks : [NSURL] = iTunesHelper.getiTunesLinksFromRSS(categories)
         //this gets the top 25 podcast channels for each category
@@ -28,8 +27,7 @@ class ContentGenerator {
         var xmlParser : XMLParser?
         
         for(var categoryCount = 0; categoryCount < iTunesLinks.count; categoryCount++) {
-            println(categoryCount)
-            println(iTunesLinks[categoryCount])
+
             let categoryCountInternal = categoryCount
             
             RequestHelper.makeRequestForLookupID(iTunesLinks[categoryCount]) { savedIDs in //make the http request for the first category
@@ -44,21 +42,15 @@ class ContentGenerator {
 
                     RequestHelper.makeRequestForFeedURL(lookupURLs[channelCount]) { feedURL in //got feedURL
 
-                        println(feedURL)
-                        if(feedURL == "") {
-                            println("is this taking long?")
+                        //println(feedURL)
+                        if(feedURL.absoluteString == "") {
                             totalPodcastCount++
                         }
                         else {
-                            var startXMLParse = CACurrentMediaTime()
-                            xmlParser = XMLParser(feedURL: feedURL)
-                            let podcast = xmlParser!.beginParse()
-//                            if let pod = podcast {
-                            var finishXMLParse = CACurrentMediaTime()
-                            println("Request Finished for XML Parsing: \(finishXMLParse - startXMLParse)")
-                            podcastPlaylistPerCategory.append(podcast!)
-//                            }
-                            //saves podcasts for each category to be appended later
+                            var podcast = XMLParser.getPodcast(feedURL)
+                            podcast.printPodcast()
+                            podcastPlaylistPerCategory.append(podcast)
+
                             totalPodcastCount++
                         }
 

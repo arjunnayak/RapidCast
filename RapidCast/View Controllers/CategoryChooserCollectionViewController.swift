@@ -38,25 +38,23 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
         }
     }
     
-    override func viewWillDisappear(animated: Bool) {
-        //write the chosenCategory realm object
-        
+    func segueToHomeScreen() {
         let realm = Realm()
-        
         realm.write {
             realm.add(self.chosenCategories, update: false)
-            var objs = realm.objects(ChosenCategories)
+            self.performSegueWithIdentifier("RapidCast", sender: self)
         }
         
-    }
-    
-    func segueToHomeScreen() {
-        self.performSegueWithIdentifier("RapidCast", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.navigationBarHidden = false
     }
 
     
@@ -90,9 +88,10 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
         
         var category = categories[indexPath.row]
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CategoryCell", forIndexPath: indexPath) as! CategoryCollectionViewCell
+        cell.alpha = 0.25
 
         if(category.isSelected) {
-            cell.alpha = 0.5
+            cell.alpha = 1.0
         }
         else {
             //cell.alpha = 1
@@ -118,12 +117,12 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
         }
         
         let cell = collectionView.cellForItemAtIndexPath(indexPath)
-        cell?.alpha = 0.25
+        cell?.alpha = 1
         categories[indexPath.row].isSelected = true
         
         self.navigationItem.rightBarButtonItem = doneButton
         
-        println("adding: \(self.chosenCategories.categoriesToStore)")
+       // println("adding: \(self.chosenCategories.categoriesToStore)")
     }
     
     override func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
@@ -142,11 +141,11 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
         }
         if(index != -1) {
             self.chosenCategories.categoriesToStore.removeAtIndex(index)
-            println("removing: \(self.chosenCategories.categoriesToStore)")
+           // println("removing: \(self.chosenCategories.categoriesToStore)")
         }
 
         let cell = collectionView.cellForItemAtIndexPath(indexPath)
-        cell?.alpha = 1
+        cell?.alpha = 0.25
         categories[indexPath.row].isSelected = false
         
         if(self.chosenCategories.categoriesToStore.count == 0) {

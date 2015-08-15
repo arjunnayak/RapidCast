@@ -24,5 +24,13 @@ class Podcast {
     func printPodcast() {
         println("\(title) \(author) \(url) \(duration) \(image?.description)")
     }
+    
+    convenience init(title : String, author: String, url: NSString, image: UIImage) {
+        self.init()
+        self.title = title
+        self.author = author
+        self.url = url
+        self.image = image
+    }
 }
 

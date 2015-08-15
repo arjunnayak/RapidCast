@@ -46,6 +46,7 @@
 		4709A4921B77F17000D64F41 /* RealmCategory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmCategory.swift; sourceTree = "<group>"; };
 		4730DF8A1B558C730040B15B /* jazzy.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = jazzy.mp3.mp3; path = ../../../Downloads/jazzy.mp3.mp3; sourceTree = "<group>"; };
 		4730DF8F1B56CF0E0040B15B /* PodcastPlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastPlaylistViewController.swift; sourceTree = "<group>"; };
+		4752675F1B7DB99E00E89891 /* RapidCast-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RapidCast-Bridging-Header.h"; sourceTree = "<group>"; };
 		475D19B91B62FB9000C453A9 /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		475D19BE1B68270300C453A9 /* ContentGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentGenerator.swift; sourceTree = "<group>"; };
 		4768FF471B5038620012C80F /* RapidCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RapidCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -138,6 +139,7 @@
 		4768FF4A1B5038620012C80F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				4752675F1B7DB99E00E89891 /* RapidCast-Bridging-Header.h */,
 				47FEB0CA1B5814150091725D /* podcast icon.jpeg */,
 				4730DF8A1B558C730040B15B /* jazzy.mp3.mp3 */,
 				4768FF4B1B5038620012C80F /* Info.plist */,
@@ -504,7 +506,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "RapidCast/RapidCast-Bridging-Header.h";
 			};
 			name = Debug;
 		};
@@ -520,7 +522,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "RapidCast/RapidCast-Bridging-Header.h";
 			};
 			name = Release;
 		};

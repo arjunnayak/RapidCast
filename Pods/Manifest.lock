@@ -1,4 +1,5 @@
 PODS:
+  - GDataXML-HTML (1.2.0)
   - Realm (0.93.2):
     - Realm/Headers (= 0.93.2)
   - Realm/Headers (0.93.2)
@@ -7,10 +8,12 @@ PODS:
   - SwiftyJSON (2.2.1)
 
 DEPENDENCIES:
+  - GDataXML-HTML (~> 1.2)
   - RealmSwift
   - SwiftyJSON (~> 2.2.0)
 
 SPEC CHECKSUMS:
+  GDataXML-HTML: dac3692417e9fc612f8e12d8baae3706fccedcc8
   Realm: 2fdd0ae74f730e190384e0338d8a0d3654df8220
   RealmSwift: 231b064da9f98b1c4f325fe1f1cb8756aae2b8d6
   SwiftyJSON: ae2d0a3d68025d136602a33c4ee215091ced3e33

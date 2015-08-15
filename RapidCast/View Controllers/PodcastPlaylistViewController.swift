@@ -11,7 +11,6 @@ import AVFoundation
 
 class PodcastPlaylistViewController: UITableViewController {
 
-    //for setup
     var podcastPlaylist : [String : [Podcast]] = [:]
     var categories : [Category] = []
     
@@ -20,9 +19,7 @@ class PodcastPlaylistViewController: UITableViewController {
         var podcasts : [Podcast]
     }
     
-    //for referencing podcasts
     var allPodcasts : [Podcast] = []
-    //var indexPodcasts = NSMutableArray()
     
     var selectedPodcastIndex = 0
 

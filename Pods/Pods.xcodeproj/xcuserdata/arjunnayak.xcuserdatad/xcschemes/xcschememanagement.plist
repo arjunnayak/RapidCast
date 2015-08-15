@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>GDataXML-HTML.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-RapidCast.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,12 +32,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>8530DEDBC37DD75056E54EB064F88745</key>
+		<key>1AC4D3165FF3B49CBE617C13570866EA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A50B4F8A1B812D2C99E90E785DF5A175</key>
+		<key>1B44B9AD9480536DC9319E4ED8F87543</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>8530DEDBC37DD75056E54EB064F88745</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,7 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EE8A82B14FCE3C979FBD94FA3EA2CB68</key>
+		<key>D8B7B32D18A080E9456C332520208C7C</key>
 		<dict>
 			<key>primary</key>
 			<true/>

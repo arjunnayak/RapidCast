@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "4DC293FC0968DAFA31969DC3"
-               BuildableName = "Realm.framework"
-               BlueprintName = "Realm"
+               BlueprintIdentifier = "9EC0E3CB97AA86C7E0B6AEE5"
+               BuildableName = "GDataXML_HTML.framework"
+               BlueprintName = "GDataXML-HTML"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
