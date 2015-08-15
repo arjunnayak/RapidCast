@@ -27,6 +27,7 @@ class RapidCastViewController: UIViewController {
         
         //self.noteLabel.lineBreakMode = .ByWordWrapping
         self.noteLabel.numberOfLines = 2
+        self.waitingLabel.hidden = true
         
         let realm = Realm()
         
@@ -93,7 +94,7 @@ class RapidCastViewController: UIViewController {
                 
                 dispatch_async(dispatch_get_main_queue()) {
                         self.performSegueWithIdentifier("RapidCast", sender: self)
-                        print("should segue NOW")
+                        //print("should segue NOW")
                     
                     
                         self.spinner.stopAnimating()
@@ -108,11 +109,13 @@ class RapidCastViewController: UIViewController {
     
     //MARK: UI Elements/Functionality
     
+    @IBOutlet weak var waitingLabel: UILabel!
     @IBOutlet weak var rapidCastButton: UIButton!
     @IBAction func prepareForUnwind(segue: UIStoryboardSegue) { }
     
     @IBAction func rapidCast(sender: AnyObject) {
         self.spinner.startAnimating()
+        self.waitingLabel.hidden = false
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         generateContent()
     }

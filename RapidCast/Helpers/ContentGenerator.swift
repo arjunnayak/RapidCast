@@ -48,7 +48,7 @@ class ContentGenerator {
                         }
                         else {
                             var podcast = XMLParser.getPodcast(feedURL)
-                            podcast.printPodcast()
+                            //podcast.printPodcast()
                             podcastPlaylistPerCategory.append(podcast)
 
                             totalPodcastCount++

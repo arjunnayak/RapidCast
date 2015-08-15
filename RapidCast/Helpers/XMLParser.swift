@@ -14,7 +14,7 @@ class XMLParser {
     var gotPodcast = false
     
     static func getPodcast(feedURL : NSURL) -> Podcast {
-        println(feedURL)
+       // println(feedURL)
         
         var xml : GDataXMLDocument = GDataXMLDocument(data: NSData(contentsOfURL: feedURL), error: nil)
         var root = xml.rootElement()
