@@ -63,7 +63,9 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if(segue.identifier == "RapidCast") {
-            let navigationController = segue.destinationViewController as! RapidCastViewController
+            let navigationController = segue.destinationViewController as! UINavigationController
+            let rcVC = navigationController.viewControllers[0] as! RapidCastViewController
+            
             //let rapidCastController : RapidCastViewController = navigationController.viewControllers[0] as! RapidCastViewController
             
             //rapidCastController.chosenCategories = self.chosenCategories //send realm object to rapid cast controller

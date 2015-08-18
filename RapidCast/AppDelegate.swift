@@ -18,21 +18,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-       
-        //NSFileManager.defaultManager().removeItemAtPath(RLMRealm.defaultRealmPath(), error: nil)
-        if let firstOpen = NSUserDefaults.standardUserDefaults().objectForKey("first") as? String { //if app has opened already
-            //let natural launch view controller happen
+        
+        if !(NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce")) {
+            println("first time launch")
+            
+            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+            var storyboard = UIStoryboard(name: "Main", bundle: nil)
+            var cvc = storyboard.instantiateViewControllerWithIdentifier("chooseCategories") as! UINavigationController
+            self.window?.rootViewController = cvc
+            self.window?.makeKeyAndVisible()
+            
+            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "HasLaunchedOnce")
+            NSUserDefaults.standardUserDefaults().synchronize()
         }
-        else { //first time user has opened app
-            let storyBoard = UIStoryboard(name: "Main", bundle: nil)
-            let vc : CategoryChooserCollectionViewController = storyBoard.instantiateViewControllerWithIdentifier("choosefuckingcategories") as! CategoryChooserCollectionViewController
-            
-            let navigationController = UINavigationController(rootViewController: vc)
-            
-            self.window?.rootViewController?.presentViewController(navigationController, animated: true, completion: nil)
-            
+        else {
+            println("not first launch. should go to rapidcast controller")
         }
-    
         return true
     }
 
