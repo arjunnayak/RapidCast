@@ -42,11 +42,7 @@ class RapidCastViewController: UIViewController {
             //println(categories)
         }
         
-        
-        //println("realm categories object: \(self.chosenCategories.categoriesToStore)")
-        
         rapidCastButton.layer.borderColor = UIColor.whiteColor().CGColor
-        //self.navigationController?.setNavigationBarHidden(true, animated: true)
 
     }
     
