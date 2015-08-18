@@ -19,8 +19,6 @@
 		4768FF631B5038620012C80F /* RapidCastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4768FF621B5038620012C80F /* RapidCastTests.swift */; };
 		479579341B7436C8003CE451 /* CategoryChooserCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479579331B7436C8003CE451 /* CategoryChooserCollectionViewController.swift */; };
 		479579361B743788003CE451 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479579351B743788003CE451 /* CategoryCollectionViewCell.swift */; };
-		47A99D241B831F5A00E07DB3 /* SavedPodcasts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A99D231B831F5A00E07DB3 /* SavedPodcasts.swift */; };
-		47A99D261B831F8900E07DB3 /* RealmPodcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A99D251B831F8900E07DB3 /* RealmPodcast.swift */; };
 		47CF41F51B75D3DA00F7790B /* ChosenCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47CF41F41B75D3DA00F7790B /* ChosenCategories.swift */; };
 		47D3FC821B5DC59D00EAE1EF /* RapidCastViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3FC811B5DC59D00EAE1EF /* RapidCastViewController.swift */; };
 		47D3FC891B60181000EAE1EF /* iTunesHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47D3FC881B60181000EAE1EF /* iTunesHelper.swift */; };
@@ -61,8 +59,6 @@
 		4768FF621B5038620012C80F /* RapidCastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidCastTests.swift; sourceTree = "<group>"; };
 		479579331B7436C8003CE451 /* CategoryChooserCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryChooserCollectionViewController.swift; sourceTree = "<group>"; };
 		479579351B743788003CE451 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
-		47A99D231B831F5A00E07DB3 /* SavedPodcasts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedPodcasts.swift; sourceTree = "<group>"; };
-		47A99D251B831F8900E07DB3 /* RealmPodcast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmPodcast.swift; sourceTree = "<group>"; };
 		47CF41F41B75D3DA00F7790B /* ChosenCategories.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChosenCategories.swift; sourceTree = "<group>"; };
 		47D3FC811B5DC59D00EAE1EF /* RapidCastViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RapidCastViewController.swift; sourceTree = "<group>"; };
 		47D3FC881B60181000EAE1EF /* iTunesHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = iTunesHelper.swift; sourceTree = "<group>"; };
@@ -195,8 +191,6 @@
 				47FEB0D11B58200B0091725D /* Podcast.swift */,
 				47CF41F41B75D3DA00F7790B /* ChosenCategories.swift */,
 				4709A4921B77F17000D64F41 /* RealmCategory.swift */,
-				47A99D231B831F5A00E07DB3 /* SavedPodcasts.swift */,
-				47A99D251B831F8900E07DB3 /* RealmPodcast.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -373,7 +367,6 @@
 			files = (
 				479579341B7436C8003CE451 /* CategoryChooserCollectionViewController.swift in Sources */,
 				47018D7D1B54693D009A7870 /* PodcastPlayerViewController.swift in Sources */,
-				47A99D241B831F5A00E07DB3 /* SavedPodcasts.swift in Sources */,
 				4709A4931B77F17000D64F41 /* RealmCategory.swift in Sources */,
 				4730DF901B56CF0E0040B15B /* PodcastPlaylistViewController.swift in Sources */,
 				47D3FC8B1B6018CA00EAE1EF /* JSONParser.swift in Sources */,
@@ -384,7 +377,6 @@
 				47FEB0D21B58200B0091725D /* Podcast.swift in Sources */,
 				4768FF4D1B5038620012C80F /* AppDelegate.swift in Sources */,
 				47D3FC891B60181000EAE1EF /* iTunesHelper.swift in Sources */,
-				47A99D261B831F8900E07DB3 /* RealmPodcast.swift in Sources */,
 				47FEB0CF1B5815F20091725D /* PodcastTableViewCell.swift in Sources */,
 				47D3FC821B5DC59D00EAE1EF /* RapidCastViewController.swift in Sources */,
 				47CF41F51B75D3DA00F7790B /* ChosenCategories.swift in Sources */,

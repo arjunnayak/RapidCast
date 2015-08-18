@@ -13,8 +13,6 @@ class RapidCastViewController: UIViewController {
     
     var chosenCategories : ChosenCategories = ChosenCategories()
     
-    var podcastsToStore : SavedPodcasts = SavedPodcasts()
-    
     var categories: [String] = []
     
     var finalPlaylist : [String : [Podcast]] = [:]
@@ -33,8 +31,8 @@ class RapidCastViewController: UIViewController {
         
         let realm = Realm()
         
-        if let getCategories = realm.objects(ChosenCategories).last {
-            self.chosenCategories = getCategories
+        if let get = realm.objects(ChosenCategories).last {
+            self.chosenCategories = get
             //println("realm categories \(get.categoriesToStore.count)")
             
             for cat in self.chosenCategories.categoriesToStore {
@@ -42,21 +40,6 @@ class RapidCastViewController: UIViewController {
             }
             
             //println(categories)
-        }
-        
-        if let getSavedPodcasts = realm.objects(SavedPodcasts).last?.storedPodcasts {
-            self.podcastsToStore.storedPodcasts = getSavedPodcasts
-            
-            for (category, podcasts) in getSavedPodcasts {
-                
-                var swiftPodcasts : [Podcast] = []
-                for rPod in podcasts {
-
-                    swiftPodcasts.append(Podcast(title: rPod.title, author: rPod.author, url: rPod.url, image: UIImage(data: NSData(contentsOfURL: NSURL(string: rPod.imageString)!)!)!))
-                }
-                self.finalPlaylist[category] = swiftPodcasts
-                println("playlist from realm: \(finalPlaylist)")
-            }
         }
         
         
@@ -136,30 +119,6 @@ class RapidCastViewController: UIViewController {
         self.waitingLabel.hidden = false
         UIApplication.sharedApplication().beginIgnoringInteractionEvents()
         generateContent()
-        
-        
-        //make podcastsToStore = finalPlaylist
-        
-        for (category, podcasts) in finalPlaylist { //creates podcast queue of podcasts
-            
-            var arrOfRealmPodcasts = List<RealmPodcast>()
-            for podcast in podcasts {
-                var rPodcast = RealmPodcast()
-                rPodcast.title = podcast.title!
-                rPodcast.author = podcast.author!
-                rPodcast.url = podcast.url as! String
-                //rPodcast.imageString = podcast.image.
-                arrOfRealmPodcasts.append(rPodcast)
-            }
-            
-            podcastsToStore.storedPodcasts[category] = arrOfRealmPodcasts
-        }
-        
-        let realm = Realm()
-        realm.write {
-            realm.add(self.podcastsToStore, update: false)
-            self.performSegueWithIdentifier("RapidCast", sender: self)
-        }
     }
     
     @IBAction func currentPlaylist(sender: AnyObject) {
