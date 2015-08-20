@@ -25,6 +25,7 @@ class RapidCastViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         //self.noteLabel.lineBreakMode = .ByWordWrapping
         self.noteLabel.numberOfLines = 2
         self.waitingLabel.hidden = true
@@ -48,6 +49,7 @@ class RapidCastViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
+        UIApplication.sharedApplication().setStatusBarStyle(UIStatusBarStyle.LightContent, animated: true)  
         self.navigationController?.setNavigationBarHidden(true, animated: true)
         self.waitingLabel.hidden = true
     }

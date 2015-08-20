@@ -48,6 +48,9 @@ class XMLParser {
                     var url = ""
                     if let enclosure = gChild.elementsForName("enclosure") as? [GDataXMLElement] {
                         url = enclosure[0].attributeForName("url").stringValue()
+                        if(image == nil) {
+                            image = UIImage(named: "podcast icon.jpeg")
+                        }
                         pod = Podcast(title: titleRef[0].stringValue(), author: podcastAuthor, url: NSString(string: url), image: image!)
                         gotPodcast = true
                     }

@@ -41,6 +41,8 @@ class PodcastPlayerViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        setupSwipeGestures()
+        
         if(podcastPlaylist.isEmpty) {
             println("error: playlist is empty")
         }
@@ -64,6 +66,20 @@ class PodcastPlayerViewController: UIViewController {
         pausePlay.setImage(pauseImg, forState: UIControlState.Normal)
         
 
+    }
+    
+    func setupSwipeGestures() {
+        
+        var swipeLeft = UISwipeGestureRecognizer(target: self, action: Selector("pressedFastForward:"))
+        var swipeRight = UISwipeGestureRecognizer(target: self, action: Selector("pressedRewind:"))
+        
+        swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
+        swipeRight.direction = UISwipeGestureRecognizerDirection.Right
+        
+        self.view.addGestureRecognizer(swipeLeft)
+        self.view.addGestureRecognizer(swipeRight)
+        self.podcastImage.addGestureRecognizer(swipeLeft)
+        self.podcastImage.addGestureRecognizer(swipeRight)
     }
     
     func setupPodcast() {

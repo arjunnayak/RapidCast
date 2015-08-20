@@ -18,21 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        let realm = Realm()
         
-        if !(NSUserDefaults.standardUserDefaults().boolForKey("HasLaunchedOnce")) {
-            println("first time launch")
-            
+        if(realm.objects(ChosenCategories).count == 0){
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
             var storyboard = UIStoryboard(name: "Main", bundle: nil)
             var cvc = storyboard.instantiateViewControllerWithIdentifier("chooseCategories") as! UINavigationController
             self.window?.rootViewController = cvc
             self.window?.makeKeyAndVisible()
-            
-            NSUserDefaults.standardUserDefaults().setBool(true, forKey: "HasLaunchedOnce")
-            NSUserDefaults.standardUserDefaults().synchronize()
-        }
-        else {
-            println("not first launch. should go to rapidcast controller")
         }
         return true
     }
