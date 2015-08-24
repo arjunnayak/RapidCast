@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "9EC0E3CB97AA86C7E0B6AEE5"
+               BlueprintIdentifier = "63E94AEE8E4947885748450F"
                BuildableName = "GDataXML_HTML.framework"
                BlueprintName = "GDataXML-HTML"
                ReferencedContainer = "container:Pods.xcodeproj">
