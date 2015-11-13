@@ -8,7 +8,7 @@
 
 import UIKit
 import AVFoundation
-
+import SDWebImage
 
 class PodcastPlayerViewController: UIViewController {
     
@@ -44,7 +44,7 @@ class PodcastPlayerViewController: UIViewController {
         setupSwipeGestures()
         
         if(podcastPlaylist.isEmpty) {
-            println("error: playlist is empty")
+            print("error: playlist is empty")
         }
         for (category, podcasts) in podcastPlaylist { //creates podcast queue of av player items
             categories.append(Category(name: category, podcasts: podcasts))
@@ -53,25 +53,21 @@ class PodcastPlayerViewController: UIViewController {
                 if(podcast.title != nil) {
                     self.indexPodcasts.addObject(podcast as Podcast)
                     self.podcasts.append(podcast)
-                    let item = AVPlayerItem(URL: NSURL(string: podcast.url as! String))
+                    let item = AVPlayerItem(URL: NSURL(string: podcast.url as! String)!)
                     self.allPodcasts.append(item)
                 }
             }
         }
         self.player = AVPlayer(playerItem: self.allPodcasts[currentIndex])
         self.player.play()
-        
         setupPodcast()
-        
         pausePlay.setImage(pauseImg, forState: UIControlState.Normal)
-        
-
     }
     
     func setupSwipeGestures() {
         
-        var swipeLeft = UISwipeGestureRecognizer(target: self, action: Selector("pressedFastForward:"))
-        var swipeRight = UISwipeGestureRecognizer(target: self, action: Selector("pressedRewind:"))
+        let swipeLeft = UISwipeGestureRecognizer(target: self, action: Selector("pressedFastForward:"))
+        let swipeRight = UISwipeGestureRecognizer(target: self, action: Selector("pressedRewind:"))
         
         swipeLeft.direction = UISwipeGestureRecognizerDirection.Left
         swipeRight.direction = UISwipeGestureRecognizerDirection.Right
@@ -104,19 +100,16 @@ class PodcastPlayerViewController: UIViewController {
         if (self.player.rate != 0 && self.player.error == nil) {           //if player is playing
             self.player.pause()
             pausePlay.setImage(playImg, forState: UIControlState.Normal)
-        }
-        else if(self.player.rate == 0) {                                   //if player is paused
+        } else if(self.player.rate == 0) {                                   //if player is paused
             pausePlay.setImage(pauseImg, forState: UIControlState.Normal)
             self.player.play()
-        }
-        else {
-            println("podcast is buffering")
+        } else {
+            print("podcast is buffering")
         }
     }
     
     @IBAction func pressedFastForward(sender: AnyObject) {
 
-       // self.player.
         if(currentIndex == allPodcasts.count - 1) {
             currentIndex = 0
         }
@@ -125,13 +118,12 @@ class PodcastPlayerViewController: UIViewController {
         }
         //for testing
         let podcast = podcasts[currentIndex]
-        println("Next Podcast: \(podcast.title)")
+        print("Next Podcast: \(podcast.title)")
         
         //self.player = AVPlayer(playerItem: allPodcasts[currentIndex])
         self.player.replaceCurrentItemWithPlayerItem(allPodcasts[currentIndex])
         self.player.play()
         setupPodcast()
-
     }
     
     @IBAction func pressedRewind(sender: AnyObject) {
@@ -143,7 +135,7 @@ class PodcastPlayerViewController: UIViewController {
         }
         //for testing
         let podcast = podcasts[currentIndex]
-        println("Previous Podcast: \(podcast.title)")
+        print("Previous Podcast: \(podcast.title)")
         
 //        self.player = AVPlayer(playerItem: allPodcasts[currentIndex])
         self.player.replaceCurrentItemWithPlayerItem(allPodcasts[currentIndex])

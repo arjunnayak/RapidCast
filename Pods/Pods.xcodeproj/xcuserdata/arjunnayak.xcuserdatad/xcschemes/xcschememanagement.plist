@@ -4,7 +4,17 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>Bolts.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>GDataXML-HTML.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Parse.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -24,6 +34,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>SDWebImage.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,17 +47,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>1AC4D3165FF3B49CBE617C13570866EA</key>
+		<key>10845198053E6B4C1CB0DB2377D456CA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>61B64F5E2E37CF84BDC0D35D8251690A</key>
+		<key>258B2E6312CE6C65AA327106F246C7F5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8530DEDBC37DD75056E54EB064F88745</key>
+		<key>8784954C824D14730A2814AA38913E5A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9666688CB41B38A9914616144C9C7A3E</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -52,7 +72,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>FBAC76CFA2C9B4BF02D125F0E4BAF691</key>
+		<key>BC2CE2EED8EF0A1FCD9F2FDE10A37944</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DF18FD0F2ECA16AF7D4C4B4D21ABB9DC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FC2BC177AD03D92F338FB9ACBCB6E0F0</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -11,7 +11,8 @@ import RealmSwift
 
 class ChosenCategories : Object {
     
-    dynamic var categoriesToStore : List<RealmCategory> = List<RealmCategory>()
+    //dynamic
+    var categoriesToStore : List<RealmCategory> = List<RealmCategory>()
     dynamic var _myID = "0"
     
 }

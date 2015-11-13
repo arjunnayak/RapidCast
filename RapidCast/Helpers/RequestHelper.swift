@@ -17,24 +17,28 @@ class RequestHelper {
         
         var returningID : [String] = []
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-            var responseString = NSString(data: data, encoding: NSUTF8StringEncoding)!
-            returningID = JSONParser.parseForLookupID(responseString)
-            completionBlock(returningID)
+            if let workingData = data {
+                let responseString = NSString(data: workingData, encoding: NSUTF8StringEncoding)!
+                returningID = JSONParser.parseForLookupID(responseString)
+                completionBlock(returningID)
+            } else {
+                print("url session is failing")
+            }
         }
         task.resume()
     }
 
-
-    static func makeRequestForFeedURL(url: NSURL, completionBlock: NSURL -> Void) {
+    static func makeRequestForFeedURL(url: NSURL, completionBlock: NSURL throws -> Void) {
             
         var returningLink = NSURL(string: "")
+        
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-            var responseString = NSString(data: data, encoding: NSUTF8StringEncoding)!
+            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)!
             returningLink = NSURL(string: JSONParser.parseForFeedURL(responseString))!
-            completionBlock(returningLink!)
+            try! completionBlock(returningLink!)
         }
         task.resume()
-    }
 
+    }
 }
 

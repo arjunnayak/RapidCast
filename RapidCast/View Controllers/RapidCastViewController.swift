@@ -8,6 +8,7 @@
 
 import UIKit
 import RealmSwift
+import Parse
 
 class RapidCastViewController: UIViewController {
     
@@ -25,26 +26,30 @@ class RapidCastViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         //self.noteLabel.lineBreakMode = .ByWordWrapping
         self.noteLabel.numberOfLines = 2
         self.waitingLabel.hidden = true
         
-        let realm = Realm()
-        
-        if let get = realm.objects(ChosenCategories).last {
-            self.chosenCategories = get
-            //println("realm categories \(get.categoriesToStore.count)")
-            
-            for cat in self.chosenCategories.categoriesToStore {
-                categories.append(cat.value)
+        let rlm = try? Realm()
+        if let realm = rlm {
+            if let get = realm.objects(ChosenCategories).last {
+                self.chosenCategories = get
+                //println("realm categories \(get.categoriesToStore.count)")
+                
+                for cat in self.chosenCategories.categoriesToStore {
+                    categories.append(cat.value)
+                }
+                
+                //println(categories)
             }
-            
-            //println(categories)
         }
-        
         rapidCastButton.layer.borderColor = UIColor.whiteColor().CGColor
-
+        
+//        let testObject = PFObject(className: "TestObject")
+//        testObject["foo"] = "bar"
+//        testObject.saveInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
+//            print("Object has been saved.")
+//        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -78,7 +83,7 @@ class RapidCastViewController: UIViewController {
                     let playlistController: PodcastPlaylistViewController = segue.destinationViewController as! PodcastPlaylistViewController
                     playlistController.podcastPlaylist = finalPlaylist
                 default:
-                    println("segue error")
+                    print("segue error")
             }
             
         }
@@ -86,22 +91,13 @@ class RapidCastViewController: UIViewController {
     
     func generateContent() {
         if self.categories.count > 0 {
-            
-            
-            ContentGenerator.generate(categories) { finalPlaylist in //final playlist created
+            ContentGenerator.generate(categories) { finalPlaylist in
                 self.finalPlaylist = finalPlaylist
-                
                 dispatch_async(dispatch_get_main_queue()) {
                         self.performSegueWithIdentifier("RapidCast", sender: self)
-                        //print("should segue NOW")
-                    
-                    
                         self.spinner.stopAnimating()
-                    
                         UIApplication.sharedApplication().endIgnoringInteractionEvents()
                 }
-                
-                
             }
         }
     }

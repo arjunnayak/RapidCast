@@ -60,7 +60,7 @@ class PodcastPlaylistViewController: UITableViewController {
         if let identifier = segue.identifier {
             if(identifier == "PlayPodcast") {
                 let playerViewController = segue.destinationViewController as! PodcastPlayerViewController
-                let path = self.tableView.indexPathForSelectedRow()!
+                let path = self.tableView.indexPathForSelectedRow!
 
                 playerViewController.currentIndex = self.selectedPodcastIndex
                 playerViewController.podcastPlaylist = self.podcastPlaylist

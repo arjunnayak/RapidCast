@@ -9,6 +9,8 @@
 import UIKit
 import RealmSwift
 import Realm
+import Parse
+import Bolts
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -18,15 +20,25 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
-        let realm = Realm()
-        
-        if(realm.objects(ChosenCategories).count == 0){
-            self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
-            var storyboard = UIStoryboard(name: "Main", bundle: nil)
-            var cvc = storyboard.instantiateViewControllerWithIdentifier("chooseCategories") as! UINavigationController
-            self.window?.rootViewController = cvc
-            self.window?.makeKeyAndVisible()
+        let rlm = try? Realm()
+        if let realm = rlm {
+            if(realm.objects(ChosenCategories).count == 0){
+                self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
+                var storyboard = UIStoryboard(name: "Main", bundle: nil)
+                var cvc = storyboard.instantiateViewControllerWithIdentifier("chooseCategories") as! UINavigationController
+                self.window?.rootViewController = cvc
+                self.window?.makeKeyAndVisible()
+            }
         }
+        
+        // [Optional] Power your app with Local Datastore. For more info, go to
+        // https://parse.com/docs/ios_guide#localdatastore/iOS
+        Parse.enableLocalDatastore()
+        
+        // Initialize Parse.
+        Parse.setApplicationId("NFk5JKiRLI2aV0kLiywF1AseZY0d4QBQJ9FkyZyH",
+            clientKey: "7IUPXDaufxZM1YUtqWsYgMHanmfWYAd3rDF5LPUL")
+        
         return true
     }
 

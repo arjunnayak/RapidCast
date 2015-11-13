@@ -13,25 +13,19 @@ class ContentGenerator {
     
     static func generate(categories: [String], completionBlock: [String : [Podcast]] -> Void) {
         
-        var lookupIDs = [String]()
         var iTunesLinks : [NSURL] = iTunesHelper.getiTunesLinksFromRSS(categories)
         //this gets the top 25 podcast channels for each category
-        
-        var podcastPlaylist: [Podcast] = []
         
         var finalPlaylist : [String : [Podcast]] = [:]
         
         var totalPodcastCount = 0
-        var expectedPodcastCount = 3*iTunesLinks.count
-        
-        var xmlParser : XMLParser?
+        let expectedPodcastCount = 3*iTunesLinks.count
         
         for(var categoryCount = 0; categoryCount < iTunesLinks.count; categoryCount++) {
 
             let categoryCountInternal = categoryCount
             
             RequestHelper.makeRequestForLookupID(iTunesLinks[categoryCount]) { savedIDs in //make the http request for the first category
-                
 
                 var lookupURLs : [NSURL] = iTunesHelper.getiTunesLookupURLs(savedIDs) //3 lookupUrls for podcast channels
                 
@@ -39,18 +33,18 @@ class ContentGenerator {
                 var podcastPlaylistPerCategory : [Podcast] = []
                 
                 for(var channelCount = 0;  channelCount < lookupURLs.count; channelCount++) {
+                    
 
-                    RequestHelper.makeRequestForFeedURL(lookupURLs[channelCount]) { feedURL in //got feedURL
+                    RequestHelper.makeRequestForFeedURL(lookupURLs[channelCount]) { feedURL in
 
                         //println(feedURL)
                         if(feedURL.absoluteString == "") {
                             totalPodcastCount++
                         }
                         else {
-                            var podcast = XMLParser.getPodcast(feedURL)
+                            let podcast = XMLParser.getPodcast(feedURL)
                             podcast.printPodcast()
                             podcastPlaylistPerCategory.append(podcast)
-
                             totalPodcastCount++
                         }
 
@@ -63,6 +57,7 @@ class ContentGenerator {
                             finalPlaylist[categories[categoryCountInternal]] = podcastPlaylistPerCategory
                         }
                     }
+
                 }
             }
         }

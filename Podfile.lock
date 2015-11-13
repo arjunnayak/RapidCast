@@ -1,21 +1,32 @@
 PODS:
+  - Bolts/Tasks (1.4.0)
   - GDataXML-HTML (1.2.0)
-  - Realm (0.93.2):
-    - Realm/Headers (= 0.93.2)
-  - Realm/Headers (0.93.2)
-  - RealmSwift (0.93.2):
-    - Realm (= 0.93.2)
+  - Parse (1.9.1):
+    - Bolts/Tasks (>= 1.4.0)
+  - Realm (0.95.2):
+    - Realm/Headers (= 0.95.2)
+  - Realm/Headers (0.95.2)
+  - RealmSwift (0.95.2):
+    - Realm (= 0.95.2)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
   - SwiftyJSON (2.2.1)
 
 DEPENDENCIES:
   - GDataXML-HTML (~> 1.2)
+  - Parse
   - RealmSwift
+  - SDWebImage
   - SwiftyJSON (~> 2.2.0)
 
 SPEC CHECKSUMS:
+  Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   GDataXML-HTML: dac3692417e9fc612f8e12d8baae3706fccedcc8
-  Realm: 2fdd0ae74f730e190384e0338d8a0d3654df8220
-  RealmSwift: 231b064da9f98b1c4f325fe1f1cb8756aae2b8d6
+  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
+  Realm: 4c026902041bb39c4bd083ebc5e88f4f17973d72
+  RealmSwift: ac7822fe7ab8dca7fa979f4d576793b111d6dce1
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
   SwiftyJSON: ae2d0a3d68025d136602a33c4ee215091ced3e33
 
 COCOAPODS: 0.38.2

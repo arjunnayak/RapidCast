@@ -6,6 +6,8 @@ target 'RapidCast' do
 	pod 'SwiftyJSON', '~> 2.2.0'
 	pod 'RealmSwift'
 	pod 'GDataXML-HTML', '~> 1.2'
+    pod 'SDWebImage'
+    pod 'Parse'
 end
 
 target 'RapidCastTests' do

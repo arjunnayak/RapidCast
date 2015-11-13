@@ -39,12 +39,15 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
     }
     
     func segueToHomeScreen() {
-        let realm = Realm()
-        realm.write {
-            realm.add(self.chosenCategories, update: false)
-            self.performSegueWithIdentifier("RapidCast", sender: self)
-        }
+        //INSTEAD OF USING REALM, YOU COULD USE PARSE TO STORE OBJECT TO USER
         
+        let rlm = try? Realm()
+        if let realm = rlm {
+            realm.write {
+                realm.add(self.chosenCategories, update: false)
+                self.performSegueWithIdentifier("RapidCast", sender: self)
+            }
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -88,7 +91,7 @@ class CategoryChooserCollectionViewController: UICollectionViewController {
 
     override func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
-        var category = categories[indexPath.row]
+        let category = categories[indexPath.row]
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("CategoryCell", forIndexPath: indexPath) as! CategoryCollectionViewCell
         cell.alpha = 0.25
 

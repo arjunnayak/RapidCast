@@ -17,12 +17,10 @@ class Podcast {
     var duration: String?
     var image : UIImage?
     
-    init() {
-        
-    }
+    init() {}
     
     func printPodcast() {
-        println("\(title) \(author) \(url) \(duration) \(image?.description)")
+        print("\(title) \(author) \(url) \(duration) \(image?.description)")
     }
     
     convenience init(title : String, author: String, url: NSString, image: UIImage) {
