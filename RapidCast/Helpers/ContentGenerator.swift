@@ -13,7 +13,7 @@ class ContentGenerator {
     
     static func generate(categories: [String], completionBlock: [String : [Podcast]] -> Void) {
         
-        var iTunesLinks : [NSURL] = iTunesHelper.getiTunesLinksFromRSS(categories)
+        let iTunesLinks : [NSURL] = iTunesHelper.getiTunesLinksFromRSS(categories)
         //this gets the top 25 podcast channels for each category
         
         var finalPlaylist : [String : [Podcast]] = [:]
@@ -27,9 +27,9 @@ class ContentGenerator {
             
             RequestHelper.makeRequestForLookupID(iTunesLinks[categoryCount]) { savedIDs in //make the http request for the first category
 
-                var lookupURLs : [NSURL] = iTunesHelper.getiTunesLookupURLs(savedIDs) //3 lookupUrls for podcast channels
+                let lookupURLs : [NSURL] = iTunesHelper.getiTunesLookupURLs(savedIDs) //3 lookupUrls for podcast channels
                 
-                //var channelCount = 0
+                //let channelCount = 0
                 var podcastPlaylistPerCategory : [Podcast] = []
                 
                 for(var channelCount = 0;  channelCount < lookupURLs.count; channelCount++) {

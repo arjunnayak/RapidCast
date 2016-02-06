@@ -41,7 +41,7 @@ class iTunesHelper {
         return genres
     }
     
-    static var genres = [
+    private static let genres = [
         "Arts" : "1301",
         "Comedy" : "1303",
         "Education" : "1304",

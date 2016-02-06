@@ -28,7 +28,7 @@
 		47FEB0CB1B5814150091725D /* podcast icon.jpeg in Resources */ = {isa = PBXBuildFile; fileRef = 47FEB0CA1B5814150091725D /* podcast icon.jpeg */; };
 		47FEB0CF1B5815F20091725D /* PodcastTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FEB0CE1B5815F20091725D /* PodcastTableViewCell.swift */; };
 		47FEB0D21B58200B0091725D /* Podcast.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47FEB0D11B58200B0091725D /* Podcast.swift */; };
-		6450CCEB4F7C00789A41752B /* Pods_RapidCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229AD353732B1E4D7C11F174 /* Pods_RapidCast.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		6450CCEB4F7C00789A41752B /* Pods_RapidCast.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 229AD353732B1E4D7C11F174 /* Pods_RapidCast.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -515,6 +515,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RapidCast/RapidCast-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 			};
 			name = Debug;
 		};
@@ -532,6 +533,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "RapidCast/RapidCast-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 			};
 			name = Release;
 		};

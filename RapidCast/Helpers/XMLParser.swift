@@ -11,7 +11,7 @@ import UIKit
 
 class XMLParser {
 
-    var gotPodcast = false
+    let gotPodcast = false
     
     static func getPodcast(feedURL : NSURL) -> Podcast {
        // println(feedURL)
@@ -41,7 +41,7 @@ class XMLParser {
                     }
                     
                     if(gChild.name() == "item") {
-                        var titleRef = gChild.elementsForName("title") as! [GDataXMLElement]
+                        let titleRef = gChild.elementsForName("title") as! [GDataXMLElement]
                         var podcastAuthor = ""
                         if let authorRef = gChild.elementsForName("itunes:author") as? [GDataXMLElement] {
                             podcastAuthor = authorRef[0].stringValue()
@@ -66,16 +66,12 @@ class XMLParser {
             print("xml parser error")
         }
         
-        
         if let pod = pod {
             return pod
         }
         else  {
             return Podcast()
         }
-        
-        
-        
     }
     
 }

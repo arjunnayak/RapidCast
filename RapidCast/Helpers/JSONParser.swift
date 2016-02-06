@@ -27,7 +27,7 @@ class JSONParser {
         let entryArray = json["feed"]["entry"]
         
         //get the 3 podcast channel ids for the generated random indexes
-        for index  in randomIndexes {
+        for index in randomIndexes {
             let id = entryArray[index]["id"]["attributes"]["im:id"].stringValue
             lookupIDs.append(id)
         }

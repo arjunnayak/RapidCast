@@ -10,9 +10,6 @@ import Foundation
 
 class RequestHelper {
     
-    private static var currentID : String =  ""
-    private static var currentLink : NSURL? =  NSURL(string: "")
-    
     static func makeRequestForLookupID(url: NSURL, completionBlock: [String] -> Void) {
         
         var returningID : [String] = []

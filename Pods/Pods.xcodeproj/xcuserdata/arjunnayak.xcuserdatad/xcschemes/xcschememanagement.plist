@@ -4,17 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>Bolts.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>GDataXML-HTML.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>Parse.xcscheme</key>
+		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -47,42 +42,37 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>10845198053E6B4C1CB0DB2377D456CA</key>
+		<key>3F37C7411207DAC1A01E53AC75363693</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>258B2E6312CE6C65AA327106F246C7F5</key>
+		<key>4E35346A4DF6278BD70D5E719828552F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>8784954C824D14730A2814AA38913E5A</key>
+		<key>64F2BD5F41D35B71F32EDEDFA2762680</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9666688CB41B38A9914616144C9C7A3E</key>
+		<key>93C3B7EAAF8329A9398DAD85C3FD1301</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B9A04D3C9B208813656510FDA8ADAE02</key>
+		<key>AE93CBC5993099B937E15CE7614F1214</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>BC2CE2EED8EF0A1FCD9F2FDE10A37944</key>
+		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>DF18FD0F2ECA16AF7D4C4B4D21ABB9DC</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>FC2BC177AD03D92F338FB9ACBCB6E0F0</key>
+		<key>F1FC51EAA90A12BC5B0E2087905015A8</key>
 		<dict>
 			<key>primary</key>
 			<true/>

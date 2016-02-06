@@ -1,8 +1,6 @@
 PODS:
-  - Bolts/Tasks (1.4.0)
   - GDataXML-HTML (1.2.0)
-  - Parse (1.9.1):
-    - Bolts/Tasks (>= 1.4.0)
+  - MBProgressHUD (0.9.2)
   - Realm (0.95.2):
     - Realm/Headers (= 0.95.2)
   - Realm/Headers (0.95.2)
@@ -11,22 +9,30 @@ PODS:
   - SDWebImage (3.7.3):
     - SDWebImage/Core (= 3.7.3)
   - SDWebImage/Core (3.7.3)
-  - SwiftyJSON (2.2.1)
+  - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
-  - GDataXML-HTML (~> 1.2)
-  - Parse
+  - GDataXML-HTML
+  - MBProgressHUD (~> 0.9.2)
   - RealmSwift
   - SDWebImage
-  - SwiftyJSON (~> 2.2.0)
+  - SwiftyJSON (from `https://github.com/SwiftyJSON/SwiftyJSON.git`)
+
+EXTERNAL SOURCES:
+  SwiftyJSON:
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
+
+CHECKOUT OPTIONS:
+  SwiftyJSON:
+    :commit: 42bdb102d2624b143c07850ebdc1537d5b6579b6
+    :git: https://github.com/SwiftyJSON/SwiftyJSON.git
 
 SPEC CHECKSUMS:
-  Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
   GDataXML-HTML: dac3692417e9fc612f8e12d8baae3706fccedcc8
-  Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
+  MBProgressHUD: 1569cf7ace17a8bac47aabfbb8580a49690386d1
   Realm: 4c026902041bb39c4bd083ebc5e88f4f17973d72
   RealmSwift: ac7822fe7ab8dca7fa979f4d576793b111d6dce1
   SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
-  SwiftyJSON: ae2d0a3d68025d136602a33c4ee215091ced3e33
+  SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-COCOAPODS: 0.38.2
+COCOAPODS: 0.39.0
