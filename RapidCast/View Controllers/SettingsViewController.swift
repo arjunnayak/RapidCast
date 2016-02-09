@@ -21,9 +21,5 @@ class SettingsViewController : UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-//        if(self.respondsToSelector(ed) {
-//            self.edgesForExtendedLayout = UIRectEdge.None
-//        }
     }
 }

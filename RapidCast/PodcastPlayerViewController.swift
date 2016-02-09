@@ -22,7 +22,7 @@ class PodcastPlayerViewController: UIViewController {
     
     var podcastPlaylist : [String : [Podcast]] = [:]
     var allPodcasts : [AVPlayerItem] = []
-    var indexPodcasts = NSMutableArray()
+    let indexPodcasts = NSMutableArray()
     var podcasts : [Podcast] = []
     var currentIndex = 0
     

@@ -86,16 +86,12 @@ strip_invalid_archs() {
 if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "Pods-RapidCast/GDataXML_HTML.framework"
   install_framework "Pods-RapidCast/MBProgressHUD.framework"
-  install_framework "Pods-RapidCast/Realm.framework"
-  install_framework "Pods-RapidCast/RealmSwift.framework"
   install_framework "Pods-RapidCast/SDWebImage.framework"
   install_framework "Pods-RapidCast/SwiftyJSON.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "Pods-RapidCast/GDataXML_HTML.framework"
   install_framework "Pods-RapidCast/MBProgressHUD.framework"
-  install_framework "Pods-RapidCast/Realm.framework"
-  install_framework "Pods-RapidCast/RealmSwift.framework"
   install_framework "Pods-RapidCast/SDWebImage.framework"
   install_framework "Pods-RapidCast/SwiftyJSON.framework"
 fi

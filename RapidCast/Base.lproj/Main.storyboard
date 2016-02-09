@@ -19,7 +19,6 @@
             <string>HelveticaNeue-Thin</string>
             <string>HelveticaNeue-Thin</string>
             <string>HelveticaNeue-Thin</string>
-            <string>HelveticaNeue-Thin</string>
         </mutableArray>
     </customFonts>
     <scenes>
@@ -309,29 +308,6 @@
                                             <constraint firstAttribute="height" constant="30" id="5Ut-xJ-1Ve"/>
                                         </constraints>
                                     </imageView>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lnb-hd-p6T">
-                                        <rect key="frame" x="243" y="333" width="115" height="100"/>
-                                        <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="This may take a few seconds.." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ihR-Gc-YKH">
-                                                <rect key="frame" x="7" y="8" width="100" height="47"/>
-                                                <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="15"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
-                                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="Bol-xI-ekH">
-                                                <rect key="frame" x="39" y="55" width="37" height="37"/>
-                                            </activityIndicatorView>
-                                        </subviews>
-                                        <constraints>
-                                            <constraint firstAttribute="centerX" secondItem="Bol-xI-ekH" secondAttribute="centerX" id="Ajo-0M-P5R"/>
-                                            <constraint firstItem="Bol-xI-ekH" firstAttribute="top" secondItem="ihR-Gc-YKH" secondAttribute="bottom" id="Jvb-RF-KKI"/>
-                                            <constraint firstAttribute="centerY" secondItem="ihR-Gc-YKH" secondAttribute="centerY" constant="18.5" id="M5A-Xf-Ta5"/>
-                                            <constraint firstAttribute="centerY" secondItem="Bol-xI-ekH" secondAttribute="centerY" constant="-23.5" id="RzG-cw-irc"/>
-                                            <constraint firstAttribute="height" constant="100" id="Tuy-JY-P1S"/>
-                                            <constraint firstAttribute="width" constant="115" id="UCb-fk-E1N"/>
-                                            <constraint firstAttribute="centerX" secondItem="ihR-Gc-YKH" secondAttribute="centerX" constant="0.5" id="dqB-7E-tIV"/>
-                                        </constraints>
-                                    </view>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wO9-mP-kkQ" userLabel="Settings">
                                         <rect key="frame" x="551" y="39" width="32" height="32"/>
                                         <constraints>
@@ -379,14 +355,12 @@
                                     <constraint firstItem="4Dz-rI-6ue" firstAttribute="bottom" secondItem="Fgp-d3-3Xc" secondAttribute="bottom" id="K0g-nB-p4g"/>
                                     <constraint firstItem="LgK-U4-E2h" firstAttribute="top" secondItem="Fa7-be-k8C" secondAttribute="bottom" constant="31" id="Krg-c0-fju"/>
                                     <constraint firstItem="e4k-E6-Tr6" firstAttribute="leading" secondItem="Xu2-Cr-waC" secondAttribute="leading" constant="337" id="OB8-i3-0jS"/>
-                                    <constraint firstAttribute="centerX" secondItem="lnb-hd-p6T" secondAttribute="centerX" id="PEr-yz-xWb"/>
                                     <constraint firstAttribute="bottom" secondItem="Fgp-d3-3Xc" secondAttribute="bottom" constant="30" id="PSF-fv-kdT"/>
                                     <constraint firstItem="LgK-U4-E2h" firstAttribute="centerY" secondItem="Xu2-Cr-waC" secondAttribute="centerY" id="SPK-Ka-c4l"/>
                                     <constraint firstAttribute="centerY" secondItem="Fa7-be-k8C" secondAttribute="centerY" constant="79.5" id="UNJ-5g-Mmh"/>
                                     <constraint firstItem="4Dz-rI-6ue" firstAttribute="leading" secondItem="Fgp-d3-3Xc" secondAttribute="leading" id="cZE-jr-z7g"/>
                                     <constraint firstItem="wO9-mP-kkQ" firstAttribute="top" secondItem="Xu2-Cr-waC" secondAttribute="top" constant="39" id="e4b-h1-3z8"/>
                                     <constraint firstItem="4Dz-rI-6ue" firstAttribute="top" secondItem="Fgp-d3-3Xc" secondAttribute="top" id="eIR-ib-OBb"/>
-                                    <constraint firstAttribute="centerY" secondItem="lnb-hd-p6T" secondAttribute="centerY" constant="-83" id="q1t-rb-t93"/>
                                     <constraint firstAttribute="centerX" secondItem="Fa7-be-k8C" secondAttribute="centerX" constant="-79" id="qIv-RJ-E0a"/>
                                     <constraint firstAttribute="trailing" secondItem="4Dz-rI-6ue" secondAttribute="trailing" constant="8" id="rAi-Qa-8Hs"/>
                                     <constraint firstItem="d9A-aa-oL8" firstAttribute="top" secondItem="Xu2-Cr-waC" secondAttribute="top" constant="28" id="s19-Jl-7oE"/>
@@ -406,24 +380,14 @@
                         <constraints>
                             <constraint firstItem="Xu2-Cr-waC" firstAttribute="bottom" secondItem="Cbh-ef-Si8" secondAttribute="top" id="43d-4D-y74"/>
                             <constraint firstAttribute="trailing" secondItem="Xu2-Cr-waC" secondAttribute="trailing" id="DzE-ny-KcR"/>
-                            <constraint firstItem="lnb-hd-p6T" firstAttribute="height" secondItem="bQf-u7-Ryu" secondAttribute="height" id="U4R-qv-DQc"/>
                             <constraint firstItem="Xu2-Cr-waC" firstAttribute="leading" secondItem="bQf-u7-Ryu" secondAttribute="leading" id="doM-dT-aLi"/>
-                            <constraint firstItem="lnb-hd-p6T" firstAttribute="width" secondItem="bQf-u7-Ryu" secondAttribute="width" id="hGo-CX-p8F"/>
                             <constraint firstItem="Xu2-Cr-waC" firstAttribute="top" secondItem="bQf-u7-Ryu" secondAttribute="top" id="vQB-4w-Sva"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="U4R-qv-DQc"/>
-                                <exclude reference="hGo-CX-p8F"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Home" id="6xd-w4-z9r"/>
                     <connections>
                         <outlet property="noteLabel" destination="Fa7-be-k8C" id="BKb-lh-YnP"/>
                         <outlet property="rapidCastButton" destination="LgK-U4-E2h" id="4mm-o3-mgq"/>
-                        <outlet property="spinner" destination="Bol-xI-ekH" id="322-g6-IDO"/>
-                        <outlet property="waitingLabel" destination="ihR-Gc-YKH" id="n6x-Kt-dnn"/>
                         <segue destination="tXg-JQ-3Ih" kind="show" identifier="RapidCast" id="KMz-2e-rE3"/>
                         <segue destination="tXg-JQ-3Ih" kind="show" identifier="ShowCurrentPlaylist" id="EAA-oE-P6K"/>
                     </connections>
