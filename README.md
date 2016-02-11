@@ -12,7 +12,6 @@ Rapidcast is an iOS app that generates a playlist of podcasts specific to your t
     - Improve/refine algorithm (speed and consistent results): (crucial)
       - consider new xml parser
       - consider AFNetworking for network management
-      - consider holding references to podcasts already seen by user (algorithm side)
     - Storage Decisions:
       - <del> store categories in nsuserdefaults (crucial)
       - <del> remove realm (crucial)
@@ -26,8 +25,9 @@ Rapidcast is an iOS app that generates a playlist of podcasts specific to your t
         - add and remove 15/30 seconds (crucial)
 
   - 1.5 Update
-    - Storage: 
+    - Storage & Algorithm: 
       - consider holding references to podcasts already seen by user (storage side) 
+      - consider holding references to podcasts already seen by user (algorithm side)
     - Podcast playing:
       - possible speed changing? (1.5x, 2x)
   - Other features:
