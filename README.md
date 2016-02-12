@@ -16,7 +16,7 @@ Rapidcast is an iOS app that generates a playlist of podcasts specific to your t
       - <del> store categories in nsuserdefaults (crucial)
       - <del> remove realm (crucial)
       - consider core data/Realm for persistent podcast storage
-        - allows for playing most recent generated playlist (crucial)
+        - store most recent generated playlist (crucial)
   - Podcast playing:
     - switch to StreamingKit (https://github.com/tumtumtum/StreamingKit)
       - Allow for playing in background (crucial)
@@ -26,8 +26,7 @@ Rapidcast is an iOS app that generates a playlist of podcasts specific to your t
 
   - 1.5 Update
     - Storage & Algorithm: 
-      - consider holding references to podcasts already seen by user (storage side) 
-      - consider holding references to podcasts already seen by user (algorithm side)
+      - consider holding references to podcasts already seen by user (storage AND algorithm side)
     - Podcast playing:
       - possible speed changing? (1.5x, 2x)
   - Other features:
