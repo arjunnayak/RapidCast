@@ -18,7 +18,6 @@ class JSONParser {
         let dataFromString = dataFromRequest.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
         let json = JSON(data: dataFromString!)
         
-        //grab 3 random numbers
         var randomIndexes : [Int] = []
         for _ in (0...2) {
             randomIndexes.append(Int(arc4random_uniform(25)))
@@ -33,7 +32,6 @@ class JSONParser {
         }
         
         return lookupIDs
-        
     }
     
     static func parseForFeedURL(dataFromRequest: NSString) -> String {

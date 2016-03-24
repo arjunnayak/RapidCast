@@ -61,14 +61,29 @@ class RapidCastViewController: UIViewController {
     
     func generateContent() {
         if self.categories.count > 0 {
-            let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             
-            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) {
+//            let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+//            
+//            dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0)) {
+//                
+//                ContentGenerator.generate(self.categories) { finalPlaylist in
+//                    self.finalPlaylist = finalPlaylist
+//                    dispatch_async(dispatch_get_main_queue()) {
+//                        
+//                        progressHUD.hide(true)
+//                        self.performSegueWithIdentifier("RapidCast", sender: self)
+//                    }
+//                }
+//            }
+            
+            let progressHUD = MBProgressHUD.showHUDAddedTo(self.view, animated:true)
+            let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.01 * Double(NSEC_PER_SEC)))
+            dispatch_after(popTime, dispatch_get_main_queue()) {
                 
                 ContentGenerator.generate(self.categories) { finalPlaylist in
                     self.finalPlaylist = finalPlaylist
+                    
                     dispatch_async(dispatch_get_main_queue()) {
-                        
                         progressHUD.hide(true)
                         self.performSegueWithIdentifier("RapidCast", sender: self)
                     }

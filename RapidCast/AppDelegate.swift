@@ -18,7 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         let categories = NSUserDefaults.standardUserDefaults().objectForKey("chosen_categories")
-        if let _ = categories {
+        print("chosen categories: \(categories)")
+        if(categories == nil) {
             self.window = UIWindow(frame: UIScreen.mainScreen().bounds)
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let cvc = storyboard.instantiateViewControllerWithIdentifier("chooseCategories") as! UINavigationController

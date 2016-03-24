@@ -2,4 +2,118 @@
 <Bucket
    type = "0"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RapidCast/Helpers/ContentGenerator.swift"
+            timestampString = "476930076.999919"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "generate(_:completionBlock:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static RapidCast.ContentGenerator.generate (RapidCast.ContentGenerator.Type)(Swift.Array&lt;Swift.String&gt;, completionBlock : (Swift.Dictionary&lt;Swift.String, Swift.Array&lt;RapidCast.Podcast&gt;&gt;) -&gt; ()) -&gt; ()"
+                  moduleName = "RapidCast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arjunnayak/Downloads/RapidCast-1-master/RapidCast/Helpers/ContentGenerator.swift"
+                  timestampString = "476930227.308157"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "344">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static RapidCast.ContentGenerator.(generate (RapidCast.ContentGenerator.Type) -&gt; (Swift.Array&lt;Swift.String&gt;, completionBlock : (Swift.Dictionary&lt;Swift.String, Swift.Array&lt;RapidCast.Podcast&gt;&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "RapidCast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arjunnayak/Downloads/RapidCast-1-master/RapidCast/Helpers/ContentGenerator.swift"
+                  timestampString = "476930227.308521"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "68">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RapidCast/Helpers/ContentGenerator.swift"
+            timestampString = "476930086.259694"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
+            landmarkName = "generate(_:completionBlock:)"
+            landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static RapidCast.ContentGenerator.(generate (RapidCast.ContentGenerator.Type) -&gt; (Swift.Array&lt;Swift.String&gt;, completionBlock : (Swift.Dictionary&lt;Swift.String, Swift.Array&lt;RapidCast.Podcast&gt;&gt;) -&gt; ()) -&gt; ()).(closure #1)"
+                  moduleName = "RapidCast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arjunnayak/Downloads/RapidCast-1-master/RapidCast/Helpers/ContentGenerator.swift"
+                  timestampString = "476930227.309879"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "272">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static RapidCast.ContentGenerator.(generate (RapidCast.ContentGenerator.Type) -&gt; (Swift.Array&lt;Swift.String&gt;, completionBlock : (Swift.Dictionary&lt;Swift.String, Swift.Array&lt;RapidCast.Podcast&gt;&gt;) -&gt; ()) -&gt; ()).(closure #1).(closure #1)"
+                  moduleName = "RapidCast"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/arjunnayak/Downloads/RapidCast-1-master/RapidCast/Helpers/ContentGenerator.swift"
+                  timestampString = "476930227.310121"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "88">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RapidCast/Helpers/ContentGenerator.swift"
+            timestampString = "476930096.586871"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "generate(_:completionBlock:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

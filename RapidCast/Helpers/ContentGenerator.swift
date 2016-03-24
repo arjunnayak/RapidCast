@@ -13,8 +13,8 @@ class ContentGenerator {
     
     static func generate(categories: [String], completionBlock: [String : [Podcast]] -> Void) {
         
+        //this gets the top 25 podcast channels for each category as NSURLS
         let iTunesLinks : [NSURL] = iTunesHelper.getiTunesLinksFromRSS(categories)
-        //this gets the top 25 podcast channels for each category
         
         var finalPlaylist : [String : [Podcast]] = [:]
         
@@ -25,19 +25,19 @@ class ContentGenerator {
 
             let categoryCountInternal = categoryCount
             
-            RequestHelper.makeRequestForLookupID(iTunesLinks[categoryCount]) { savedIDs in //make the http request for the first category
+            //make the http request, parses JSON, and returns list of Podcast URLS
+            RequestHelper.makeRequestForLookupID(iTunesLinks[categoryCount]) { savedIDs in
 
-                let lookupURLs : [NSURL] = iTunesHelper.getiTunesLookupURLs(savedIDs) //3 lookupUrls for podcast channels
+                //gets iTunes URLS
+                let lookupURLs : [NSURL] = iTunesHelper.getiTunesLookupURLs(savedIDs)
                 
                 //let channelCount = 0
                 var podcastPlaylistPerCategory : [Podcast] = []
-                
                 for(var channelCount = 0;  channelCount < lookupURLs.count; channelCount++) {
-                    
-
+                    //get feed URL containing XML
                     RequestHelper.makeRequestForFeedURL(lookupURLs[channelCount]) { feedURL in
 
-                        //println(feedURL)
+                        print("feed URL: \(feedURL)")
                         if(feedURL.absoluteString == "") {
                             totalPodcastCount++
                         }
@@ -49,11 +49,9 @@ class ContentGenerator {
                         }
 
                         if totalPodcastCount ==  expectedPodcastCount { //we've collected all podcasts
-                            
                             finalPlaylist[categories[categoryCountInternal]] = podcastPlaylistPerCategory
                             completionBlock(finalPlaylist)
-                        }
-                        else {
+                        } else {
                             finalPlaylist[categories[categoryCountInternal]] = podcastPlaylistPerCategory
                         }
                     }
