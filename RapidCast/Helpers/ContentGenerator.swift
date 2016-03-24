@@ -41,6 +41,8 @@ class ContentGenerator {
                         if(feedURL.absoluteString == "") {
                             totalPodcastCount++
                         }
+                            
+                        ////////
                         else {
                             let podcast = XMLParser.getPodcast(feedURL)
                             podcast.printPodcast()
