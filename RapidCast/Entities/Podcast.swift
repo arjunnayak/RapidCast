@@ -20,6 +20,7 @@ class Podcast {
     init() {}
     
     func printPodcast() {
+        print("-----Printing Podcast------")
         print("\(title) \(author) \(url) \(duration) \(image?.description)")
     }
     

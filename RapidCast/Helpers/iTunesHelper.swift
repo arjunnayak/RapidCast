@@ -10,26 +10,25 @@ import Foundation
 
 class iTunesHelper {
     
+    /*
+    * Generates iTunes link for each category supplied
+    * @parm Array of categories
+    */
     static func getiTunesLinksFromRSS(categories: [String]) -> [NSURL] {
-        var genreIDs = [String]()
-        for category in categories {
-            genreIDs.append(iTunesHelper.genres[category]!)
-        }
-        
         var iTunesLinks = [NSURL]()
-        for (var i = 0; i < genreIDs.count; i++) {
-            //get ids from rss link
-            iTunesLinks.append(NSURL(string: "https://itunes.apple.com/us/rss/toppodcasts/limit=25/genre=\(genreIDs[i])/json")!)
+        for category in categories {
+            let genreID = iTunesHelper.getGenres()[category]!
+            iTunesLinks.append(NSURL(string: "https://itunes.apple.com/us/rss/toppodcasts/limit=25/genre=\(genreID)/json")!)
         }
         return iTunesLinks
     }
     
     
     /*
-    * @parm in the lookup ID from rss link generator
+    * Generates iTunes Lookup URL
+    * @parm array of lookup IDs from rss link generator
     */
     static func getiTunesLookupURLs(lookupIDs: [String]) -> [NSURL] {
-        
         var lookupURLs : [NSURL] = []
         for id in lookupIDs {
             lookupURLs.append(NSURL(string: "https://itunes.apple.com/lookup?id=\(id)")!)

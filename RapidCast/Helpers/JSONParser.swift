@@ -18,29 +18,34 @@ class JSONParser {
         let dataFromString = dataFromRequest.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
         let json = JSON(data: dataFromString!)
         
-        var randomIndexes : [Int] = []
-        for _ in (0...2) {
-            randomIndexes.append(Int(arc4random_uniform(25)))
-        }
-        
         let entryArray = json["feed"]["entry"]
+        
+        var randomIndexes = Set<Int>()
+        while(randomIndexes.count != 3) {
+            randomIndexes.insert(Int(arc4random_uniform(UInt32(entryArray.count))))
+        }
         
         //get the 3 podcast channel ids for the generated random indexes
         for index in randomIndexes {
             let id = entryArray[index]["id"]["attributes"]["im:id"].stringValue
+            print("json parser lookup id \(id)")
+            if(id == "") {
+                print("json parser id empty")
+                print("json parser tried to acces \(index) in entry array \(entryArray)")
+            }
             lookupIDs.append(id)
         }
-        
         return lookupIDs
     }
     
     static func parseForFeedURL(dataFromRequest: NSString) -> String {
         
         let dataFromString = dataFromRequest.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
-        let json = JSON(data: dataFromString!) //gets here successfully!
+        let json = JSON(data: dataFromString!)
         let results = json["results"]
         let resultsAttributes = results[0]
         let feedURL = resultsAttributes["feedUrl"].stringValue
+        print("json parser podcast feedURL \(feedURL)")
         return feedURL
     }
 }
