@@ -13,8 +13,12 @@ class XMLParser {
 
     let gotPodcast = false
     
+    
     static func getPodcast(feedURL : NSURL) -> Podcast {
-       // println(feedURL)
+        
+        ////timing
+        var startTime = CFAbsoluteTimeGetCurrent()
+        
         
         let data = NSData(contentsOfURL: feedURL)
         var pod : Podcast?
@@ -62,6 +66,9 @@ class XMLParser {
                     }
                 }
             }
+            ////timing
+            let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+            print("xml parsing takes: \(Double(timeElapsed))")
         } catch _ {
             print("xml parser error")
         }
@@ -70,8 +77,8 @@ class XMLParser {
             return pod
         }
         else  {
+            print("returned empty podcast")
             return Podcast()
         }
     }
-    
 }
