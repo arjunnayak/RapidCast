@@ -37,7 +37,7 @@ class JSONParser {
     static func parseForFeedURL(dataFromRequest: NSString) -> String {
         
         let dataFromString = dataFromRequest.dataUsingEncoding(NSUTF8StringEncoding, allowLossyConversion: false)
-        let json = JSON(data: dataFromString!) //gets here successfully!
+        let json = JSON(data: dataFromString!)
         let results = json["results"]
         let resultsAttributes = results[0]
         let feedURL = resultsAttributes["feedUrl"].stringValue

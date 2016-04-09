@@ -13,10 +13,10 @@ class ContentGenerator {
     
     static func generate(categories: [String], completionBlock: [String : [Podcast]] -> Void) {
         
+        var finalPlaylist : [String : [Podcast]] = [:]
+        
         //this gets the top 25 podcast channels for each category as NSURLS
         let iTunesLinks : [NSURL] = iTunesHelper.getiTunesLinksFromRSS(categories)
-        
-        var finalPlaylist : [String : [Podcast]] = [:]
         
         var totalPodcastCount = 0
         let expectedPodcastCount = 3*iTunesLinks.count
@@ -41,8 +41,6 @@ class ContentGenerator {
                         if(feedURL.absoluteString == "") {
                             totalPodcastCount++
                         }
-                            
-                        ////////
                         else {
                             let podcast = XMLParser.getPodcast(feedURL)
                             podcast.printPodcast()

@@ -11,7 +11,6 @@ import Foundation
 class RequestHelper {
     
     static func makeRequestForLookupID(url: NSURL, completionBlock: [String] -> Void) {
-        
         var returningID : [String] = []
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
             if let workingData = data {
@@ -19,23 +18,24 @@ class RequestHelper {
                 returningID = JSONParser.parseForLookupID(responseString)
                 completionBlock(returningID)
             } else {
-                print("url session is failing")
+                print("LookupID request for url: \(url) failed")
             }
         }
         task.resume()
     }
 
     static func makeRequestForFeedURL(url: NSURL, completionBlock: NSURL throws -> Void) {
-            
         var returningLink = NSURL(string: "")
-        
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
-            let responseString = NSString(data: data!, encoding: NSUTF8StringEncoding)!
-            returningLink = NSURL(string: JSONParser.parseForFeedURL(responseString))!
-            try! completionBlock(returningLink!)
+            if let workingData = data {
+                let responseString = NSString(data: workingData, encoding: NSUTF8StringEncoding)!
+                returningLink = NSURL(string: JSONParser.parseForFeedURL(responseString))!
+                try! completionBlock(returningLink!)
+            } else {
+                print("Feed URL request for url: \(url) failed")
+            }
         }
         task.resume()
-
     }
 }
 
