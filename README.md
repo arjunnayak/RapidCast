@@ -42,4 +42,6 @@ Rapidcast is an iOS app that generates a playlist of podcasts specific to your t
 
 
 Some Notes
-1. [4/8/16] HUGE Bug (still in testing): when generating random integers (used to be 1 - 25) to pick from list of "top 25" from each category, sometimes we wouldn't even receive 25 podcast channels, so sometimes the random integer is larger than the actual list, thus giving us an empty lookupID
+
+
+1. [4/8/16] HUGE Bug (still in testing): when generating random integers (used to be 1 - 25) to pick from list of "top 25" from each category, sometimes we wouldn't even receive 25 podcast channels; the random integer would be larger than the actual list, thus giving us an empty lookupID.

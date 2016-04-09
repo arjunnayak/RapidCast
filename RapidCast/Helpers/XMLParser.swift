@@ -62,6 +62,7 @@ class XMLParser {
                     }
                     
                     if(gotPodcast) {
+                        print("xml parsing - got podcast, breaking parsing")
                         break parsing
                     }
                 }

@@ -71,7 +71,6 @@ class ContentGenerator {
                             finalPlaylist[categories[categoryCountInternal]] = podcastPlaylistPerCategory
                         }
                     }
-
                 }
             }
         }

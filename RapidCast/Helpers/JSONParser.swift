@@ -45,7 +45,6 @@ class JSONParser {
         let results = json["results"]
         let resultsAttributes = results[0]
         let feedURL = resultsAttributes["feedUrl"].stringValue
-        print("json parser podcast feedURL \(feedURL)")
         return feedURL
     }
 }

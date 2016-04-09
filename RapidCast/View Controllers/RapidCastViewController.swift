@@ -80,14 +80,24 @@ class RapidCastViewController: UIViewController {
             let popTime = dispatch_time(DISPATCH_TIME_NOW, Int64(0.01 * Double(NSEC_PER_SEC)))
             dispatch_after(popTime, dispatch_get_main_queue()) {
                 
-                ContentGenerator.generate(self.categories) { finalPlaylist in
-                    self.finalPlaylist = finalPlaylist
-                    
-                    dispatch_async(dispatch_get_main_queue()) {
-                        progressHUD.hide(true)
-                        self.performSegueWithIdentifier("RapidCast", sender: self)
+                ////timing
+                let finalStartTime = CFAbsoluteTimeGetCurrent()
+                
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), { () -> () in
+                    ContentGenerator.generate(self.categories) { finalPlaylist in
+                        self.finalPlaylist = finalPlaylist
+                        
+                        ////timing
+                        let finalTimeElapsed = CFAbsoluteTimeGetCurrent() - finalStartTime
+                        print("entire podcast process time: \(Double(finalTimeElapsed))")
+                        
+                        dispatch_async(dispatch_get_main_queue()) {
+                            progressHUD.hide(true)
+                            self.performSegueWithIdentifier("RapidCast", sender: self)
+                        }
                     }
-                }
+                });
+               
             }
         }
     }
