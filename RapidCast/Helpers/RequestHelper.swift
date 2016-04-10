@@ -28,6 +28,7 @@ class RequestHelper {
         var returningLink = NSURL(string: "")
         let task = NSURLSession.sharedSession().dataTaskWithURL(url) { (data, response, error) in
             if let workingData = data {
+                print(String(format: "Feed url file size is : %.2f KB", Float(workingData.length)/Float(1024.0)));
                 let responseString = NSString(data: workingData, encoding: NSUTF8StringEncoding)!
                 returningLink = NSURL(string: JSONParser.parseForFeedURL(responseString))!
                 try! completionBlock(returningLink!)

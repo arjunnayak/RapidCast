@@ -21,7 +21,7 @@ class Podcast {
     
     func printPodcast() {
         print("-----Printing Podcast------")
-        print("\(title) \(author) \(url) \(duration) \(image?.description)")
+        print("title:\(title) author:\(author) url:\(url) duration:\(duration) image:\(image?.description) \n")
     }
     
     convenience init(title : String, author: String, url: NSString, image: UIImage) {

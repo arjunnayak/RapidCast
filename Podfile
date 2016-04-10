@@ -8,7 +8,9 @@ target 'RapidCast' do
 	pod 'GDataXML-HTML'
     pod 'SDWebImage'
     pod 'MBProgressHUD', '~> 0.9.2'
-    
+    pod 'TBXML'
+    pod 'Ono'
+
 end
 
 target 'RapidCastTests' do

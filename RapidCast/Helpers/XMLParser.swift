@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Ono
 
 class XMLParser {
 
@@ -15,11 +16,8 @@ class XMLParser {
     
     
     static func getPodcast(feedURL : NSURL) -> Podcast {
-        
         ////timing
-        var startTime = CFAbsoluteTimeGetCurrent()
-        
-        
+        let startTime = CFAbsoluteTimeGetCurrent()
         let data = NSData(contentsOfURL: feedURL)
         var pod : Podcast?
         do {
@@ -62,24 +60,96 @@ class XMLParser {
                     }
                     
                     if(gotPodcast) {
-                        print("xml parsing - got podcast, breaking parsing")
+                        print("gdata xml parsing - got podcast, breaking parsing")
                         break parsing
                     }
                 }
             }
             ////timing
             let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
-            print("xml parsing takes: \(Double(timeElapsed))")
+            print("gdata xml parsing takes: \(Double(timeElapsed))")
         } catch _ {
-            print("xml parser error")
+            print("gdata xml parser error")
         }
         
         if let pod = pod {
             return pod
         }
         else  {
-            print("returned empty podcast")
+            print("gdata returned empty podcast")
             return Podcast()
         }
     }
+    
+    
+    static func getPodcastOno(feedURL : NSURL) -> Podcast? {
+        ////timing
+        let startTime = CFAbsoluteTimeGetCurrent()
+        let data = NSData(contentsOfURL: feedURL)
+        var pod : Podcast?
+        do {
+            let document = try ONOXMLDocument(data: data)
+            let channel : ONOXMLElement = document.rootElement.children[0] as! ONOXMLElement
+            var image = self.getImage(channel.firstChildWithTag("image"))
+            if(image == nil) { //getImage could not find an image, set default image
+                image = UIImage.init(named: "AppIcon")!
+            }
+            let channelElements = channel.children
+            var gotPodcast = false
+            parsing: for child in channelElements {
+                if let oChild = child as? ONOXMLElement {
+                    //print(oChild.tag)
+                    if(oChild.tag == "item") {
+                        //print("item: \(oChild)")
+                        let title : ONOXMLElement = oChild.firstChildWithTag("title")
+                        let author : ONOXMLElement = oChild.firstChildWithTag("itunes:author")
+                        let enclosure : ONOXMLElement = oChild.firstChildWithTag("enclosure")
+                        let url = enclosure.valueForAttribute("url") as! String
+                        pod = Podcast(title: title.stringValue(), author: author.stringValue(), url: url, image: image!)
+                        gotPodcast = true
+                    }
+                    if(gotPodcast) {
+                        print("ono xml parsing - got podcast, breaking parsing")
+                        break parsing
+                    }
+                }
+            }
+            ////timing
+            let timeElapsed = CFAbsoluteTimeGetCurrent() - startTime
+            print("gdata xml parsing takes: \(Double(timeElapsed))")
+        } catch _ {
+            print("ono xml parser error")
+        }
+        
+        if let pod = pod {
+            return pod
+        }
+        else  {
+            print("gdata returned empty podcast")
+            return nil
+        }
+    }
+    
+    static func getImage(element: ONOXMLElement) -> UIImage? {
+        //element.tag is always "image"
+        var image : UIImage?
+        //print("getImage element: \(element)")
+        if(!element.attributes.isEmpty) {
+            //print("getImage itunes:image attributes \(element.attributes)")
+            //print("getImage itunes:image href attribute: \(element.valueForAttribute("href"))")
+            let urlStr = element.valueForAttribute("href") as! String
+            print("getImage urlStr: \(urlStr)")
+            image = UIImage.init(data: NSData.init(contentsOfURL: NSURL.init(string: urlStr)!)!)
+        } else if(!element.children.isEmpty) {
+            let urlElement = element.firstChildWithTag("url")
+            print("getImage <image> url child: \(urlElement.stringValue())")
+            image = UIImage.init(data: NSData.init(contentsOfURL: NSURL.init(string: urlElement.stringValue())!)!)!
+        }
+        if let img = image {
+            return img
+        } else {
+            return nil
+        }
+    }
 }
+

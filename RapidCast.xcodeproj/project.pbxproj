@@ -142,8 +142,8 @@
 		4768FF4A1B5038620012C80F /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				47F116061C6854B8001FEADC /* podcast icon.jpeg */,
 				4752675F1B7DB99E00E89891 /* RapidCast-Bridging-Header.h */,
+				47F116061C6854B8001FEADC /* podcast icon.jpeg */,
 				47FEB0CA1B5814150091725D /* podcast icon.jpeg */,
 				4730DF8A1B558C730040B15B /* jazzy.mp3.mp3 */,
 				4768FF4B1B5038620012C80F /* Info.plist */,
@@ -514,7 +514,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arjunnayak.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "RapidCast/RapidCast-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/arjunnayak/Downloads/RapidCast-1-master/RapidCast/RapidCast-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 			};
 			name = Debug;
@@ -532,7 +532,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.arjunnayak.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
-				SWIFT_OBJC_BRIDGING_HEADER = "RapidCast/RapidCast-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "/Users/arjunnayak/Downloads/RapidCast-1-master/RapidCast/RapidCast-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Ounchecked";
 			};
 			name = Release;

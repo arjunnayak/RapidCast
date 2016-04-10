@@ -58,9 +58,14 @@ class ContentGenerator {
                             print("feed url was invalid")
                             totalPodcastCount++
                         } else {
-                            let podcast = XMLParser.getPodcast(feedURL)
-                            podcast.printPodcast()
-                            podcastPlaylistPerCategory.append(podcast)
+//                            let podcast = XMLParser.getPodcast(feedURL)
+                            let podcast = XMLParser.getPodcastOno(feedURL)
+                            if let pod = podcast {
+                                pod.printPodcast()
+                                podcastPlaylistPerCategory.append(pod)
+                            } else {
+                                //do something if we don't get back a podcast
+                            }
                             totalPodcastCount++
                         }
                         if totalPodcastCount ==  expectedPodcastCount { //we've collected all podcasts

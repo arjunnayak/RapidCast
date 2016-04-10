@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="35" width="600" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wgK-AL-M4Y" id="hWn-B0-dJC">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="64.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="65"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reset Categories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pht-Yz-0f7">
@@ -57,7 +57,7 @@
                                         <rect key="frame" x="0.0" y="100" width="600" height="239"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4yh-RP-9Wb" id="uQ0-gU-wEs">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="238.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="239"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Developed by Arjun Nayak" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLO-8x-TWX">
@@ -170,22 +170,54 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zt7-wQ-1X2">
-                                            <rect key="frame" x="8" y="15" width="50" height="50"/>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zt7-wQ-1X2">
+                                            <rect key="frame" x="8" y="8" width="58" height="58"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="58" id="74w-ME-aHB"/>
+                                                <constraint firstAttribute="width" secondItem="zt7-wQ-1X2" secondAttribute="height" multiplier="1:1" id="Wk4-Xt-mzi"/>
+                                            </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Podcast Channel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdZ-QX-YhL">
-                                            <rect key="frame" x="66" y="44" width="172" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Episode Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szh-Bz-sIe">
+                                            <rect key="frame" x="74" y="8" width="518" height="28"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="526" id="NTW-2C-sgF"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="NTW-2C-sgF"/>
+                                                </mask>
+                                            </variation>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Episode Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Szh-Bz-sIe">
-                                            <rect key="frame" x="66" y="15" width="267" height="24"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Podcast Channel" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DdZ-QX-YhL">
+                                            <rect key="frame" x="74" y="39" width="518" height="27"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="27" id="JZs-VR-Zqp"/>
+                                                <constraint firstAttribute="width" constant="518" id="yVu-oI-AeN"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
+                                            <variation key="default">
+                                                <mask key="constraints">
+                                                    <exclude reference="yVu-oI-AeN"/>
+                                                </mask>
+                                            </variation>
                                         </label>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Szh-Bz-sIe" secondAttribute="trailing" id="Axg-4q-eAJ"/>
+                                        <constraint firstItem="zt7-wQ-1X2" firstAttribute="leading" secondItem="OTw-6x-qvy" secondAttribute="leadingMargin" id="Pni-8d-KHj"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="DdZ-QX-YhL" secondAttribute="trailing" id="Sfh-Dj-3OL"/>
+                                        <constraint firstItem="DdZ-QX-YhL" firstAttribute="leading" secondItem="Szh-Bz-sIe" secondAttribute="leading" id="c6Z-5m-OiO"/>
+                                        <constraint firstItem="Szh-Bz-sIe" firstAttribute="leading" secondItem="zt7-wQ-1X2" secondAttribute="trailing" constant="8" id="mF9-PA-jGi"/>
+                                        <constraint firstItem="zt7-wQ-1X2" firstAttribute="centerY" secondItem="OTw-6x-qvy" secondAttribute="centerY" constant="-2.75" id="n7X-ls-bNE"/>
+                                        <constraint firstItem="DdZ-QX-YhL" firstAttribute="top" secondItem="Szh-Bz-sIe" secondAttribute="bottom" constant="3" id="nwM-Pb-rVZ"/>
+                                        <constraint firstItem="zt7-wQ-1X2" firstAttribute="bottom" secondItem="DdZ-QX-YhL" secondAttribute="bottom" id="qRw-mh-CsB"/>
+                                        <constraint firstItem="Szh-Bz-sIe" firstAttribute="top" secondItem="zt7-wQ-1X2" secondAttribute="top" id="ye7-HK-7bP"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="author" destination="DdZ-QX-YhL" id="guW-Jb-CAW"/>
