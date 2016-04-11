@@ -11,8 +11,8 @@ Rapidcast is an iOS app that generates a playlist of podcasts specific to your t
   - Improve/refine algorithm (speed and consistent results): 
     - <del>consider new xml parser</del>  [ONO]
     - <del>work from xml parsing algorithm
+    - <del>caching images
     - work on architecture after the smaller pieces are optimized
-    - consider AFNetworking for network request management
   - Podcast playing:
     - switch to StreamingKit (https://github.com/tumtumtum/StreamingKit)
       - Allow for playing in background 
@@ -20,11 +20,11 @@ Rapidcast is an iOS app that generates a playlist of podcasts specific to your t
         - scrubber 
         - add and remove 15/30 seconds 
   - Storage Decisions:
-    - <del> store categories in nsuserdefaults 
-    - <del> remove realm 
-    - consider core data/Realm for persistent podcast storage
+    - <del>store categories in nsuserdefaults 
+    - <del>remove realm 
+    - Realm for persistent podcast storage
       - store most recent generated playlist 
-    - look at options for trimming and caching images
+      - trimming image for storage
   - New Features
     - allow users to "star" podcasts channels to select and listen
     - give both the ability to pull from favorited channels or random channels
@@ -40,7 +40,8 @@ Rapidcast is an iOS app that generates a playlist of podcasts specific to your t
   - Notifications
   - Scrollable text (for long podcast titles titles)
 
-
+Current Issues
+- Algorithm only provides the latest podcast (Should implement random algorithm as well)
 Additional Notes/Logs
 
 1. [4/8/16] HUGE Bug (still in testing): when generating random integers (used to be 1 - 25) to pick from list of "top 25" from each category, sometimes we wouldn't even receive 25 podcast channels; the random integer would be larger than the actual list, thus giving us an empty lookupID.
