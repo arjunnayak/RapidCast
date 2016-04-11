@@ -5,11 +5,12 @@ use_frameworks!
 target 'RapidCast' do
     pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
 #	pod 'RealmSwift'
-	pod 'GDataXML-HTML'
+#	pod 'GDataXML-HTML'
     pod 'SDWebImage'
     pod 'MBProgressHUD', '~> 0.9.2'
-    pod 'TBXML'
     pod 'Ono'
+    pod 'MarqueeLabel'
+    pod 'StreamingKit'
 
 end
 

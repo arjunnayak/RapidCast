@@ -65,11 +65,8 @@ class PodcastPlaylistViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> PodcastTableViewCell {
         let podcast = categories[indexPath.section].podcasts![indexPath.row]
-        
         var cell = tableView.dequeueReusableCellWithIdentifier("PodcastCell", forIndexPath: indexPath) as! PodcastTableViewCell
-        
         cell.podcast = podcast
-        
         return cell
     }
     

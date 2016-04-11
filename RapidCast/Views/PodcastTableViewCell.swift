@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class PodcastTableViewCell: UITableViewCell {
 
@@ -29,10 +30,11 @@ class PodcastTableViewCell: UITableViewCell {
     var podcast: Podcast? {
         didSet {
             if let podcast = podcast {
-                
                 self.title.text = podcast.title
                 self.author.text = podcast.author
-                self.podcastImage.image = podcast.image
+                self.podcastImage.sd_setImageWithURL(NSURL.init(string: podcast.imageStr!), placeholderImage: UIImage.init(named: "appIcon"), completed: { (imageDownloaded, error2, SDImageCacheType, imageURL) -> Void in
+                    podcast.imageSaved = imageDownloaded
+                })
                 //self.duration.text = podcast.duration
                 let track = podcast.url
             }

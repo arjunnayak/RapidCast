@@ -4,12 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>GDataXML-HTML.xcscheme</key>
+		<key>MBProgressHUD.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>MBProgressHUD.xcscheme</key>
+		<key>MarqueeLabel.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -29,12 +29,12 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>SwiftyJSON.xcscheme</key>
+		<key>StreamingKit.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>TBXML.xcscheme</key>
+		<key>SwiftyJSON.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -42,42 +42,22 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>003785EF15845C7369E38D1E61D3A0B0</key>
+		<key>099282877A289C819224DF13C6E705DE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>152E63DE6EFE65B33B1AFEE1FBC1EAA4</key>
+		<key>729B07FD1D057344A147E438F9D7703F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>5743994515CF60F3D79207E4C0150864</key>
+		<key>96A55C988A3DC8633B7A68FEFFED86CE</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>62202822C01F47C212551FC778A4CAAF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>86CA93D6C5185A886FDCC003FDADDC4F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>892EA93B1285CA88CF270290E12A83A9</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>AE93CBC5993099B937E15CE7614F1214</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>D22D9AB36DBAE404DB0C2C92765C0D8E</key>
+		<key>C342FAC3FA791341E8B724E072E3C9ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -88,6 +68,11 @@
 			<true/>
 		</dict>
 		<key>E61CE3B6DFA1FE6B3E296965C76C0E10</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F0EA0DBE4CC14BB311124892C749C9B3</key>
 		<dict>
 			<key>primary</key>
 			<true/>

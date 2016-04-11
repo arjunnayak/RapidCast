@@ -9,6 +9,8 @@
 #ifndef RapidCast_RapidCast_Bridging_Header_h
 #define RapidCast_RapidCast_Bridging_Header_h
 
-#import "GDataXMLNode.h"
+//#import "GDataXMLNode.h"
+#import <SDWebImage/UIImageView+WebCache.h>
+//#import <SDWebImage/SDImageCache.h>
 
 #endif

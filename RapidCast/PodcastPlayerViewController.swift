@@ -9,6 +9,7 @@
 import UIKit
 import AVFoundation
 import SDWebImage
+import MarqueeLabel
 
 class PodcastPlayerViewController: UIViewController {
     
@@ -79,7 +80,7 @@ class PodcastPlayerViewController: UIViewController {
     }
     
     func setupPodcast() {
-        self.podcastImage.image = self.podcasts[currentIndex].image
+        self.podcastImage.image = self.podcasts[currentIndex].imageSaved
         self.titleLabel.text = self.podcasts[currentIndex].title
         self.authorLabel.text = self.podcasts[currentIndex].author
     }
@@ -88,15 +89,13 @@ class PodcastPlayerViewController: UIViewController {
     
     @IBOutlet weak var pausePlay: UIButton!
     @IBOutlet weak var podcastImage: UIImageView!
-    @IBOutlet weak var podcastTitle: UILabel!
     @IBOutlet weak var podcastSlider: UISlider!
     @IBOutlet weak var volumeButton: UIButton!
-    
     @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var titleLabel: MarqueeLabel!
     
     @IBAction func pressedPlayPause(sender: AnyObject) {
-        
+        print("tapped play/pause")
         if (self.player.rate != 0 && self.player.error == nil) {           //if player is playing
             self.player.pause()
             pausePlay.setImage(playImg, forState: UIControlState.Normal)
@@ -109,35 +108,32 @@ class PodcastPlayerViewController: UIViewController {
     }
     
     @IBAction func pressedFastForward(sender: AnyObject) {
-
+        print("tapped next")
         if(currentIndex == allPodcasts.count - 1) {
             currentIndex = 0
-        }
-        else {
+        } else {
             currentIndex++
         }
         //for testing
         let podcast = podcasts[currentIndex]
         print("Next Podcast: \(podcast.title)")
         
-        //self.player = AVPlayer(playerItem: allPodcasts[currentIndex])
         self.player.replaceCurrentItemWithPlayerItem(allPodcasts[currentIndex])
         self.player.play()
         setupPodcast()
     }
     
     @IBAction func pressedRewind(sender: AnyObject) {
+        print("tapped previous")
         if(currentIndex == 0) {
             currentIndex = allPodcasts.count - 1
-        }
-        else {
+        } else {
             currentIndex--
         }
         //for testing
         let podcast = podcasts[currentIndex]
         print("Previous Podcast: \(podcast.title)")
         
-//        self.player = AVPlayer(playerItem: allPodcasts[currentIndex])
         self.player.replaceCurrentItemWithPlayerItem(allPodcasts[currentIndex])
         self.player.play()
         setupPodcast()

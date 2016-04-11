@@ -15,21 +15,22 @@ class Podcast {
     var author: String? //authorTerm
     var url:  NSString?
     var duration: String?
-    var image : UIImage?
+    var imageStr : String?
+    var imageSaved : UIImage?
     
     init() {}
     
     func printPodcast() {
         print("-----Printing Podcast------")
-        print("title:\(title) author:\(author) url:\(url) duration:\(duration) image:\(image?.description) \n")
+        print("title:\(title) author:\(author) url:\(url) duration:\(duration) image:\(imageStr) \n")
     }
     
-    convenience init(title : String, author: String, url: NSString, image: UIImage) {
+    convenience init(title : String, author: String, url: NSString, image: String) {
         self.init()
         self.title = title
         self.author = author
         self.url = url
-        self.image = image
+        self.imageStr = image
     }
 }
 
