@@ -40,9 +40,6 @@ Rapidcast is an iOS app that generates a playlist of podcasts specific to your t
   - Notifications
   - Scrollable text (for long podcast titles titles)
 
-Current Issues
-- Algorithm only provides the latest podcast (Should implement random algorithm as well)
-Additional Notes/Logs
-
+Logs
 1. [4/8/16] HUGE Bug (still in testing): when generating random integers (used to be 1 - 25) to pick from list of "top 25" from each category, sometimes we wouldn't even receive 25 podcast channels; the random integer would be larger than the actual list, thus giving us an empty lookupID.
 2. [4/10/16] Heavily refined xml parsing algorithm with ONO parser! XML Parsing speeds improved the entire playlist generation process from an average of ~15 seconds to ~5 seconds!
