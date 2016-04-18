@@ -26,6 +26,9 @@ Rapidcast is an iOS app that generates a playlist of podcasts specific to your t
       - store most recent generated playlist 
     - look at options for trimming and caching images
   - New Features
+  	- utilize more specific genres 
+  		- requires testing of new genres in search api
+  		- come up with new UI (expandable table view?)
     - allow users to "star" podcasts channels to select and listen
     - give both the ability to pull from favorited channels or random channels
 
