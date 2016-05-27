@@ -19,6 +19,12 @@ Rapidcast is an iOS app that generates a playlist of podcasts specific to your t
       - persistent audio controls throughout app 
         - scrubber 
         - add and remove 15/30 seconds 
+   	- compare StreamingKit performance with OrigamiEngine
+   	- Persistent AudioControls
+   		- shared instance of AudioPlayer
+   		- include persistent view along with it
+   		- if on playlist, show which podcast is playing
+   		- decision: should the persistent player show on the RapidCast page?
   - Storage Decisions:
     - <del> store categories in nsuserdefaults 
     - <del> remove realm 
