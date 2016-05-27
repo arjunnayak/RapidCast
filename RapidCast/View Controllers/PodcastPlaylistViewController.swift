@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import StreamingKit
 
 class PodcastPlaylistViewController: UITableViewController {
 
@@ -36,6 +37,11 @@ class PodcastPlaylistViewController: UITableViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.navigationItem.title = "Playlist"
+        
+        let audioPlayer = AudioPlayer.sharedInstance
+        if(audioPlayer.getState() == STKAudioPlayerState.Running) {
+            AudioControlsView.sharedInstance.showView()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -45,9 +51,12 @@ class PodcastPlaylistViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             if(identifier == "PlayPodcast") {
-                var playerViewController = segue.destinationViewController as! PodcastPlayerViewController
+                let playerViewController = segue.destinationViewController as! PodcastPlayerViewController
                 playerViewController.currentIndex = self.selectedPodcastIndex
                 playerViewController.podcastPlaylist = self.podcastPlaylist
+            } else if(identifier == "SKPlayPodcast") {
+                let SKplayerViewController = segue.destinationViewController as! SKPodcastPlayerViewController
+                SKplayerViewController.selectedPodcast = allPodcasts[self.selectedPodcastIndex]
             }
         }
     }
@@ -65,7 +74,7 @@ class PodcastPlaylistViewController: UITableViewController {
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> PodcastTableViewCell {
         let podcast = categories[indexPath.section].podcasts![indexPath.row]
-        var cell = tableView.dequeueReusableCellWithIdentifier("PodcastCell", forIndexPath: indexPath) as! PodcastTableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("PodcastCell", forIndexPath: indexPath) as! PodcastTableViewCell
         cell.podcast = podcast
         return cell
     }
@@ -73,7 +82,7 @@ class PodcastPlaylistViewController: UITableViewController {
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let podcast = categories[indexPath.section].podcasts![indexPath.row]
         
-        //this block of code finds the right podcast to display on the player based on what cell was selected. 
+        //this block of code finds the right podcast to display on the player based on what cell was selected.
         //this is necessary because of the headers, the rows of the index path were reset with every new header
         var index = 0
         for i in (0...allPodcasts.count) {
@@ -84,6 +93,7 @@ class PodcastPlaylistViewController: UITableViewController {
         }
         self.selectedPodcastIndex = index
         performSegueWithIdentifier("PlayPodcast", sender: self)
+//        self.performSegueWithIdentifier("SKPlayPodcast", sender: self)
     }
     
     override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {

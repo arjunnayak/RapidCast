@@ -11,6 +11,9 @@ import SwiftyJSON
 
 class JSONParser {
     
+    /*
+    * Returns the 
+    */
     static func parseForLookupID(dataFromRequest : NSString) -> [String] {
     
         var lookupIDs : [String] = []

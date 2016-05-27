@@ -10,12 +10,15 @@
 		47018D7D1B54693D009A7870 /* PodcastPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47018D7C1B54693D009A7870 /* PodcastPlayerViewController.swift */; };
 		4730DF8B1B558C730040B15B /* jazzy.mp3.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 4730DF8A1B558C730040B15B /* jazzy.mp3.mp3 */; };
 		4730DF901B56CF0E0040B15B /* PodcastPlaylistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4730DF8F1B56CF0E0040B15B /* PodcastPlaylistViewController.swift */; };
+		474B07661CC587820043B723 /* AudioControlsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 474B07651CC587820043B723 /* AudioControlsView.swift */; };
 		475D19BA1B62FB9000C453A9 /* XMLParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475D19B91B62FB9000C453A9 /* XMLParser.swift */; };
 		475D19BF1B68270300C453A9 /* ContentGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 475D19BE1B68270300C453A9 /* ContentGenerator.swift */; };
+		47662F171CC22AE4001E6D0F /* SKPodcastPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47662F161CC22AE4001E6D0F /* SKPodcastPlayerViewController.swift */; };
 		4768FF4D1B5038620012C80F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4768FF4C1B5038620012C80F /* AppDelegate.swift */; };
 		4768FF521B5038620012C80F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4768FF501B5038620012C80F /* Main.storyboard */; };
 		4768FF541B5038620012C80F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4768FF531B5038620012C80F /* Images.xcassets */; };
 		4768FF631B5038620012C80F /* RapidCastTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4768FF621B5038620012C80F /* RapidCastTests.swift */; };
+		477B9D0A1CC4A06500F03F6A /* AudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 477B9D091CC4A06500F03F6A /* AudioPlayer.swift */; };
 		479579341B7436C8003CE451 /* CategoryChooserCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479579331B7436C8003CE451 /* CategoryChooserCollectionViewController.swift */; };
 		479579361B743788003CE451 /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 479579351B743788003CE451 /* CategoryCollectionViewCell.swift */; };
 		47A99D281B83355700E07DB3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47A99D271B83355700E07DB3 /* SettingsViewController.swift */; };
@@ -46,9 +49,11 @@
 		47018D7C1B54693D009A7870 /* PodcastPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PodcastPlayerViewController.swift; path = ../PodcastPlayerViewController.swift; sourceTree = "<group>"; };
 		4730DF8A1B558C730040B15B /* jazzy.mp3.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; name = jazzy.mp3.mp3; path = ../../../Downloads/jazzy.mp3.mp3; sourceTree = "<group>"; };
 		4730DF8F1B56CF0E0040B15B /* PodcastPlaylistViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PodcastPlaylistViewController.swift; sourceTree = "<group>"; };
+		474B07651CC587820043B723 /* AudioControlsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioControlsView.swift; sourceTree = "<group>"; };
 		4752675F1B7DB99E00E89891 /* RapidCast-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RapidCast-Bridging-Header.h"; sourceTree = "<group>"; };
 		475D19B91B62FB9000C453A9 /* XMLParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XMLParser.swift; sourceTree = "<group>"; };
 		475D19BE1B68270300C453A9 /* ContentGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentGenerator.swift; sourceTree = "<group>"; };
+		47662F161CC22AE4001E6D0F /* SKPodcastPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SKPodcastPlayerViewController.swift; sourceTree = "<group>"; };
 		4768FF471B5038620012C80F /* RapidCast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RapidCast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4768FF4B1B5038620012C80F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4768FF4C1B5038620012C80F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +62,7 @@
 		4768FF5C1B5038620012C80F /* RapidCastTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RapidCastTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4768FF611B5038620012C80F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4768FF621B5038620012C80F /* RapidCastTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RapidCastTests.swift; sourceTree = "<group>"; };
+		477B9D091CC4A06500F03F6A /* AudioPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioPlayer.swift; sourceTree = "<group>"; };
 		479579331B7436C8003CE451 /* CategoryChooserCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryChooserCollectionViewController.swift; sourceTree = "<group>"; };
 		479579351B743788003CE451 /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		47A99D271B83355700E07DB3 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +106,7 @@
 				47D3FC811B5DC59D00EAE1EF /* RapidCastViewController.swift */,
 				479579331B7436C8003CE451 /* CategoryChooserCollectionViewController.swift */,
 				47A99D271B83355700E07DB3 /* SettingsViewController.swift */,
+				47662F161CC22AE4001E6D0F /* SKPodcastPlayerViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -176,6 +183,7 @@
 				47D3FC8C1B60545000EAE1EF /* RequestHelper.swift */,
 				475D19B91B62FB9000C453A9 /* XMLParser.swift */,
 				475D19BE1B68270300C453A9 /* ContentGenerator.swift */,
+				477B9D091CC4A06500F03F6A /* AudioPlayer.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -185,6 +193,7 @@
 			children = (
 				47FEB0CE1B5815F20091725D /* PodcastTableViewCell.swift */,
 				479579351B743788003CE451 /* CategoryCollectionViewCell.swift */,
+				474B07651CC587820043B723 /* AudioControlsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -376,10 +385,13 @@
 				4730DF901B56CF0E0040B15B /* PodcastPlaylistViewController.swift in Sources */,
 				47D3FC8B1B6018CA00EAE1EF /* JSONParser.swift in Sources */,
 				47D3FC8D1B60545000EAE1EF /* RequestHelper.swift in Sources */,
+				474B07661CC587820043B723 /* AudioControlsView.swift in Sources */,
 				475D19BF1B68270300C453A9 /* ContentGenerator.swift in Sources */,
+				47662F171CC22AE4001E6D0F /* SKPodcastPlayerViewController.swift in Sources */,
 				47A99D281B83355700E07DB3 /* SettingsViewController.swift in Sources */,
 				479579361B743788003CE451 /* CategoryCollectionViewCell.swift in Sources */,
 				475D19BA1B62FB9000C453A9 /* XMLParser.swift in Sources */,
+				477B9D0A1CC4A06500F03F6A /* AudioPlayer.swift in Sources */,
 				47FEB0D21B58200B0091725D /* Podcast.swift in Sources */,
 				47F116091C685634001FEADC /* Category.swift in Sources */,
 				4768FF4D1B5038620012C80F /* AppDelegate.swift in Sources */,

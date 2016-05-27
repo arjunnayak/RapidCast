@@ -24,6 +24,9 @@ class XMLParser {
             let document = try ONOXMLDocument(data: data)
             let channel : ONOXMLElement = document.rootElement.children[0] as! ONOXMLElement
             let author : ONOXMLElement = channel.firstChildWithTag("author")
+            if((channel.firstChildWithTag("image") == nil)) {
+                print("ono xml parsing - image tag is nil")
+            }
             let image : String = self.getImageURL(channel.firstChildWithTag("image"))
             let channelElements = channel.children
             var gotPodcast = false

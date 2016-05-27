@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 import SDWebImage
 import MarqueeLabel
+import StreamingKit
 
 class PodcastPlayerViewController: UIViewController {
     
@@ -27,7 +28,7 @@ class PodcastPlayerViewController: UIViewController {
     var podcasts : [Podcast] = []
     var currentIndex = 0
     
-    var volumeToggleState = 1
+    var volumeToggleState = 0
     
     //audio
     var player = AVPlayer()
@@ -64,6 +65,11 @@ class PodcastPlayerViewController: UIViewController {
         setupPodcast()
         pausePlay.setImage(pauseImg, forState: UIControlState.Normal)
     }
+    
+//    override func viewDidAppear(animated: Bool) {
+//        let audioControls = AudioControlsView.sharedInstance
+//        audioControls.hideView()
+//    }
     
     func setupSwipeGestures() {
         
@@ -125,11 +131,8 @@ class PodcastPlayerViewController: UIViewController {
     
     @IBAction func pressedRewind(sender: AnyObject) {
         print("tapped previous")
-        if(currentIndex == 0) {
-            currentIndex = allPodcasts.count - 1
-        } else {
-            currentIndex--
-        }
+        currentIndex = (currentIndex == 0) ? allPodcasts.count - 1 : currentIndex--
+        
         //for testing
         let podcast = podcasts[currentIndex]
         print("Previous Podcast: \(podcast.title)")
@@ -141,15 +144,15 @@ class PodcastPlayerViewController: UIViewController {
     
     @IBAction func volumeToggle(sender: AnyObject) {
         //if(volumeButton.imageView?.description)
-        if(volumeToggleState == 1) {
+        if(volumeToggleState == 0) {
             self.player.muted = true
             volumeButton.setImage(volumeMuted, forState: UIControlState.Normal)
-            volumeToggleState = 2
+            volumeToggleState = 1
         }
-        else if(volumeToggleState == 2) {
+        else if(volumeToggleState == 1) {
             self.player.muted = false
             volumeButton.setImage(volume, forState: UIControlState.Normal)
-            volumeToggleState = 1
+            volumeToggleState = 0
         }
     }
     

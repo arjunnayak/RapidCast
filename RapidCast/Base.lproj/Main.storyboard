@@ -38,7 +38,7 @@
                                         <rect key="frame" x="0.0" y="35" width="600" height="65"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="wgK-AL-M4Y" id="hWn-B0-dJC">
-                                            <rect key="frame" x="0.0" y="0.0" width="567" height="65"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="567" height="64.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Reset Categories" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pht-Yz-0f7">
@@ -57,7 +57,7 @@
                                         <rect key="frame" x="0.0" y="100" width="600" height="239"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4yh-RP-9Wb" id="uQ0-gU-wEs">
-                                            <rect key="frame" x="0.0" y="0.0" width="600" height="239"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="238.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Developed by Arjun Nayak" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TLO-8x-TWX">
@@ -167,7 +167,7 @@
                                 <rect key="frame" x="0.0" y="22" width="600" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="aOT-s3-sJF" id="OTw-6x-qvy">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="79.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zt7-wQ-1X2">
@@ -239,6 +239,7 @@
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <segue destination="zd0-nn-XDP" kind="show" identifier="PlayPodcast" id="ABp-dq-wos"/>
+                        <segue destination="rwx-zz-hcc" kind="show" identifier="SKPlayPodcast" id="R2T-Qc-Nmp"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pgz-IJ-4fE" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -491,8 +492,11 @@
                                             <action selector="pressedFastForward:" destination="zd0-nn-XDP" eventType="touchUpInside" id="qWd-ju-aed"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giL-PY-SPc" userLabel="Volume">
-                                        <rect key="frame" x="282" y="3" width="54" height="46"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="giL-PY-SPc" userLabel="Volume">
+                                        <rect key="frame" x="282" y="3" width="54" height="49"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="54" id="0vL-xp-djI"/>
+                                        </constraints>
                                         <state key="normal" image="Volume">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -510,9 +514,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fVF-6H-jtL" userLabel="Pause/Play">
-                                        <rect key="frame" x="152" y="-8" width="46" height="68"/>
+                                        <rect key="frame" x="145" y="0.0" width="53" height="53"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="46" id="fRj-Io-iBw"/>
+                                            <constraint firstAttribute="width" constant="53" id="fRj-Io-iBw"/>
                                         </constraints>
                                         <state key="normal" image="Play">
                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
@@ -527,11 +531,11 @@
                                     <constraint firstItem="giL-PY-SPc" firstAttribute="bottom" secondItem="zLD-ot-xXV" secondAttribute="bottom" constant="-2" id="1Mz-6o-LJK"/>
                                     <constraint firstAttribute="trailing" secondItem="giL-PY-SPc" secondAttribute="trailing" constant="14" id="B6V-3H-mTu"/>
                                     <constraint firstItem="giL-PY-SPc" firstAttribute="leading" secondItem="zLD-ot-xXV" secondAttribute="trailing" constant="13" id="CEj-AK-99i"/>
-                                    <constraint firstItem="fVF-6H-jtL" firstAttribute="centerX" secondItem="H4h-gl-IKd" secondAttribute="centerX" id="F44-Vo-eKY"/>
+                                    <constraint firstItem="fVF-6H-jtL" firstAttribute="centerX" secondItem="H4h-gl-IKd" secondAttribute="centerX" constant="-3.5" id="F44-Vo-eKY"/>
                                     <constraint firstItem="zLD-ot-xXV" firstAttribute="leading" secondItem="fVF-6H-jtL" secondAttribute="trailing" constant="21" id="IPZ-mJ-bb0"/>
                                     <constraint firstAttribute="width" constant="350" id="Jxy-ER-Is6"/>
-                                    <constraint firstItem="fVF-6H-jtL" firstAttribute="leading" secondItem="Kbn-HM-S0V" secondAttribute="trailing" constant="25" id="Lqj-UB-hoF"/>
-                                    <constraint firstItem="fVF-6H-jtL" firstAttribute="bottom" secondItem="H4h-gl-IKd" secondAttribute="bottomMargin" id="SPd-Tt-NF4"/>
+                                    <constraint firstItem="fVF-6H-jtL" firstAttribute="leading" secondItem="Kbn-HM-S0V" secondAttribute="trailing" constant="18" id="Lqj-UB-hoF"/>
+                                    <constraint firstItem="fVF-6H-jtL" firstAttribute="bottom" secondItem="H4h-gl-IKd" secondAttribute="bottomMargin" constant="-7" id="SPd-Tt-NF4"/>
                                     <constraint firstItem="zLD-ot-xXV" firstAttribute="centerY" secondItem="fVF-6H-jtL" secondAttribute="centerY" id="UR0-Is-Vuo"/>
                                     <constraint firstItem="giL-PY-SPc" firstAttribute="top" secondItem="H4h-gl-IKd" secondAttribute="top" constant="3" id="W38-31-j8W"/>
                                     <constraint firstItem="Kbn-HM-S0V" firstAttribute="top" secondItem="H4h-gl-IKd" secondAttribute="top" constant="3" id="ct4-mM-BJt"/>
@@ -616,7 +620,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cIe-iw-j3l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="686" y="270"/>
+            <point key="canvasLocation" x="656" y="-46"/>
+        </scene>
+        <!--Podcast Player View Controller-->
+        <scene sceneID="Hki-me-lAg">
+            <objects>
+                <viewController id="rwx-zz-hcc" customClass="SKPodcastPlayerViewController" customModule="RapidCast" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="DvG-PB-SXG"/>
+                        <viewControllerLayoutGuide type="bottom" id="fIl-Su-Rs3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Z2Q-n1-jAZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cJs-eg-KbA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="656" y="687"/>
         </scene>
         <!--Category Chooser -->
         <scene sceneID="mQ9-l7-HTC">
