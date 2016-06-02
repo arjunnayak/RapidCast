@@ -17,25 +17,10 @@ Rapidcast is an iOS app that generates a playlist of podcasts specific to your t
     - Conceptual Improvements:
       - Give something better than just the most recent podcast
   - Podcast playing:
-    - switch to StreamingKit (https://github.com/tumtumtum/StreamingKit)
-<<<<<<< HEAD
-      - Allow for playing in background 
-      - persistent audio controls throughout app 
-        - scrubber 
-        - add and remove 15/30 seconds 
-   	- compare StreamingKit performance with OrigamiEngine
-   	- Persistent AudioControls
-   		- shared instance of AudioPlayer
-   		- include persistent view along with it
-   		- if on playlist, show which podcast is playing
-   		- decision: should the persistent player show on the RapidCast page?
-=======
-      - Background audio
-      - Persistent audio controls
-      - 15/30 seconds 
-      - Scrubber 
+    - Background audio
+    - 15/30 seconds 
+    - Scrubber 
     - <del>Automatic scrolling for long titles
->>>>>>> 46960b55e8c223e000d063fccdd2d84cb5234010
   - Storage Decisions:
     - <del>store categories in nsuserdefaults 
     - <del>remove realm 
